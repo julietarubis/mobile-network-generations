@@ -5,7 +5,6 @@
 ## Contents
 
 - [Overview](#overview)
-- [Visual timeline: 1G to 6G](#visual-timeline-1g-to-6g)
 - [Comparison at a glance](#comparison-at-a-glance)
 - [Common architecture concepts](#common-architecture-concepts)
 - [1G — Analog cellular](#1g--analog-cellular)
@@ -14,10 +13,6 @@
 - [4G — All-IP broadband](#4g--all-ip-broadband)
 - [5G — Service-based architecture](#5g--service-based-architecture)
 - [6G — IMT-2030 research](#6g--imt-2030-research)
-- [5G components in detail](#5g-components-in-detail)
-- [6G candidate components](#6g-candidate-components)
-- [FCAPS and OSS management](#fcaps-and-oss-management)
-- [Telecommunications standards and performance management](#telecommunications-standards-and-performance-management)
 - [Architecture evolution](#architecture-evolution)
 - [Research directions](#research-directions)
 - [References](#references)
@@ -34,27 +29,6 @@ The **G** in 1G–6G stands for **generation**. Each new generation changes wire
 - **6G:** A future generation under development, with research into AI integration, sensing, and ubiquitous connectivity.
 
 > **Status note (October 2026):** 1G–5G are historical or deployed generations. 6G is not yet a finalized commercial cellular architecture. The diagrams below distinguish standardized implementations from proposed research concepts.
-
-## Visual timeline: 1G to 6G
-
-The following graphic is rendered directly by GitHub using **Mermaid** (no external image hosting required).
-
-```mermaid
-flowchart LR
-    G1["📞 1G<br/>1980s<br/>Analog voice"] --> G2["✉️ 2G<br/>1990s<br/>Digital + SMS"]
-    G2 --> G3["🌐 3G<br/>2000s<br/>Mobile internet"]
-    G3 --> G4["📱 4G<br/>2010s<br/>All-IP LTE"]
-    G4 --> G5["📡 5G<br/>2020s<br/>5G NR + 5GC"]
-    G5 -.-> G6["🧠 6G<br/>~2030 target<br/>AI + sensing research"]
-    classDef historical fill:#eaf3ff,stroke:#3778c2,color:#132b4b,stroke-width:1.5px;
-    classDef current fill:#daf5e8,stroke:#237c54,color:#123d2a,stroke-width:1.5px;
-    classDef future fill:#fff1da,stroke:#ac7522,color:#573708,stroke-dasharray:5 3;
-    class G1,G2,G3,G4 historical;
-    class G5 current;
-    class G6 future;
-```
-
-**Reading the graphic:** Solid arrows show the progression of deployed generations; the dashed arrow marks 6G as an emerging, not-yet-finalized generation. Each generation's detailed network architecture appears below.
 
 ## Comparison at a glance
 
@@ -284,179 +258,6 @@ flowchart TB
 
 The IMT-2030 framework discusses ambitious capability ranges. They are **research objectives**, not guaranteed field performance or requirements already delivered by commercial 6G systems.
 
-## 5G components in detail
-
-> **Status:** The 5G components below are standardized 3GPP concepts. The main diagram describes **5G Standalone (SA)**, not a 5G NSA deployment anchored on LTE/EPC.
-
-### 5G system layers and components
-
-| Layer | Component | Full name / function |
-|---|---|---|
-| Device | **UE** | User Equipment; smartphone, router, IoT device |
-| Radio access | **gNB** | Next-generation Node B; 5G NR base station |
-| RAN control | **gNB-CU-CP** | Central Unit control plane; RRC and control functions in a split gNB |
-| RAN data | **gNB-CU-UP** | Central Unit user plane; user-data processing in split gNB |
-| RAN real-time | **gNB-DU** | Distributed Unit; lower-layer processing and scheduling in a split gNB |
-| Radio hardware | **RU / radio unit** | Radio frequency, antenna, and physical radio functions; exact split is deployment-specific |
-| Core control | **AMF** | Access and Mobility Management Function; registration and mobility |
-| Core control | **SMF** | Session Management Function; PDU session control and UPF selection |
-| Core data | **UPF** | User Plane Function; packet routing, forwarding and QoS enforcement |
-| Core authentication | **AUSF** | Authentication Server Function |
-| Core subscription | **UDM / UDR** | Unified Data Management / Unified Data Repository |
-| Core policy | **PCF** | Policy Control Function |
-| Core discovery | **NRF** | Network Repository Function; network function discovery |
-| Core slicing | **NSSF** | Network Slice Selection Function |
-| Core exposure | **NEF** | Network Exposure Function; controlled capability exposure |
-| Core analytics | **NWDAF** | Network Data Analytics Function; analytics for network functions |
-| External services | **DN / IMS / MEC** | Data Network, IP Multimedia Subsystem, Multi-access Edge Computing (MEC is a deployment architecture) |
-
-### 5G Standalone reference architecture (simplified)
-
-```mermaid
-flowchart TB
-  UE[User Equipment] --> GNB[gNodeB / NG-RAN]
-  GNB -->|N2 control| AMF[AMF]
-  GNB -->|N3 user data| UPF[UPF]
-  AMF --> SMF[SMF]
-  SMF -->|N4 control| UPF
-  UPF --> DN[Internet and Data Networks]
-  AMF --> AUSF[AUSF]
-  AMF --> UDM[UDM]
-  AMF --> NSSF[NSSF]
-  SMF --> PCF[PCF]
-  NRF[NRF discovery] -.-> AMF
-  NRF -.-> SMF
-  NWDAF[NWDAF analytics] -.-> AMF
-```
-
-*This diagram is conceptual: actual 5GC uses a service-based control plane with standardized services and interfaces, not a single linear chain.*
-
-### Example split gNodeB architecture
-
-```mermaid
-flowchart LR
-  UE[5G Device] <--> RU[Radio Unit]
-  RU <--> DU[gNB Distributed Unit]
-  DU <--> CUCP[gNB Central Unit Control]
-  DU <--> CUUP[gNB Central Unit User]
-  CUCP --> AMF[5G Core AMF]
-  CUUP --> UPF[5G Core UPF]
-```
-
-*The split architecture is one deployment option; not every 5G site uses separate CU, DU and RU equipment.*
-
-### 5G interfaces and protocols
-
-| Interface | Between | Role |
-|---|---|---|
-| **Uu** | UE and gNB | 5G NR radio interface |
-| **N2** | NG-RAN and AMF | Control plane |
-| **N3** | NG-RAN and UPF | User plane |
-| **N4** | SMF and UPF | Session/user-plane control |
-| **N6** | UPF and Data Network | External data connectivity |
-| **Xn** | NG-RAN nodes | Coordination and mobility |
-| **F1** | gNB-CU and gNB-DU | Split RAN connectivity |
-| **E1** | gNB-CU-CP and gNB-CU-UP | CU control / user split |
-
-**Principal standards:** [3GPP TS 23.501](https://www.3gpp.org/dynareport/23501.htm) (5GS architecture), [TS 38.300](https://www.3gpp.org/dynareport/38300.htm) (NR/NG-RAN overview), [TS 38.401](https://www.3gpp.org/dynareport/38401.htm) (NG-RAN architecture).
-
-## 6G candidate components
-
-> **Research-only conceptual architecture, October 2026:** **No finalized 3GPP 6G network-function inventory or normative 6G core reference architecture is established here.** Terms below describe research directions, **not guaranteed 6G nodes or interfaces**. ITU-R IMT-2030 is the framework used to guide the future radio technology evaluation.
-
-| Candidate subsystem | Research role | Status |
-|---|---|---|
-| Intelligent user devices | XR headsets, robots, connected vehicles, sensors | Candidate use cases |
-| Advanced terrestrial RAN | New radio waveforms, distributed antennas, spectrum coordination | Under research |
-| Non-terrestrial network (NTN) integration | Satellite and aerial connectivity with ground coverage | Integration direction |
-| **ISAC** capabilities | Joint sensing and communications, environmental estimation | IMT-2030 usage scenario |
-| AI-enabled RAN control | Resource optimization, mobility and capacity management | Research direction |
-| Distributed edge compute | Low-latency computing and AI inference near devices | Design candidate |
-| Programmable core / orchestration | Adaptable services, policy and automation | Not finalized for 6G |
-| Network digital twins | Simulation and predictive operational planning | Research direction |
-| Security and resilience | Trust, privacy, secure operation and fault tolerance | Cross-cutting design objective |
-
-### Illustrative 6G system concept — not a formal 3GPP architecture
-
-```mermaid
-flowchart TB
-  DEV[Future Mobile and IoT Devices] <--> ACCESS[Integrated Radio Access]
-  TER[Advanced Terrestrial RAN] <--> ACCESS
-  NTN[Satellite and Aerial Networks] <--> ACCESS
-  SENSE[Joint Sensing Functions] <--> ACCESS
-  ACCESS <--> EDGE[Edge Computing and AI]
-  EDGE <--> CORE[Future Core and Orchestration]
-  CORE <--> APP[Applications and Cloud]
-  AI[AI Assisted Optimization] -.-> ACCESS
-  AI -.-> EDGE
-  AI -.-> CORE
-  SEC[Security and Resilience] -.-> CORE
-```
-
-ITU-R M.2160 identifies **immersive communication, hyper-reliable low-latency communication, massive communication, ubiquitous connectivity, AI and communication, and integrated sensing and communication** as IMT-2030 usage scenarios. It does **not** prescribe the named nodes in the diagram above.
-
-## FCAPS and OSS management
-
-**FCAPS** is the classic ITU-T TMN taxonomy for network operations: **Fault, Configuration, Accounting, Performance and Security Management**. The main foundational reference is [ITU-T M.3400](https://www.itu.int/rec/T-REC-M.3400-200002-I/en).
-
-| FCAPS area | 5G example | Relevant operational data |
-|---|---|---|
-| **Fault** | gNB transport link failure; UPF unreachable | Alarms, severity, probable cause, timestamps |
-| **Configuration** | Modify cell parameters; provision network resources | Managed objects, configuration and change records |
-| **Accounting** | Account for subscriber/service consumption | Charging and usage records |
-| **Performance** | Track 5G accessibility, throughput and handovers | Counters, measurements, KPI time series |
-| **Security** | Detect unauthorized management access | Audit logs, identity, access and security events |
-
-### 5G FCAPS / performance management architecture
-
-```mermaid
-flowchart TB
-  NOC[Network Operations Centre] --> OSS[OSS and Assurance Platform]
-  OSS --> FM[Fault Management]
-  OSS --> CM[Configuration Management]
-  OSS --> AM[Accounting Management]
-  OSS --> PM[Performance Management]
-  OSS --> SM[Security Management]
-  FM --> COL[Management Collection and Domain Systems]
-  CM --> COL
-  AM --> COL
-  PM --> COL
-  SM --> COL
-  COL <--> RAN[5G Radio Access Network]
-  COL <--> CORE[5G Core Network]
-  COL <--> TRAN[Transport and Cloud Infrastructure]
-  PM --> KPI[KPI Dashboards and Analytics]
-```
-
-**Performance management workflow:** network elements create measurements → collectors receive and validate them → a PM platform aggregates counters → KPI formulas produce comparable indicators → engineers monitor trends and investigate anomalies. **Vendor-specific counters require definition mapping; 3GPP standardization alone does not guarantee identical exports from every vendor.**
-
-## Telecommunications standards and performance management
-
-| Body | What it standardizes or coordinates | Examples |
-|---|---|---|
-| **ITU / ITU-R / ITU-T** | IMT frameworks, spectrum coordination, TMN management functions | ITU-R M.2160; ITU-T M.3400 |
-| **3GPP** | Cellular radio, core, protocols, management, orchestration | TS 23.501; TS 38.300; TS 28.552 |
-| **ETSI and other 3GPP partners** | Publication/adoption of telecom specifications | ETSI publication of 3GPP TS |
-| **TM Forum** | OSS/BSS process and API frameworks | eTOM, Open APIs |
-| **IETF** | IP/network management and data modeling protocols | SNMP, NETCONF, YANG |
-
-### Primary performance management documents
-
-| Specification | Official scope | Why it matters |
-|---|---|---|
-| [3GPP TS 32.401](https://www.3gpp.org/dynareport/32401.htm) | PM concepts and requirements | Foundation for PM data collection |
-| [3GPP TS 32.404](https://www.3gpp.org/dynareport/32404.htm) | PM measurement definitions and template | Rules for defining counters |
-| [3GPP TS 32.425](https://www.3gpp.org/dynareport/32425.htm) | E-UTRAN performance measurements | LTE RAN measurements |
-| [3GPP TS 32.450](https://www.3gpp.org/dynareport/32450.htm) | E-UTRAN KPI definitions | LTE KPI calculations |
-| [3GPP TS 28.541](https://www.3gpp.org/dynareport/28541.htm) | 5G Network Resource Model | Managed 5G resources |
-| [3GPP TS 28.550](https://www.3gpp.org/dynareport/28550.htm) | Performance assurance | Assurance architecture and functions |
-| [3GPP TS 28.552](https://www.3gpp.org/dynareport/28552.htm) | 5G performance measurements | Standard 5G RAN/core counters |
-| [3GPP TS 28.554](https://www.3gpp.org/dynareport/28554.htm) | 5G end-to-end KPIs | E2E performance evaluation |
-
-**Practical KPI dimensions:** availability, accessibility, retainability, mobility, latency, traffic volume, throughput, resource utilization, reliability and energy efficiency. Specific formulas, scopes and counter definitions must be taken from the **selected 3GPP release and specification version** rather than assumed from KPI labels.
-
-**6G management note:** AI-assisted assurance, sensing-related KPIs and intelligent management are research areas. Do not label proposed 6G counters or core functions as already standardized.
-
 ## Architecture evolution
 
 ```mermaid
@@ -488,8 +289,6 @@ Areas well suited to a technical paper or thesis include:
 6. **ISAC and terrestrial/non-terrestrial integration:** Trade-offs in coverage, spectrum, and coordination.
 
 ## References
-
-For management and 5G/6G architecture, also consult 3GPP TS 28.552, TS 28.554, TS 38.401, ITU-T M.3400 and ITU-R M.2160 (linked in the sections above).
 
 Primary and standards-oriented resources:
 
