@@ -837,4 +837,669 @@ flowchart TD
     E --> F
 ```
 
+# Mobile Telecommunications Standards
 
+## 1. Introduction
+
+Mobile telecommunications standards are technical specifications and agreed rules that define how mobile devices, base stations, core networks, and other telecommunications systems communicate.
+
+Standards make it possible for network equipment and mobile devices from different manufacturers to work together.
+
+### Why Are Standards Important?
+
+1. **Interoperability:** Devices from different manufacturers can communicate.
+2. **Compatibility:** Mobile equipment can operate on supported networks.
+3. **Roaming:** Users can access compatible networks in other countries.
+4. **Security:** Standards specify authentication and security mechanisms.
+5. **Network Performance:** Standards define radio interfaces, protocols, and network functions.
+6. **Global Development:** Manufacturers and operators can build interoperable systems.
+
+### Basic Concept
+
+```mermaid
+flowchart LR
+    A["Mobile Device"]
+    B["Radio Access Network"]
+    C["Core Network"]
+    D["Internet / Telephone Network"]
+
+    A <-->|"Standard Radio Protocols"| B
+    B <-->|"Standard Interfaces"| C
+    C <-->|"Interconnection Protocols"| D
+```
+
+---
+
+## 2. Telecommunications Standardisation Organisations
+
+Different organisations contribute to mobile telecommunications standards.
+
+### Main Organisations
+
+| Organisation | Full Name | Main Responsibility |
+|---|---|---|
+| ITU | International Telecommunication Union | Global telecom coordination and IMT frameworks |
+| 3GPP | 3rd Generation Partnership Project | GSM evolution, UMTS, LTE, 5G and ongoing specifications |
+| ETSI | European Telecommunications Standards Institute | European ICT and telecom standards |
+| IEEE | Institute of Electrical and Electronics Engineers | Networking standards including Wi-Fi |
+| 3GPP2 | 3rd Generation Partnership Project 2 | Historical CDMA2000 specifications |
+| IETF | Internet Engineering Task Force | Internet protocols such as IP, TCP and related technologies |
+
+### How Standards Are Developed
+
+```mermaid
+flowchart TD
+    A["Industry Requirements"]
+    B["Research and Technical Proposals"]
+    C["Standards Development"]
+    D["Technical Specifications"]
+    E["Equipment Implementation"]
+    F["Testing and Interoperability"]
+    G["Commercial Deployment"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+
+### Understanding ITU and 3GPP
+
+**ITU** establishes international frameworks and requirements for mobile telecommunications.
+
+Examples:
+
+- IMT-2000: Third-generation mobile systems
+- IMT-Advanced: Advanced fourth-generation mobile systems
+- IMT-2020: Fifth-generation mobile systems
+- IMT-2030: Framework for future sixth-generation systems
+
+**3GPP** develops detailed technical specifications for mobile networks.
+
+Examples:
+
+- GSM and GPRS/EDGE specifications
+- UMTS and HSPA
+- LTE and LTE-Advanced
+- 5G NR and 5G Core
+- Ongoing mobile-network evolution
+
+**Important:** ITU defines broad international IMT frameworks, while 3GPP produces many of the detailed cellular technical specifications.
+
+---
+
+## 3. Mobile Telecommunications Standards by Generation
+
+| Generation | Important Standards | Radio Technologies | Main Services |
+|---|---|---|---|
+| 1G | AMPS, NMT, TACS | Analogue FM, FDMA | Analogue voice |
+| 2G | GSM, IS-95, IS-136 | TDMA, CDMA | Digital voice and SMS |
+| 2.5G / 2.75G | GPRS, EDGE | Packet-data enhancements | Basic mobile internet |
+| 3G | UMTS, CDMA2000 | WCDMA, CDMA | Mobile internet and multimedia |
+| 3G Enhancements | HSPA, HSPA+, EV-DO | Enhanced packet radio | Faster mobile data |
+| 4G | LTE, LTE-Advanced | OFDMA, SC-FDMA, MIMO | Mobile broadband |
+| 5G | 5G NR, 5G Core | OFDM-based radio, Massive MIMO | Broadband, IoT, low-latency services |
+| 6G | IMT-2030 framework; standards under development | Advanced radio, AI and sensing research | Future intelligent connectivity |
+
+---
+
+# 4. First Generation (1G) Standards
+
+## 4.1 AMPS — Advanced Mobile Phone System
+
+**Generation:** 1G  
+**Type:** Analogue cellular standard  
+**Main Market:** Initially North America
+
+### What Is AMPS?
+
+AMPS was an early analogue cellular telephone system.
+
+It used frequency-division multiple access and supported voice calls.
+
+### Main Components
+
+| Component | Role |
+|---|---|
+| Mobile Station | User's analogue mobile phone |
+| Base Station | Radio communication with the phone |
+| Mobile Switching Centre | Call switching and mobility support |
+| PSTN | Connection to telephone networks |
+
+### AMPS Architecture
+
+```mermaid
+flowchart LR
+    A["Mobile Phone"]
+    B["Analogue Base Station"]
+    C["Mobile Switching Centre"]
+    D["PSTN"]
+
+    A <-->|"Analogue Radio"| B
+    B <--> C
+    C <--> D
+```
+
+### Key Technologies
+
+- Analogue frequency modulation
+- FDMA
+- Circuit-switched voice communication
+
+---
+
+## 4.2 NMT — Nordic Mobile Telephone
+
+**Generation:** 1G
+
+NMT was an analogue cellular system introduced in Nordic countries.
+
+### Features
+
+- Analogue voice calls
+- Cellular coverage and roaming
+- Frequency-based channel allocation
+
+---
+
+## 4.3 TACS — Total Access Communication System
+
+**Generation:** 1G
+
+TACS was an analogue mobile telephone standard derived from AMPS and used in several markets, including the United Kingdom.
+
+### Features
+
+- Analogue voice
+- FDMA
+- Cellular handover
+- Circuit-switched communication
+
+---
+
+# 5. Second Generation (2G) Standards
+
+## 5.1 GSM — Global System for Mobile Communications
+
+**Generation:** 2G  
+**Standard Family:** GSM  
+**Main Technology:** FDMA and TDMA
+
+### What Is GSM?
+
+GSM is a digital cellular communication standard.
+
+It supports:
+
+- Digital voice calls
+- SMS
+- Subscriber authentication
+- International roaming
+- Basic data services through extensions
+
+### Main Components
+
+| Component | Full Form | Role |
+|---|---|---|
+| MS | Mobile Station | User's device |
+| BTS | Base Transceiver Station | Radio transmission |
+| BSC | Base Station Controller | Radio resource management |
+| MSC | Mobile Switching Centre | Voice call switching |
+| HLR | Home Location Register | Subscriber database |
+| VLR | Visitor Location Register | Temporary subscriber information |
+| AuC | Authentication Centre | Authentication support |
+
+### GSM Architecture
+
+```mermaid
+flowchart LR
+    A["Mobile Station"]
+    B["BTS"]
+    C["BSC"]
+    D["MSC"]
+    E["PSTN"]
+    F["HLR / VLR / AuC"]
+
+    A <-->|"Radio Interface"| B
+    B <--> C
+    C <--> D
+    D <--> E
+    D <--> F
+```
+
+### How GSM Works
+
+1. The phone connects to a BTS.
+2. BTS transfers signalling and user traffic to BSC.
+3. BSC manages the radio resources.
+4. MSC controls circuit-switched calls.
+5. Subscriber databases support authentication and mobility.
+6. Calls connect to internal or external telephone networks.
+
+---
+
+## 5.2 IS-95 — Interim Standard 95
+
+**Generation:** 2G  
+**Also Known As:** cdmaOne  
+**Technology:** CDMA
+
+IS-95 uses code division multiple access to support multiple users within a shared frequency band.
+
+### Main Features
+
+- Digital voice
+- Spread-spectrum radio communication
+- Power control
+- Soft handoff support
+
+### IS-95 Architecture
+
+```mermaid
+flowchart LR
+    A["CDMA Mobile Phone"]
+    B["Base Station"]
+    C["Base Station Controller"]
+    D["Mobile Switching Centre"]
+    E["Telephone Network"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+    D <--> E
+```
+
+---
+
+## 5.3 GPRS — General Packet Radio Service
+
+**Generation:** 2G enhancement  
+**Purpose:** Packet-switched mobile data
+
+GPRS added packet-based internet connectivity to GSM networks.
+
+### Main Components
+
+- BTS
+- BSC / PCU
+- SGSN
+- GGSN
+
+### GPRS Architecture
+
+```mermaid
+flowchart LR
+    A["GPRS Phone"]
+    B["BTS"]
+    C["BSC / PCU"]
+    D["SGSN"]
+    E["GGSN"]
+    F["Internet"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+```
+
+### Component Roles
+
+| Component | Role |
+|---|---|
+| PCU | Packet Control Unit: handles packet-radio resource functions |
+| SGSN | Serving GPRS Support Node: packet mobility and session support |
+| GGSN | Gateway GPRS Support Node: external packet-network connectivity |
+
+---
+
+## 5.4 EDGE — Enhanced Data Rates for GSM Evolution
+
+**Generation:** 2G enhancement
+
+EDGE improved data performance through more efficient radio modulation and coding.
+
+### Main Features
+
+- Faster packet data than basic GPRS
+- Improved spectral efficiency
+- Continued use of evolved GSM infrastructure
+
+---
+
+# 6. Third Generation (3G) Standards
+
+## 6.1 UMTS — Universal Mobile Telecommunications System
+
+**Generation:** 3G  
+**Standardisation:** 3GPP  
+**Radio Technology:** WCDMA
+
+UMTS supports mobile internet, voice communication, multimedia, and video calls.
+
+### UMTS Architecture
+
+```mermaid
+flowchart LR
+    A["3G User Equipment"]
+    B["NodeB"]
+    C["RNC"]
+    D["Core Network"]
+    E["Internet / PSTN"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+    D <--> E
+```
+
+### Main Components
+
+| Component | Role |
+|---|---|
+| UE | User Equipment |
+| NodeB | 3G radio base station |
+| RNC | Radio resource management |
+| MSC | Circuit-switched voice support |
+| SGSN | Packet data mobility management |
+| GGSN | Gateway to external data networks |
+
+---
+
+## 6.2 WCDMA — Wideband Code Division Multiple Access
+
+**Generation:** 3G  
+**Category:** Radio interface technology
+
+WCDMA is the main radio access technology used by conventional UMTS systems.
+
+### Characteristics
+
+- Wideband spread-spectrum radio interface
+- Code-based user separation
+- Power control
+- Voice and packet data support
+
+---
+
+## 6.3 CDMA2000
+
+**Generation:** 3G  
+**Standards Organisation:** Historically 3GPP2
+
+CDMA2000 evolved from IS-95.
+
+### Main Variants
+
+- CDMA2000 1x
+- CDMA2000 EV-DO
+
+### Main Services
+
+- Digital voice
+- Packet-based mobile data
+- Mobile internet
+
+---
+
+## 6.4 HSPA — High Speed Packet Access
+
+**Generation:** 3G enhancement
+
+HSPA improved the packet-data capabilities of UMTS networks.
+
+### Main Technologies
+
+- HSDPA: High Speed Downlink Packet Access
+- HSUPA: High Speed Uplink Packet Access
+- HSPA+: Evolved High Speed Packet Access
+
+### Purpose
+
+Increase mobile-data performance without replacing the entire UMTS network architecture.
+
+---
+
+# 7. Fourth Generation (4G) Standards
+
+## 7.1 LTE — Long Term Evolution
+
+**Generation:** 4G-era mobile technology  
+**Standards Organisation:** 3GPP
+
+LTE was developed for high-speed, packet-based mobile communication.
+
+### LTE Main Components
+
+| Component | Full Form | Role |
+|---|---|---|
+| UE | User Equipment | User device |
+| eNodeB | Evolved NodeB | LTE base station |
+| MME | Mobility Management Entity | Control-plane mobility |
+| SGW | Serving Gateway | User-plane packet forwarding |
+| PGW | Packet Data Network Gateway | External packet-network access |
+| HSS | Home Subscriber Server | Subscriber information |
+
+### LTE Architecture
+
+```mermaid
+flowchart LR
+    A["UE"]
+    B["eNodeB"]
+    C["MME"]
+    D["SGW"]
+    E["PGW"]
+    F["Internet"]
+
+    A <-->|"LTE Radio"| B
+    B -.->|"Control Plane"| C
+    B -->|"User Plane"| D
+    D --> E
+    E --> F
+```
+
+### Key Technologies
+
+- OFDMA downlink
+- SC-FDMA uplink
+- MIMO
+- Packet-based EPC architecture
+
+---
+
+## 7.2 LTE-Advanced
+
+**Generation:** 4G  
+**Standardisation:** 3GPP
+
+LTE-Advanced enhanced LTE performance and supported capabilities aligned with IMT-Advanced requirements.
+
+### Main Technologies
+
+- Carrier aggregation
+- Higher-order MIMO
+- Improved radio resource management
+- Enhanced spectral efficiency
+
+### What Is Carrier Aggregation?
+
+Carrier aggregation combines multiple component carriers to increase available bandwidth.
+
+```mermaid
+flowchart LR
+    A["Carrier 1"]
+    B["Carrier 2"]
+    C["Carrier 3"]
+    D["Aggregated Radio Capacity"]
+    E["Higher Potential Throughput"]
+
+    A --> D
+    B --> D
+    C --> D
+    D --> E
+```
+
+---
+
+# 8. Fifth Generation (5G) Standards
+
+## 8.1 5G NR — Fifth Generation New Radio
+
+**Generation:** 5G  
+**Standards Organisation:** 3GPP
+
+5G NR defines the radio access technology used by 5G networks.
+
+### Main Features
+
+- Flexible OFDM-based numerology
+- Massive MIMO
+- Beamforming
+- Enhanced mobile broadband
+- Support for low-latency and large-scale IoT scenarios
+
+---
+
+## 8.2 5G Core (5GC)
+
+The 5G Core introduces a service-based architecture for control-plane network functions.
+
+### Important Components
+
+| Component | Full Form | Main Role |
+|---|---|---|
+| AMF | Access and Mobility Management Function | Registration and mobility |
+| SMF | Session Management Function | Session management |
+| UPF | User Plane Function | User-data forwarding |
+| AUSF | Authentication Server Function | Authentication |
+| UDM | Unified Data Management | Subscriber data management |
+| PCF | Policy Control Function | Network policies |
+| NRF | Network Repository Function | Network-function discovery |
+
+### Simplified 5G Standalone Architecture
+
+```mermaid
+flowchart LR
+    A["UE"]
+    B["gNodeB"]
+    C["AMF"]
+    D["SMF"]
+    E["UPF"]
+    F["Internet / Data Network"]
+    G["AUSF / UDM / PCF / NRF"]
+
+    A <-->|"5G NR"| B
+    B -.->|"Control Plane"| C
+    C -.-> D
+    C -.-> G
+    D -.->|"Controls"| E
+    B -->|"User Plane"| E
+    E --> F
+```
+
+**Note:** This is a simplified learning diagram. Actual 5G Core architecture contains additional interfaces and network functions.
+
+---
+
+## 8.3 5G NSA and SA
+
+### NSA — Non-Standalone
+
+- Uses 5G radio with existing LTE infrastructure.
+- Common early deployment approach.
+- Often relies on the EPC.
+
+### SA — Standalone
+
+- Uses 5G NR and 5G Core.
+- Supports a fuller set of 5G architecture capabilities.
+- Enables flexible network slicing and cloud-native deployment approaches.
+
+---
+
+## 8.4 5G-Advanced
+
+**Standards Evolution:** 3GPP Release 18 and later
+
+5G-Advanced introduces further improvements to 5G systems.
+
+### Areas of Development
+
+- AI/ML-supported network optimisation
+- Enhanced MIMO
+- Improved energy efficiency
+- Extended support for non-terrestrial networks
+- Advanced positioning and radio performance
+
+---
+
+# 9. Sixth Generation (6G) Standards
+
+## 9.1 IMT-2030
+
+**Generation:** 6G framework  
+**Organisation:** ITU-R
+
+IMT-2030 provides a framework for future sixth-generation mobile systems.
+
+As of October 2026, detailed 6G technologies and system specifications are still under development.
+
+### Research Areas
+
+- AI-assisted and AI-native networks
+- Integrated Sensing and Communication (ISAC)
+- Non-Terrestrial Networks (NTN)
+- Advanced antenna systems
+- Future radio spectrum technologies
+- Immersive connectivity
+- Energy-efficient communication
+
+---
+
+## 9.2 Conceptual 6G Architecture
+
+```mermaid
+flowchart LR
+    A["Intelligent Devices"]
+    B["Advanced Radio Access"]
+    C["AI-Assisted Network Functions"]
+    D["Cloud / Edge Services"]
+    E["Non-Terrestrial Networks"]
+    F["Integrated Sensing"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+    C <--> E
+    B <--> F
+```
+
+**Important:** This is a conceptual architecture for learning, not a completed 6G standard.
+
+---
+
+# 10. Mobile Network Standards Evolution
+
+```mermaid
+flowchart TD
+    A["1G: AMPS / NMT / TACS"]
+    B["2G: GSM / IS-95"]
+    C["2G Enhancements: GPRS / EDGE"]
+    D["3G: UMTS / CDMA2000"]
+    E["3G Enhancements: HSPA / EV-DO"]
+    F["4G: LTE / LTE-Advanced"]
+    G["5G: 5G NR / 5G Core"]
+    H["5G-Advanced"]
+    I["6G: IMT-2030 / Research"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+```
