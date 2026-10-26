@@ -837,34 +837,4 @@ flowchart TD
     E --> F
 ```
 
----
-
-# Study Questions
-
-1. What is the difference between FDMA and OFDMA?
-2. What does GSM stand for?
-3. How does IS-95 use CDMA?
-4. What is the relationship between UMTS and WCDMA?
-5. How is CDMA2000 different from UMTS?
-6. What does LTE stand for?
-7. Why is OFDMA useful in mobile networks?
-8. How does MIMO improve network performance?
-9. What is Massive MIMO?
-10. What is ISAC, and why is it important for 6G research?
-
----
-
-# Key Learning Summary
-
-Remember the difference between these technology categories:
-
-- **Network standards and systems:** GSM, IS-95, UMTS, CDMA2000, LTE.
-- **Multiple-access methods:** FDMA, CDMA, OFDMA.
-- **Radio interface technology:** WCDMA.
-- **Antenna technology:** MIMO.
-- **Integrated communication and sensing:** ISAC.
-
-The main learning goal is to understand how mobile networks evolved from **analogue voice communication in 1G** to **digital communication in 2G**, **mobile internet in 3G**, **broadband data in 4G**, **advanced wireless connectivity in 5G**, and **intelligent integrated networks being researched for 6G**.
-
----
 
