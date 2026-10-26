@@ -213,19 +213,33 @@ flowchart TB
   NRF -.-> SMF
 ```
 
-*Dotted lines represent simplified logical control/service relationships, not a complete set of standardized reference points.*
+## 5G Components and Roles
 
-| 5G function | Meaning | Primary responsibility |
-|---|---|---|
-| AMF | Access and Mobility Management Function | Registration and mobility signaling |
-| SMF | Session Management Function | PDU session management |
-| UPF | User Plane Function | Packet forwarding and data-network connectivity |
-| AUSF | Authentication Server Function | Authentication |
-| UDM | Unified Data Management | Subscriber data management |
-| PCF | Policy Control Function | Policy decisions |
-| NRF | Network Repository Function | Network-function discovery |
-| NSSF | Network Slice Selection Function | Slice selection support |
-| NEF | Network Exposure Function | Controlled exposure of network capabilities |
+The components below correspond to **3GPP 5G Standalone (SA)**, except where noted as optional or deployment-dependent. Functions are logical: vendors may implement them as software services on shared infrastructure.
+
+| Component | Role |
+|---|---|
+| **UE** | User Equipment connecting to the mobile network, such as a phone, modem, or IoT device. |
+| **gNB (gNodeB)** | 5G NR base station providing radio access, scheduling, radio-resource management, and mobility support. |
+| **gNB-CU-CP** | Central Unit control-plane function for RRC and signaling in a split gNB. |
+| **gNB-CU-UP** | Central Unit user-plane function for higher-layer user-data processing in a split gNB. |
+| **gNB-DU** | Distributed Unit for lower-layer radio processing and scheduling in a split gNB. |
+| **RU (Radio Unit)** | Radio-frequency and antenna-side processing; exact functional split is deployment-specific. |
+| **AMF** | Access and Mobility Management Function for registration, access, and mobility signaling. |
+| **SMF** | Session Management Function for PDU sessions, addressing, and UPF control. |
+| **UPF** | User Plane Function for packet forwarding, routing, and user-plane policy/QoS enforcement. |
+| **AUSF** | Authentication Server Function for network authentication procedures. |
+| **UDM** | Unified Data Management for subscriber and authentication-related data management. |
+| **UDR** | Unified Data Repository for structured subscription and other data used by network functions. |
+| **PCF** | Policy Control Function for policy decisions, including QoS policy. |
+| **NRF** | Network Repository Function for registration and discovery of network functions. |
+| **NSSF** | Network Slice Selection Function for assisting network slice selection. |
+| **NEF** | Network Exposure Function for secure exposure of selected capabilities to applications. |
+| **NWDAF** | Network Data Analytics Function for network analytics and insights. |
+| **IMS** | IP Multimedia Subsystem supporting IP multimedia and voice services such as VoNR; a service subsystem, not a 5GC network function. |
+| **DN** | External Data Network, such as the Internet, enterprise services, or application networks. |
+
+**Primary standards:** [3GPP TS 23.501](https://www.3gpp.org/dynareport/23501.htm) (5G system architecture), [TS 23.502](https://www.3gpp.org/dynareport/23502.htm) (procedures), [TS 38.300](https://www.3gpp.org/dynareport/38300.htm) (NR overview), and [TS 38.401](https://www.3gpp.org/dynareport/38401.htm) (NG-RAN architecture).
 
 ### Main 5G service categories
 
@@ -277,34 +291,6 @@ flowchart TB
 6. Integrated Sensing and Communication (ISAC)
 
 The IMT-2030 framework discusses ambitious capability ranges. They are **research objectives**, not guaranteed field performance or requirements already delivered by commercial 6G systems.
-
-## 5G Components and Roles
-
-The components below correspond to **3GPP 5G Standalone (SA)**, except where noted as optional or deployment-dependent. Functions are logical: vendors may implement them as software services on shared infrastructure.
-
-| Component | Role |
-|---|---|
-| **UE** | User Equipment connecting to the mobile network, such as a phone, modem, or IoT device. |
-| **gNB (gNodeB)** | 5G NR base station providing radio access, scheduling, radio-resource management, and mobility support. |
-| **gNB-CU-CP** | Central Unit control-plane function for RRC and signaling in a split gNB. |
-| **gNB-CU-UP** | Central Unit user-plane function for higher-layer user-data processing in a split gNB. |
-| **gNB-DU** | Distributed Unit for lower-layer radio processing and scheduling in a split gNB. |
-| **RU (Radio Unit)** | Radio-frequency and antenna-side processing; exact functional split is deployment-specific. |
-| **AMF** | Access and Mobility Management Function for registration, access, and mobility signaling. |
-| **SMF** | Session Management Function for PDU sessions, addressing, and UPF control. |
-| **UPF** | User Plane Function for packet forwarding, routing, and user-plane policy/QoS enforcement. |
-| **AUSF** | Authentication Server Function for network authentication procedures. |
-| **UDM** | Unified Data Management for subscriber and authentication-related data management. |
-| **UDR** | Unified Data Repository for structured subscription and other data used by network functions. |
-| **PCF** | Policy Control Function for policy decisions, including QoS policy. |
-| **NRF** | Network Repository Function for registration and discovery of network functions. |
-| **NSSF** | Network Slice Selection Function for assisting network slice selection. |
-| **NEF** | Network Exposure Function for secure exposure of selected capabilities to applications. |
-| **NWDAF** | Network Data Analytics Function for network analytics and insights. |
-| **IMS** | IP Multimedia Subsystem supporting IP multimedia and voice services such as VoNR; a service subsystem, not a 5GC network function. |
-| **DN** | External Data Network, such as the Internet, enterprise services, or application networks. |
-
-**Primary standards:** [3GPP TS 23.501](https://www.3gpp.org/dynareport/23501.htm) (5G system architecture), [TS 23.502](https://www.3gpp.org/dynareport/23502.htm) (procedures), [TS 38.300](https://www.3gpp.org/dynareport/38300.htm) (NR overview), and [TS 38.401](https://www.3gpp.org/dynareport/38401.htm) (NG-RAN architecture).
 
 ### Detailed layers and interfaces
 
