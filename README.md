@@ -4393,52 +4393,6 @@ In practice, not every incident requires investigation of all five categories. E
 
 ---
 
-# 15. FCAPS Learning Roadmap
-
-## Session 1 — Introduction
-
-- Learn FCAPS terminology.
-- Understand TMN, OSS, NMS and EMS.
-- Study ITU-T M.3400.
-
-## Session 2 — Fault Management
-
-- Learn alarm severity levels.
-- Understand alarm collection and correlation.
-- Study fault management architecture.
-
-## Session 3 — Configuration Management
-
-- Learn equipment configuration concepts.
-- Understand configuration validation.
-- Study network provisioning.
-
-## Session 4 — Accounting Management
-
-- Learn accounting and charging.
-- Understand charging records.
-- Study network usage measurement.
-
-## Session 5 — Performance Management
-
-- Learn KPIs and performance counters.
-- Calculate simple network KPIs.
-- Study capacity and performance optimisation.
-
-## Session 6 — Security Management
-
-- Learn authentication and authorisation.
-- Study access controls.
-- Understand security monitoring.
-
-## Session 7 — Practical Integration
-
-- Draw a complete FCAPS architecture.
-- Identify which systems implement each function.
-- Analyse a sample mobile network incident.
-
----
-
 # 17. Official Standards and References
 
 ## ITU-T
