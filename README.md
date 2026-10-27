@@ -5274,3 +5274,714 @@ The most important official Performance Management documents are:
 Understand which official documents define Performance Management functions, measurements, file formats and KPIs, and learn how to apply them to the monitoring and optimisation of 3G, 4G and 5G networks.
 
 ---
+
+
+---
+
+# Which Standards Govern Performance Management in Mobile Telecommunications?
+
+## 1. Introduction
+
+Performance Management (PM) is a key part of telecommunications network management and the FCAPS framework.
+
+It enables mobile network operators to monitor, measure, analyse and optimise network performance.
+
+Mobile telecommunications Performance Management is guided by international recommendations and technical specifications.
+
+The two most important sources are:
+
+1. **ITU-T** — Defines foundational telecommunications management functions and architectures.
+2. **3GPP** — Defines detailed mobile-network performance measurements, management requirements, KPI definitions and performance assurance capabilities.
+
+ETSI and other partner organisations also participate in telecommunications standardisation.
+
+### Why Are PM Standards Needed?
+
+- Ensure consistent measurement definitions.
+- Support multi-vendor interoperability.
+- Establish common KPI calculation methods.
+- Define performance measurement collection requirements.
+- Support network assurance and optimisation.
+- Enable performance reporting and analysis.
+- Support automated network management.
+
+---
+
+## 2. Main Organisations Responsible for PM Standards
+
+| Organisation | Responsibility | Relevant Standards |
+|---|---|---|
+| ITU-T | Telecommunications management frameworks | M.3010, M.3400 |
+| 3GPP SA5 | Cellular network management and orchestration | TS 32-series, TS 28-series |
+| ETSI | European telecom standardisation and publication | ETSI TS versions of 3GPP specifications |
+| IETF | Internet management protocols and data models | SNMP, NETCONF, YANG |
+| TM Forum | Industry operations frameworks and information models | eTOM, SID, Open APIs |
+
+**Important:** These organisations have different roles. ITU-T and 3GPP provide the primary telecommunications management frameworks and specifications discussed here. IETF and TM Forum provide complementary network-management technologies and operational frameworks.
+
+### Standards Ecosystem
+
+```mermaid
+flowchart TD
+    A["Mobile Telecommunications Performance Management"]
+
+    A --> B["ITU-T"]
+    A --> C["3GPP SA5"]
+    A --> D["IETF"]
+    A --> E["TM Forum"]
+
+    B --> F["TMN / FCAPS Framework"]
+    C --> G["PM Requirements, Measurements and KPIs"]
+    D --> H["Management Protocols and Data Models"]
+    E --> I["Operations and OSS Frameworks"]
+```
+
+---
+
+# 3. ITU-T Performance Management Standards
+
+## 3.1 ITU-T M.3010 — TMN Architecture
+
+**Official Document:** ITU-T M.3010
+
+**Subject:** Principles for a Telecommunications Management Network
+
+**Organisation:** ITU-T
+
+**Official Link:**
+https://www.itu.int/rec/T-REC-M.3010
+
+### Purpose
+
+ITU-T M.3010 establishes architectural principles for Telecommunications Management Networks (TMN).
+
+It describes how telecommunications network management functions can be organised.
+
+### Traditional TMN Layers
+
+| Layer | Name | Purpose |
+|---|---|---|
+| BML | Business Management Layer | Business-level management |
+| SML | Service Management Layer | Service-level management |
+| NML | Network Management Layer | Network-wide management |
+| EML | Element Management Layer | Individual network element management |
+| NEL | Network Element Layer | Managed network resources |
+
+### TMN Architecture
+
+```mermaid
+flowchart TD
+    A["Business Management Layer"]
+    B["Service Management Layer"]
+    C["Network Management Layer"]
+    D["Element Management Layer"]
+    E["Network Element Layer"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+    D <--> E
+```
+
+### Relationship to Performance Management
+
+TMN provides an architectural framework for management activities.
+
+PM information can be collected from network elements, aggregated at network level and used to assess services.
+
+---
+
+## 3.2 ITU-T M.3400 — TMN Management Functions
+
+**Official Document:** ITU-T M.3400
+
+**Subject:** TMN Management Functions
+
+**Organisation:** ITU-T
+
+**Official Link:**
+https://www.itu.int/rec/T-REC-M.3400
+
+### Purpose
+
+M.3400 defines telecommunications management functions, including functions associated with the FCAPS areas.
+
+### FCAPS Functions
+
+1. Fault Management
+2. Configuration Management
+3. Accounting Management
+4. Performance Management
+5. Security Management
+
+### PM Functional Architecture
+
+```mermaid
+flowchart TD
+    A["TMN Management Functions"]
+
+    A --> B["Fault"]
+    A --> C["Configuration"]
+    A --> D["Accounting"]
+    A --> E["Performance"]
+    A --> F["Security"]
+
+    E --> G["Performance Monitoring"]
+    E --> H["Performance Evaluation"]
+    E --> I["Performance Reporting"]
+```
+
+### Learning Point
+
+M.3400 provides foundational telecommunications management concepts.
+
+It does not replace generation-specific 3GPP measurement definitions.
+
+---
+
+# 4. 3GPP Performance Management Standards
+
+3GPP SA5 develops specifications for telecommunications management, operations and orchestration.
+
+Important PM-related standards are distributed across the TS 32 and TS 28 specification families.
+
+## 4.1 Core Standards
+
+| Document | Main Purpose |
+|---|---|
+| TS 32.401 | PM concepts and requirements |
+| TS 32.404 | Performance measurement definitions and templates |
+| TS 32.411 | PM integration reference point requirements |
+| TS 32.412 | PM integration reference point information service |
+| TS 32.432 | Performance measurement collection / file-related information |
+| TS 32.435 | XML performance measurement file format |
+| TS 28.532 | Generic management services |
+| TS 28.550 | Performance assurance |
+| TS 28.552 | 5G performance measurements |
+| TS 28.554 | 5G end-to-end KPI definitions |
+
+Always check the selected specification release and version, as the title, scope and applicable solution sets can differ by release.
+
+---
+
+# 5. 3GPP TS 32.401 — PM Concepts and Requirements
+
+**Official Title:** Telecommunication management; Performance Management (PM); Concept and requirements
+
+**Official Link:**
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991
+
+### Purpose
+
+TS 32.401 describes the main concepts and requirements for cellular network Performance Management.
+
+### Main Areas
+
+- Performance measurement collection concepts
+- Measurement administration
+- Collection of measurement results
+- Management-system interactions
+- Performance measurement requirements
+
+### Architecture
+
+```mermaid
+flowchart LR
+    A["Network Element"]
+    B["Performance Measurements"]
+    C["Element Management"]
+    D["Network Management"]
+    E["Network Optimisation"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+### Example
+
+An eNodeB generates performance measurements.
+
+A management system collects the measurements and forwards the results for network analysis.
+
+---
+
+# 6. Standards Governing 2G Performance Management
+
+## 6.1 3GPP TS 52.402 — GSM Performance Measurements
+
+**Generation:** 2G
+
+**Technology:** GSM
+
+**Official Link:**
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2802
+
+### Purpose
+
+TS 52.402 defines performance measurements for GSM systems.
+
+### Network Components
+
+- BTS — Base Transceiver Station
+- BSC — Base Station Controller
+- MSC — Mobile Switching Centre
+
+### Measurement Areas
+
+- Radio resource performance
+- Traffic channel usage
+- Connection establishment
+- Mobility performance
+- Network resource utilisation
+
+### GSM PM Architecture
+
+```mermaid
+flowchart LR
+    A["GSM Mobile"]
+    B["BTS"]
+    C["BSC"]
+    D["MSC"]
+    E["Performance Management System"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+
+    B -.-> E
+    C -.-> E
+    D -.-> E
+```
+
+---
+
+# 7. Standards Governing 3G Performance Management
+
+## Main Standards
+
+| Standard | Description |
+|---|---|
+| 3GPP TS 32.403 | UMTS and combined UMTS/GSM measurements |
+| 3GPP TS 32.405 | UTRAN performance measurements |
+| 3GPP TS 32.406 | Packet-switched core measurements |
+| 3GPP TS 32.407 | Circuit-switched core measurements |
+
+### Main Components
+
+- NodeB
+- RNC
+- MSC
+- SGSN
+- GGSN
+
+### 3G PM Architecture
+
+```mermaid
+flowchart LR
+    A["3G UE"]
+    B["NodeB"]
+    C["RNC"]
+    D["3G Core Network"]
+    E["PM Management System"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+
+    B -.-> E
+    C -.-> E
+    D -.-> E
+```
+
+### Performance Areas
+
+- Radio bearer establishment
+- Connection retainability
+- Handover performance
+- Resource utilisation
+- Data service performance
+
+---
+
+# 8. Standards Governing 4G LTE Performance Management
+
+## Main Standards
+
+### 3GPP TS 32.425
+
+**Title:** E-UTRAN Performance Measurements
+
+**Official Link:**
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2011
+
+### 3GPP TS 32.450
+
+**Title:** E-UTRAN KPI Definitions
+
+### Main Purpose
+
+These documents provide LTE measurement definitions and KPI specifications.
+
+## Common LTE Performance Areas
+
+| Category | Example KPI |
+|---|---|
+| Accessibility | RRC Setup Success Rate |
+| Accessibility | E-RAB Setup Success Rate |
+| Retainability | E-RAB Drop Rate |
+| Mobility | Handover Success Rate |
+| Capacity | PRB Utilisation |
+| Integrity | User Throughput |
+
+## LTE PM Architecture
+
+```mermaid
+flowchart TD
+    A["LTE UE"]
+    B["eNodeB"]
+    C["EPC"]
+    D["EMS"]
+    E["PM System"]
+    F["KPI Dashboard"]
+
+    A <--> B
+    B <--> C
+    B -.-> D
+    D --> E
+    E --> F
+```
+
+### Example: RRC Setup Success Rate
+
+```text
+RRC Setup Success Rate (%) =
+
+Successful RRC Setups
+---------------------- × 100
+RRC Setup Attempts
+```
+
+This is a simplified teaching formula.
+
+For operational reporting, use the exact standard or operator-approved definition, including applicable exclusions and aggregation rules.
+
+---
+
+# 9. Standards Governing 5G Performance Management
+
+The key 5G PM standards are:
+
+| Standard | Main Subject |
+|---|---|
+| TS 28.532 | Generic management services |
+| TS 28.550 | Performance assurance |
+| TS 28.552 | 5G performance measurements |
+| TS 28.554 | 5G end-to-end KPIs |
+
+## 9.1 TS 28.550 — Performance Assurance
+
+**Official Link:**
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3411
+
+### Purpose
+
+Defines capabilities for performance assurance and management in modern cellular systems.
+
+### Main Concepts
+
+- Performance measurement management
+- Performance collection
+- Performance assurance services
+- Management interactions
+
+---
+
+## 9.2 TS 28.552 — 5G Performance Measurements
+
+**Official Link:**
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3413
+
+### Purpose
+
+Defines performance measurements for 5G systems.
+
+### Example Measurement Areas
+
+- NG-RAN performance
+- 5G Core performance
+- Registration-related performance
+- PDU session performance
+- Mobility measurements
+- Radio resource usage
+
+---
+
+## 9.3 TS 28.554 — 5G End-to-End KPIs
+
+**Official Link:**
+https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3415
+
+### Purpose
+
+Defines end-to-end KPIs for evaluating 5G network and service performance.
+
+### Difference Between the Standards
+
+| Standard | Question Answered |
+|---|---|
+| TS 28.550 | How is performance assurance managed? |
+| TS 28.552 | What 5G performance measurements are defined? |
+| TS 28.554 | How are specified end-to-end KPIs defined? |
+
+## Simplified 5G PM Architecture
+
+```mermaid
+flowchart TD
+    A["5G UE"]
+    B["gNodeB"]
+    C["5G Core"]
+    D["5G Management Services"]
+    E["Performance Data Collection"]
+    F["KPI Processing"]
+    G["NOC / Performance Engineers"]
+
+    A <--> B
+    B <--> C
+
+    B -.-> D
+    C -.-> D
+
+    D --> E
+    E --> F
+    F --> G
+```
+
+---
+
+# 10. Performance Management Interfaces and File Formats
+
+Performance Management also requires mechanisms for exchanging data between network elements and management systems.
+
+## Important Standards and Technologies
+
+| Standard / Technology | Purpose |
+|---|---|
+| 3GPP TS 32.411 / 32.412 | PM integration-reference-point requirements and information |
+| 3GPP TS 32.432 | PM collection and related information-service specifications |
+| 3GPP TS 32.435 | XML performance measurement format |
+| 3GPP TS 28.532 | Generic management services |
+| SNMP | Network management and monitoring protocol |
+| NETCONF | Configuration management protocol |
+| YANG | Data modelling language |
+
+SNMP, NETCONF and YANG are complementary IETF technologies. They are not substitutes for 3GPP's standardised cellular measurement definitions.
+
+## Performance Data Flow
+
+```mermaid
+flowchart TD
+    A["Mobile Network Elements"]
+    B["Measurement Collection"]
+    C["PM Data Transfer"]
+    D["Performance Management System"]
+    E["Performance Database"]
+    F["KPI Calculation"]
+    G["Dashboard and Reporting"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+
+---
+
+# 11. How These Standards Work Together
+
+No single technical specification governs every aspect of mobile-network Performance Management.
+
+Different documents describe different layers of the management process.
+
+## Standards Relationship
+
+```mermaid
+flowchart TD
+    A["ITU-T M.3400"]
+    B["3GPP TS 32.401"]
+    C["Technology-Specific Measurements"]
+    D["PM Collection and Formats"]
+    E["KPI Definitions"]
+    F["OSS / PM Management Systems"]
+    G["NOC and Network Optimisation"]
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> F
+    E --> F
+    F --> G
+```
+
+### Example
+
+1. ITU-T M.3400 provides general management-function concepts.
+2. 3GPP TS 32.401 defines cellular PM concepts and requirements.
+3. A technology-specific 3GPP specification defines measurements.
+4. Collection and interface specifications support measurement delivery.
+5. KPI specifications define how performance indicators are derived.
+6. The OSS or PM platform uses the information for operational monitoring.
+
+---
+
+# 12. Which Standard Should an Engineer Use?
+
+| Engineering Task | Recommended Starting Standard |
+|---|---|
+| Learn FCAPS and TMN | ITU-T M.3400 |
+| Learn management architecture | ITU-T M.3010 |
+| Understand PM fundamentals | 3GPP TS 32.401 |
+| Study GSM measurements | 3GPP TS 52.402 |
+| Study 3G UTRAN measurements | 3GPP TS 32.405 |
+| Study LTE RAN measurements | 3GPP TS 32.425 |
+| Study LTE KPI definitions | 3GPP TS 32.450 |
+| Study PM data exchange | 3GPP TS 32.432 / 32.435 |
+| Study 5G performance assurance | 3GPP TS 28.550 |
+| Study 5G measurement definitions | 3GPP TS 28.552 |
+| Study 5G end-to-end KPIs | 3GPP TS 28.554 |
+
+---
+
+# 13. Important: Standards vs Vendor KPIs
+
+Standardised measurements and vendor-specific counters are not necessarily identical.
+
+For example, a network vendor may expose additional counters for:
+
+- Radio scheduling
+- Device capability combinations
+- Interference analysis
+- Internal resource usage
+- Advanced MIMO operation
+
+### Engineering Best Practice
+
+When calculating or comparing KPIs:
+
+1. Identify the network technology.
+2. Identify the 3GPP specification release.
+3. Check the standard measurement definition.
+4. Check vendor counter documentation.
+5. Verify aggregation and filtering rules.
+6. Confirm the KPI formula.
+7. Validate the reported results.
+
+A KPI with the same name from different systems may produce different values if the underlying counter definitions or calculation rules differ.
+
+---
+
+# 14. Performance Management Standards by Generation
+
+| Generation | Primary Documents | Main Focus |
+|---|---|---|
+| 2G | TS 52.402 | GSM measurements |
+| 3G | TS 32.403 / 32.405 | UMTS and UTRAN measurements |
+| 4G | TS 32.425 / 32.450 | LTE counters and KPIs |
+| 5G | TS 28.550 / 28.552 / 28.554 | Assurance, measurements and KPIs |
+| Cross-generation | ITU-T M.3400 / TS 32.401 | Foundational management and PM concepts |
+| 6G | Future standards under development | Emerging intelligent-network management |
+
+---
+
+# 15. Practical Example: Investigating Poor LTE Performance
+
+## Scenario
+
+A mobile operator receives complaints about slow LTE internet.
+
+### Step 1: Select the Standards
+
+Use:
+
+- TS 32.425 for LTE performance measurements.
+- TS 32.450 for KPI definitions.
+
+### Step 2: Collect Relevant Measurements
+
+Review:
+
+- PRB utilisation
+- User throughput
+- Accessibility measurements
+- Mobility measurements
+
+### Step 3: Analyse the KPIs
+
+Determine whether radio resource congestion or other issues may explain degraded service.
+
+### Step 4: Investigate Further
+
+Review:
+
+- Radio conditions
+- Transport capacity
+- Site alarms
+- Recent configuration changes
+
+### Step 5: Optimise
+
+Apply appropriate, approved network changes.
+
+### Step 6: Verify
+
+Compare KPIs before and after the intervention.
+
+---
+
+# 18. Official References
+
+## ITU-T
+
+- [ITU-T M.3010 — TMN Principles](https://www.itu.int/rec/T-REC-M.3010)
+- [ITU-T M.3400 — TMN Management Functions](https://www.itu.int/rec/T-REC-M.3400)
+
+## 3GPP
+
+- [3GPP Official Website](https://www.3gpp.org/)
+- [3GPP Specifications Portal](https://portal.3gpp.org/)
+- [TS 32.401 — PM Concepts and Requirements](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991)
+- [TS 52.402 — GSM Performance Measurements](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2802)
+- [TS 32.425 — LTE Performance Measurements](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2011)
+- [TS 28.550 — Performance Assurance](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3411)
+- [TS 28.552 — 5G Performance Measurements](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3413)
+- [TS 28.554 — 5G End-to-End KPIs](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3415)
+
+**Standards Version Note:** Always verify the current specification status and select the release applicable to the deployed network.
+
+---
+
+# 19. Final Learning Summary
+
+Performance Management in mobile telecommunications is governed by a family of international recommendations and technical specifications.
+
+### Key Documents
+
+- **ITU-T M.3400:** FCAPS/TMN management foundation
+- **ITU-T M.3010:** Telecommunications management architecture
+- **3GPP TS 32.401:** Performance Management concepts
+- **3GPP TS 52.402:** GSM performance measurements
+- **3GPP TS 32.405:** 3G UTRAN performance measurements
+- **3GPP TS 32.425:** LTE performance measurements
+- **3GPP TS 32.450:** LTE KPI definitions
+- **3GPP TS 28.550:** 5G performance assurance
+- **3GPP TS 28.552:** 5G performance measurements
+- **3GPP TS 28.554:** 5G end-to-end KPIs
+
+**Learning Goal:** Understand which documents establish the principles, measurement definitions, interfaces and KPIs needed to manage telecommunications network performance.
+
+---
+
