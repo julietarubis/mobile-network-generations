@@ -3621,3 +3621,863 @@ Understand **who develops mobile telecommunications standards, who regulates the
 ---
 
 
+---
+
+# FCAPS Network Management in Mobile Telecommunications
+
+## 1. Introduction to FCAPS
+
+FCAPS stands for:
+
+- **F** — Fault Management
+- **C** — Configuration Management
+- **A** — Accounting Management
+- **P** — Performance Management
+- **S** — Security Management
+
+FCAPS is a functional framework used to organise network management activities.
+
+It is associated with the Telecommunications Management Network (TMN) model defined in ITU-T recommendations.
+
+### Why Is FCAPS Important?
+
+Mobile network operators use FCAPS principles to:
+
+1. Detect and resolve network failures.
+2. Configure network equipment.
+3. Monitor subscribers' service usage.
+4. Measure network performance.
+5. Maintain network security.
+6. Improve network availability and reliability.
+7. Support daily Network Operations Centre (NOC) activities.
+
+### FCAPS Architecture
+
+```mermaid
+flowchart TD
+    A["Network Management System - NMS"]
+
+    A --> F["Fault Management"]
+    A --> C["Configuration Management"]
+    A --> AC["Accounting Management"]
+    A --> P["Performance Management"]
+    A --> S["Security Management"]
+
+    F --> N["Managed Mobile Network"]
+    C --> N
+    AC --> N
+    P --> N
+    S --> N
+```
+
+---
+
+# 2. Organisations and Standards for FCAPS
+
+Several organisations develop the standards and specifications used to manage telecommunications networks.
+
+| Organisation | Standards / Specifications | Main Responsibility |
+|---|---|---|
+| ITU-T | M.3400 | TMN management functions and FCAPS |
+| ITU-T | M.3010 | Telecommunications Management Network architecture |
+| 3GPP | TS 32.101 | Telecommunications management principles |
+| 3GPP | TS 32.102 | Telecommunications management architecture |
+| 3GPP | TS 32.111 series | Fault management and alarm interfaces |
+| 3GPP | TS 32.401 | Performance management concepts and requirements |
+| 3GPP | TS 32.240 | Charging management architecture |
+| 3GPP | TS 28.532 | Generic management services |
+| 3GPP | TS 28.550 | Performance assurance |
+| ETSI | NFV / ZSM specifications | Virtualisation and automated network management |
+| IETF | SNMP, NETCONF, YANG-related RFCs | Network monitoring and configuration protocols |
+
+**Important:** FCAPS describes functional management areas. It is not a single protocol. Different specifications and interfaces implement these functions.
+
+---
+
+# 3. Fault Management (F)
+
+## What Is Fault Management?
+
+Fault Management identifies, reports, investigates and resolves problems in telecommunications networks.
+
+Examples include:
+
+- Base station failure
+- Fibre transmission failure
+- Radio link failure
+- Network equipment malfunction
+- Power supply failure
+- Core network connectivity problems
+
+## Main Responsibilities
+
+1. Detect network failures.
+2. Collect alarms from network elements.
+3. Classify alarm severity.
+4. Correlate related alarms.
+5. Identify root causes.
+6. Notify network engineers.
+7. Support fault resolution.
+8. Confirm service restoration.
+
+## Main Standards
+
+| Standard | Description |
+|---|---|
+| ITU-T M.3400 | TMN Fault Management functions |
+| 3GPP TS 32.111-1 | Fault management requirements |
+| 3GPP TS 32.111-2 | Alarm IRP information service |
+| 3GPP TS 32.111-6 | Alarm IRP solution-set definitions |
+
+## Fault Management Architecture
+
+```mermaid
+flowchart TD
+    A["Network Element: BTS / NodeB / eNodeB / gNodeB"]
+
+    A --> B["Element Management System - EMS"]
+    B --> C["Network Management System - NMS"]
+    C --> D["Alarm Monitoring"]
+    D --> E["Alarm Correlation"]
+    E --> F["Root Cause Analysis"]
+    F --> G["NOC Engineer"]
+    G --> H["Troubleshooting and Recovery"]
+    H --> I["Service Restoration"]
+```
+
+## Common Alarm Severities
+
+| Severity | Meaning |
+|---|---|
+| Critical | Serious problem requiring urgent attention |
+| Major | Significant service or equipment problem |
+| Minor | Lower-impact fault |
+| Warning | Condition requiring attention |
+| Cleared | Previously reported alarm condition has ended |
+
+Exact severity handling depends on the alarm model and implementation.
+
+## Real-World Example: 5G Site Outage
+
+**Scenario:** A gNodeB loses power.
+
+1. The equipment becomes unavailable.
+2. Site monitoring raises alarms where supported.
+3. EMS/NMS receives the alarm information.
+4. The monitoring system identifies the affected site.
+5. The NOC engineer investigates.
+6. Power is restored.
+7. The network returns to service.
+8. Recovery is verified and the incident is closed.
+
+### Learning Goal
+
+Understand how a fault travels from the network equipment to the NOC and how engineers restore the affected service.
+
+---
+
+# 4. Configuration Management (C)
+
+## What Is Configuration Management?
+
+Configuration Management controls the settings and operational configuration of network equipment.
+
+Examples include:
+
+- Configuring BTS parameters
+- Updating LTE cell settings
+- Configuring 5G gNodeB resources
+- Managing neighbour relationships
+- Changing supported frequencies and radio parameters
+- Managing network software configurations
+
+## Main Responsibilities
+
+1. Add and remove managed network resources.
+2. Update network parameters.
+3. Manage configuration inventory.
+4. Maintain configuration consistency.
+5. Track approved configuration changes.
+6. Support configuration backups and recovery.
+7. Verify configuration changes.
+
+## Relevant Standards
+
+| Standard | Role |
+|---|---|
+| ITU-T M.3400 | Configuration management functions |
+| 3GPP TS 32.101 | General telecom management requirements |
+| 3GPP TS 32.102 | Management architecture |
+| 3GPP TS 28.532 | Generic management services |
+| IETF NETCONF / YANG | Configuration protocol and data modelling approaches |
+
+## Configuration Management Architecture
+
+```mermaid
+flowchart TD
+    A["Network Engineer"]
+    B["Network Management System"]
+    C["Configuration Validation"]
+    D["Element Management / Management Service"]
+    E["Managed Network Element"]
+    F["Configuration Verification"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> B
+```
+
+## Example: LTE Cell Configuration
+
+A network engineer must change an LTE cell configuration.
+
+### Procedure
+
+1. Review the existing eNodeB configuration.
+2. Create an approved change request.
+3. Validate the proposed parameters.
+4. Apply the changes through the management system.
+5. Verify the new configuration.
+6. Monitor network performance and alarms.
+7. Roll back if required.
+
+## Configuration Parameters
+
+| Parameter | Example Purpose |
+|---|---|
+| Cell Identity | Identify the serving cell |
+| PCI | Physical Cell Identity |
+| EARFCN | LTE radio frequency channel number |
+| TAC | Tracking Area Code |
+| Transmit Power | Control radio transmission power |
+| Neighbour Relations | Support mobility and handovers |
+
+### Learning Goal
+
+Understand how network configuration changes are controlled, validated and monitored.
+
+---
+
+# 5. Accounting Management (A)
+
+## What Is Accounting Management?
+
+Accounting Management measures network service usage and supports operational accounting, charging and billing.
+
+In telecommunications, accounting management and charging are related but not identical concepts.
+
+Accounting can include tracking resource consumption and service usage. Charging systems determine charges or balances according to operator policies.
+
+## Main Responsibilities
+
+1. Collect relevant usage information.
+2. Measure resource consumption.
+3. Support charging and billing processes.
+4. Maintain charging records.
+5. Support usage reporting.
+6. Support cost allocation and analysis.
+
+## Relevant Standards
+
+| Standard | Role |
+|---|---|
+| ITU-T M.3400 | Accounting Management functions |
+| 3GPP TS 32.240 | Charging architecture and principles |
+| 3GPP TS 32.251 | Packet-switched domain charging |
+| 3GPP TS 32.298 | Charging Data Record parameter descriptions |
+| 3GPP TS 32.299 | Diameter charging applications |
+
+## Simplified Charging Architecture
+
+```mermaid
+flowchart LR
+    A["Subscriber / Mobile Device"]
+    B["Mobile Network"]
+    C["Usage and Charging Functions"]
+    D["Charging Records / Events"]
+    E["Billing or Balance System"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+This is a conceptual view. Actual charging architectures differ between GSM, UMTS, EPC and 5G Core networks.
+
+## Example: Mobile Data Usage
+
+A customer uses mobile internet.
+
+1. A data session is established.
+2. The network handles user traffic.
+3. Usage information is measured.
+4. Charging functions process relevant usage events.
+5. Billing or prepaid systems use the charging information.
+6. The operator can report consumption and associated charges.
+
+### Important Terms
+
+| Term | Meaning |
+|---|---|
+| CDR | Charging Data Record |
+| OCS | Online Charging System |
+| OFCS | Offline Charging System |
+| CHF | Charging Function in 5G |
+| Usage Data | Information about consumed network resources |
+
+### Learning Goal
+
+Understand the difference between usage measurement, accounting, charging and customer billing.
+
+---
+
+# 6. Performance Management (P)
+
+## What Is Performance Management?
+
+Performance Management monitors network behaviour, capacity and service quality using measurements and Key Performance Indicators (KPIs).
+
+## Main Responsibilities
+
+1. Collect performance measurements.
+2. Calculate network KPIs.
+3. Monitor service availability.
+4. Identify capacity problems.
+5. Analyse congestion.
+6. Investigate abnormal performance.
+7. Support network optimisation.
+
+## Relevant Standards
+
+| Standard | Description |
+|---|---|
+| ITU-T M.3400 | Performance management functions |
+| 3GPP TS 32.401 | PM concepts and requirements |
+| 3GPP TS 28.550 | Performance assurance |
+| 3GPP TS 28.532 | Generic management services |
+
+## Performance Management Architecture
+
+```mermaid
+flowchart TD
+    A["BTS / NodeB / eNodeB / gNodeB"]
+    B["Performance Counters"]
+    C["EMS / Management Services"]
+    D["Performance Management System"]
+    E["KPI Calculation"]
+    F["Performance Dashboard"]
+    G["Network Optimisation Team"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+
+## Common Mobile Network KPIs
+
+| KPI | Meaning |
+|---|---|
+| Availability | Whether a network resource or service is operational |
+| Accessibility | Ability of users to establish network access or services |
+| Retainability | Ability to maintain an established connection |
+| Throughput | Rate of successfully delivered data |
+| Latency | Delay experienced by data or signalling |
+| Handover Success Rate | Percentage of successful handover attempts |
+| PRB Utilisation | Usage of physical resource blocks |
+| Drop Rate | Frequency of unexpected service disconnections |
+
+## Example KPI Calculation
+
+### Handover Success Rate
+
+```text
+Handover Success Rate (%) =
+    Successful Handovers
+    --------------------- × 100
+      Handover Attempts
+```
+
+Example:
+
+- Successful handovers: 950
+- Handover attempts: 1,000
+
+```text
+Handover Success Rate = (950 / 1000) × 100
+
+Handover Success Rate = 95%
+```
+
+The exact definition of a KPI, its numerator, denominator and exclusions can depend on the technology and implementation.
+
+## Real-World Example: Slow 4G Internet
+
+1. Subscribers report slow mobile internet.
+2. The NOC checks LTE performance counters.
+3. Engineers analyse throughput, PRB utilisation and congestion.
+4. The team determines the likely cause.
+5. Optimisation or capacity changes are planned.
+6. Performance measurements verify the improvement.
+
+### Learning Goal
+
+Understand how raw network measurements become useful KPIs for monitoring and optimisation.
+
+---
+
+# 7. Security Management (S)
+
+## What Is Security Management?
+
+Security Management protects the confidentiality, integrity, availability and authorised use of network-management resources.
+
+It includes control over access to management systems and protection of sensitive management information.
+
+## Main Responsibilities
+
+1. Manage administrator identities.
+2. Enforce access-control policies.
+3. Protect management interfaces.
+4. Record security-relevant activities.
+5. Detect suspicious access.
+6. Support incident investigation.
+7. Maintain security configurations.
+8. Protect credentials and sensitive information.
+
+## Relevant Standards and Frameworks
+
+| Standard / Framework | Role |
+|---|---|
+| ITU-T M.3400 | Security management functions |
+| 3GPP TS 33-series | Cellular system security specifications |
+| IETF TLS / SSH standards | Secure communication protocols |
+| ISO/IEC 27001 | Information security management system requirements |
+| ETSI security specifications | Additional telecom-specific security requirements |
+
+**Note:** These specifications serve different purposes. Not all of them directly define FCAPS Security Management interfaces.
+
+## Security Management Architecture
+
+```mermaid
+flowchart TD
+    A["Network Administrator"]
+    B["Identity and Access Management"]
+    C["Authentication and Authorisation"]
+    D["Network Management System"]
+    E["Managed Network Elements"]
+    F["Security Logging and Monitoring"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    D --> F
+    E --> F
+```
+
+## Example: Unauthorised Configuration Attempt
+
+1. An account attempts to change a gNodeB configuration.
+2. The management system checks authentication and permissions.
+3. The requested action is denied if the account lacks authorisation.
+4. The attempt is recorded in an audit log.
+5. Security monitoring can identify suspicious activity.
+6. Security personnel investigate if necessary.
+
+### Important Concepts
+
+- Authentication
+- Authorisation
+- Role-Based Access Control (RBAC)
+- Encryption
+- Audit Logging
+- Security Monitoring
+- Incident Response
+
+### Learning Goal
+
+Understand how management systems prevent unauthorised changes and protect the telecom infrastructure.
+
+---
+
+# 8. Telecommunications Management Network (TMN)
+
+## What Is TMN?
+
+TMN stands for Telecommunications Management Network.
+
+ITU-T M.3010 describes principles for organising telecommunications management architectures.
+
+TMN provides a framework for managing network resources, services and operational activities.
+
+## Traditional TMN Logical Layers
+
+| Layer | Name | Role |
+|---|---|---|
+| BML | Business Management Layer | Business objectives and management |
+| SML | Service Management Layer | Customer-facing service management |
+| NML | Network Management Layer | End-to-end network management |
+| EML | Element Management Layer | Management of network elements |
+| NEL | Network Element Layer | Physical and logical network resources |
+
+## TMN Layered Architecture
+
+```mermaid
+flowchart TD
+    A["Business Management Layer - BML"]
+    B["Service Management Layer - SML"]
+    C["Network Management Layer - NML"]
+    D["Element Management Layer - EML"]
+    E["Network Element Layer - NEL"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+    D <--> E
+```
+
+### How FCAPS Relates to TMN
+
+- **TMN** describes management architecture concepts.
+- **FCAPS** describes management functional areas.
+- **OSS/NMS/EMS** are examples of management systems that implement relevant capabilities.
+
+FCAPS functions may appear across several TMN layers rather than belonging to one layer only.
+
+---
+
+# 9. FCAPS Management Architecture for Mobile Networks
+
+## Main Components
+
+| Component | Full Form | Role |
+|---|---|---|
+| OSS | Operations Support System | Supports network operation and management |
+| NMS | Network Management System | Provides network-level management |
+| EMS | Element Management System | Manages a set of network elements |
+| NE | Network Element | Network equipment or software resource |
+| RAN | Radio Access Network | Wireless access infrastructure |
+| Core | Core Network | Mobile connectivity, control and service functions |
+
+## Simplified FCAPS Architecture
+
+```mermaid
+flowchart TD
+    A["Network Operations Centre - NOC"]
+    B["OSS / Network Management System"]
+    C["Fault Management"]
+    D["Configuration Management"]
+    E["Accounting Management"]
+    F["Performance Management"]
+    G["Security Management"]
+    H["EMS / Management Services"]
+    I["2G / 3G / 4G / 5G RAN"]
+    J["Mobile Core Network"]
+
+    A <--> B
+
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
+
+    C <--> H
+    D <--> H
+    E <--> H
+    F <--> H
+    G <--> H
+
+    H <--> I
+    H <--> J
+```
+
+**Note:** This is a simplified learning architecture. Real operator environments can include multiple vendor management systems, mediation platforms, assurance systems, charging platforms and cloud management services.
+
+---
+
+# 10. FCAPS Across Mobile Generations
+
+FCAPS functions are useful across several generations, but the way they are implemented differs.
+
+| Generation | Typical Managed Elements | Management Characteristics |
+|---|---|---|
+| 1G | Analogue base stations, switches | Traditional operational monitoring and configuration |
+| 2G | BTS, BSC, MSC | EMS, alarms, performance counters and configuration management |
+| 3G | NodeB, RNC, SGSN, GGSN | Expanded fault, configuration and performance management |
+| 4G | eNodeB, EPC nodes | Packet-network management and LTE KPIs |
+| 5G | gNodeB, 5GC network functions | Service-based management, automation and cloud integration |
+| 6G | Future network resources | Research into intelligent and automated management |
+
+## Evolution Diagram
+
+```mermaid
+flowchart TD
+    A["2G: BTS / BSC / MSC Management"]
+    B["3G: NodeB / RNC Management"]
+    C["4G: eNodeB / EPC Management"]
+    D["5G: gNodeB / 5GC Management"]
+    E["6G: Intelligent Management Research"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+The diagram describes an evolution of management approaches, not a direct replacement of each management platform.
+
+---
+
+# 11. FCAPS in 5G Network Management
+
+5G introduces advanced management and orchestration capabilities.
+
+## Important 3GPP Specifications
+
+| Specification | Main Subject |
+|---|---|
+| TS 28.532 | Generic management services |
+| TS 28.550 | Performance assurance |
+| TS 32.101 | General telecommunications management principles |
+| TS 32.401 | Performance management requirements |
+| TS 32.111 series | Fault management and alarms |
+| TS 32.240 | Charging management |
+
+## Simplified 5G Management Architecture
+
+```mermaid
+flowchart TD
+    A["5G OSS / Network Management"]
+    B["Fault Supervision"]
+    C["Configuration / Provisioning"]
+    D["Performance Assurance"]
+    E["Security Operations"]
+    F["Charging and Accounting Systems"]
+    G["5G Management Services"]
+    H["gNodeB"]
+    I["5G Core Functions"]
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+
+    B --> G
+    C --> G
+    D --> G
+    E --> G
+
+    G <--> H
+    G <--> I
+    F <--> I
+```
+
+### Main Learning Points
+
+- 5G supports service-oriented management capabilities.
+- Cloud-native network functions require software and infrastructure management.
+- Network slicing introduces additional management requirements.
+- Performance assurance can use analytics and automation.
+- Charging is handled through dedicated charging functions and interfaces.
+- Security spans management, control and user-plane environments.
+
+---
+
+# 12. FCAPS vs OSS vs NMS vs EMS
+
+These terms are related but not interchangeable.
+
+| Term | Meaning | Main Purpose |
+|---|---|---|
+| FCAPS | Five functional management areas | Classify management responsibilities |
+| OSS | Operations Support System | Support telecom operations |
+| NMS | Network Management System | Manage network-level resources |
+| EMS | Element Management System | Manage individual groups of network elements |
+| TMN | Telecommunications Management Network | Architecture framework for network management |
+
+### Example
+
+An operator may have:
+
+- One OSS platform for operational workflows.
+- Multiple vendor EMS platforms.
+- A central NMS for network visibility.
+- A performance management platform.
+- A fault monitoring system.
+- Separate charging and security platforms.
+
+Together, these systems can implement the different FCAPS functions.
+
+---
+
+# 13. Real-World FCAPS Example: 5G Network Problem
+
+## Scenario
+
+Customers in one area report poor 5G service quality.
+
+The operator applies the FCAPS management framework.
+
+### Step 1 — Fault Management
+
+Check alarms and investigate possible site or equipment failures.
+
+### Step 2 — Configuration Management
+
+Review gNodeB configuration, radio parameters and recent changes.
+
+### Step 3 — Accounting Management
+
+Review relevant resource-consumption or charging information where useful to the investigation.
+
+### Step 4 — Performance Management
+
+Analyse throughput, congestion, accessibility and handover KPIs.
+
+### Step 5 — Security Management
+
+Review whether relevant access-control or security events contributed to the incident.
+
+## Troubleshooting Diagram
+
+```mermaid
+flowchart TD
+    A["5G Service Complaint"]
+    B["Fault: Check Alarms"]
+    C["Configuration: Check Settings"]
+    D["Accounting: Review Usage Information"]
+    E["Performance: Analyse KPIs"]
+    F["Security: Check Relevant Security Events"]
+    G["Root Cause Investigation"]
+    H["Corrective Action"]
+    I["Service Verification"]
+
+    A --> B
+    A --> C
+    A --> D
+    A --> E
+    A --> F
+
+    B --> G
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H
+    H --> I
+```
+
+In practice, not every incident requires investigation of all five categories. Engineers select the areas relevant to the symptoms.
+
+---
+
+# 14. FCAPS Comparison Table
+
+| FCAPS Area | Main Goal | Typical Information | Example Action |
+|---|---|---|---|
+| Fault | Restore services | Alarms and events | Troubleshoot failed site |
+| Configuration | Maintain correct settings | Configuration parameters | Update cell parameters |
+| Accounting | Track usage and charging | Usage records and charging events | Review service consumption |
+| Performance | Maintain network quality | Counters and KPIs | Optimise congested cell |
+| Security | Protect management systems | Access logs and security events | Block unauthorised changes |
+
+---
+
+# 15. FCAPS Learning Roadmap
+
+## Session 1 — Introduction
+
+- Learn FCAPS terminology.
+- Understand TMN, OSS, NMS and EMS.
+- Study ITU-T M.3400.
+
+## Session 2 — Fault Management
+
+- Learn alarm severity levels.
+- Understand alarm collection and correlation.
+- Study fault management architecture.
+
+## Session 3 — Configuration Management
+
+- Learn equipment configuration concepts.
+- Understand configuration validation.
+- Study network provisioning.
+
+## Session 4 — Accounting Management
+
+- Learn accounting and charging.
+- Understand charging records.
+- Study network usage measurement.
+
+## Session 5 — Performance Management
+
+- Learn KPIs and performance counters.
+- Calculate simple network KPIs.
+- Study capacity and performance optimisation.
+
+## Session 6 — Security Management
+
+- Learn authentication and authorisation.
+- Study access controls.
+- Understand security monitoring.
+
+## Session 7 — Practical Integration
+
+- Draw a complete FCAPS architecture.
+- Identify which systems implement each function.
+- Analyse a sample mobile network incident.
+
+---
+
+# 17. Official Standards and References
+
+## ITU-T
+
+- [ITU-T M.3400 — TMN Management Functions](https://www.itu.int/rec/T-REC-M.3400-200002-I/en)
+- [ITU-T M.3010 — TMN Architecture Principles](https://www.itu.int/rec/T-REC-M.3010)
+
+## 3GPP
+
+- [3GPP Specifications Portal](https://portal.3gpp.org/)
+- [3GPP TS 32.401 — Performance Management](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991)
+- [3GPP TS 28.532 — Generic Management Services](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3427)
+- [3GPP TS 28.550 — Performance Assurance](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3411)
+- [3GPP TS 32.240 — Charging Architecture](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1896)
+
+## Other Organisations
+
+- [ETSI](https://www.etsi.org/)
+- [IETF](https://www.ietf.org/)
+
+Check the relevant release and version before using specifications for production network implementation.
+
+---
+
+# Final Learning Summary
+
+FCAPS is a foundational framework for telecommunications network management.
+
+- **Fault Management:** Detect, investigate and resolve network problems.
+- **Configuration Management:** Configure and control network resources.
+- **Accounting Management:** Track resource usage and support charging.
+- **Performance Management:** Measure, analyse and optimise network performance.
+- **Security Management:** Protect network management systems and resources.
+
+ITU-T M.3400 provides the foundational TMN management-function model.
+
+3GPP specifications define detailed management capabilities used by cellular systems, while other standards organisations contribute network protocols, security, orchestration and automation specifications.
+
+**Learning Goal:** Understand how FCAPS supports reliable operation, monitoring, configuration, usage management, performance assurance and security across mobile telecommunications networks.
+
+---
+
