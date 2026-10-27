@@ -3012,35 +3012,7 @@ The actual implementation depends on whether the call uses GSM, UMTS, VoLTE, VoN
 
 ---
 
-## 8. Practice Questions
-
-### Beginner
-
-1. What is a mobile communication standard?
-2. Why are standards necessary?
-3. What does interoperability mean?
-4. Why do smartphones need compatible radio technologies?
-5. What is international roaming?
-
-### Intermediate
-
-6. How do mobile communication standards improve security?
-7. Why is spectrum efficiency important?
-8. How do standards support handovers?
-9. What is the difference between ITU and 3GPP?
-10. How do standards help mobile operators reduce costs?
-
-### Advanced
-
-11. Can two devices supporting the same mobile generation always communicate? Explain.
-12. How do standardised network interfaces support multi-vendor deployments?
-13. Why do mobile networks need both technical standards and regulatory spectrum allocation?
-14. What are the limitations of relying only on standards for network security?
-15. Why are new standards necessary for future 6G networks?
-
----
-
-## 9. Final Learning Summary
+## 8. Final Learning Summary
 
 Mobile communication standards are needed to make wireless telecommunications **compatible, interoperable, secure, scalable, and reliable**.
 
