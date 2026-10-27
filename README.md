@@ -3588,34 +3588,6 @@ flowchart TD
 
 ---
 
-# 13. Practice Questions
-
-## Beginner
-
-1. What does ITU stand for?
-2. What is the main role of 3GPP?
-3. What is ETSI?
-4. Which organisation develops IEEE 802.11 standards?
-5. What does IETF stand for?
-
-## Intermediate
-
-6. What is the difference between ITU and 3GPP?
-7. How does ETSI participate in 3GPP?
-8. Why are national regulators important?
-9. What is the relationship between IETF protocols and 4G/5G networks?
-10. What was the main purpose of 3GPP2?
-
-## Advanced
-
-11. How do standards organisations and national regulators cooperate?
-12. Why is radio spectrum coordination important internationally?
-13. What is the difference between a technical specification and a legal regulation?
-14. How are 3GPP technical specifications developed?
-15. Why is IMT-2030 important for future 6G standardisation?
-
----
-
 # 14. Learning Summary
 
 Mobile telecommunications standards require cooperation between international bodies, industry partnerships, regional organisations, and national authorities.
