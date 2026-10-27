@@ -5942,7 +5942,7 @@ Compare KPIs before and after the intervention.
 
 ---
 
-# 18. Official References
+# 16. Official References
 
 ## ITU-T
 
@@ -5964,7 +5964,7 @@ Compare KPIs before and after the intervention.
 
 ---
 
-# 19. Final Learning Summary
+# 17. Final Learning Summary
 
 Performance Management in mobile telecommunications is governed by a family of international recommendations and technical specifications.
 
