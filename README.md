@@ -1,777 +1,140 @@
-
----
-
-# Mobile Telecommunications Standards for FCAPS Network Management
-
-## 1. What Is FCAPS?
-
-FCAPS is a network management framework used to organise telecommunications management functions.
-
-FCAPS stands for:
-
-| Letter | Management Function | Main Purpose |
-|---|---|---|
-| F | Fault Management | Detect, report and resolve faults |
-| C | Configuration Management | Configure and control network resources |
-| A | Accounting Management | Track usage, charging and resource consumption |
-| P | Performance Management | Measure and optimise network performance |
-| S | Security Management | Protect network systems and management access |
-
-### FCAPS Architecture
-
-```mermaid
-flowchart TD
-    A["Operations Support System - OSS"]
-
-    A --> B["Fault Management"]
-    A --> C["Configuration Management"]
-    A --> D["Accounting Management"]
-    A --> E["Performance Management"]
-    A --> F["Security Management"]
-
-    B --> G["Network Management and Element Management"]
-    C --> G
-    D --> G
-    E --> G
-    F --> G
-
-    G --> H["Radio Access Network"]
-    G --> I["Mobile Core Network"]
-```
-
-FCAPS is a functional classification, not one individual communication protocol.
-
----
-
-# 2. Organisations Responsible for FCAPS Standards
-
-Several standards organisations contribute to network management.
-
-| Organisation | Main Responsibility | Relevant Standards |
-|---|---|---|
-| ITU-T | Telecommunications management frameworks | M.3010, M.3400 |
-| 3GPP SA5 | Mobile network management and orchestration | TS 32-series, TS 28-series |
-| 3GPP SA3 | Cellular security specifications | TS 33-series |
-| ETSI | Telecom standards, NFV and automation | ETSI NFV, ZSM |
-| IETF | Network management protocols and data models | SNMP, NETCONF, YANG |
-
-### Important Difference
-
-- **ITU-T:** Defines foundational telecom management frameworks.
-- **3GPP:** Defines cellular-network-specific management capabilities.
-- **ETSI:** Develops complementary telecom management and automation standards.
-- **IETF:** Defines protocols and data models that can support network management.
-
----
-
-# 3. Foundational FCAPS Standards
-
-## 3.1 ITU-T M.3400 — TMN Management Functions
-
-**Organisation:** ITU-T
-
-**Document:** ITU-T M.3400
-
-**Official Title:** TMN management functions
-
-**Official Reference:**
-https://www.itu.int/rec/T-REC-M.3400
-
-### Purpose
-
-ITU-T M.3400 defines Telecommunications Management Network (TMN) management functions.
-
-It provides the foundational functional organisation associated with FCAPS.
-
-### Main Areas
-
-1. Fault Management
-2. Configuration Management
-3. Accounting Management
-4. Performance Management
-5. Security Management
-
-### Functional Model
-
-```mermaid
-flowchart TD
-    A["ITU-T M.3400"]
-
-    A --> B["Fault"]
-    A --> C["Configuration"]
-    A --> D["Accounting"]
-    A --> E["Performance"]
-    A --> F["Security"]
-```
-
----
-
-## 3.2 ITU-T M.3010 — TMN Architecture
-
-**Organisation:** ITU-T
-
-**Document:** ITU-T M.3010
-
-**Official Subject:** Principles for a Telecommunications Management Network
-
-**Official Reference:**
-https://www.itu.int/rec/T-REC-M.3010
-
-### Purpose
-
-M.3010 defines principles for the Telecommunications Management Network architecture.
-
-### Traditional Management Layers
-
-| Layer | Name | Responsibility |
-|---|---|---|
-| BML | Business Management Layer | Business-level operations |
-| SML | Service Management Layer | Service management |
-| NML | Network Management Layer | Network-wide operations |
-| EML | Element Management Layer | Network-element management |
-| NEL | Network Element Layer | Managed network resources |
-
-### TMN Layer Architecture
-
-```mermaid
-flowchart TD
-    A["Business Management"]
-    B["Service Management"]
-    C["Network Management"]
-    D["Element Management"]
-    E["Network Elements"]
-
-    A <--> B
-    B <--> C
-    C <--> D
-    D <--> E
-```
-
-**Remember:**
-
-- M.3010 describes management architecture principles.
-- M.3400 describes management functions.
-
----
-
-# 4. Fault Management Standards
-
-## What Is Fault Management?
-
-Fault Management detects abnormal network conditions and supports fault investigation, reporting and recovery.
-
-### Important Standards
-
-| Standard | Main Subject |
-|---|---|
-| ITU-T M.3400 | TMN fault management functions |
-| 3GPP TS 32.111-1 | Fault management requirements |
-| 3GPP TS 32.111-2 | Alarm IRP information service |
-| 3GPP TS 32.111-6 | Alarm IRP solution-set definitions |
-| 3GPP TS 28.532 | Generic management services |
-
-### Official References
-
-- [ITU-T M.3400](https://www.itu.int/rec/T-REC-M.3400)
-- [3GPP Specifications Portal](https://portal.3gpp.org/)
-
-## Main Fault Management Functions
-
-- Alarm collection
-- Alarm surveillance
-- Alarm severity classification
-- Alarm correlation
-- Fault localisation
-- Trouble reporting
-- Service restoration verification
-
-### Fault Management Architecture
-
-```mermaid
-flowchart TD
-    A["BTS / NodeB / eNodeB / gNodeB"]
-    B["Element Management System"]
-    C["Fault Management Platform"]
-    D["Alarm Correlation"]
-    E["Network Operations Centre"]
-    F["Troubleshooting"]
-    G["Fault Resolution"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-```
-
-### Real-World Example
-
-A 5G base station becomes unavailable.
-
-1. A monitoring system detects the problem.
-2. An alarm is reported.
-3. The fault management system processes the alarm.
-4. A NOC engineer investigates.
-5. The fault is resolved.
-6. Network recovery is verified.
-
----
-
-# 5. Configuration Management Standards
-
-## What Is Configuration Management?
-
-Configuration Management controls network settings, managed resources and configuration changes.
-
-### Important Standards
-
-| Standard | Main Subject |
-|---|---|
-| ITU-T M.3400 | Configuration management functions |
-| 3GPP TS 32.101 | Telecom management principles |
-| 3GPP TS 32.102 | Telecom management architecture |
-| 3GPP TS 28.532 | Generic management services |
-| 3GPP TS 28.541 | 5G Network Resource Model |
-| IETF RFC 6241 | NETCONF protocol |
-| IETF RFC 7950 | YANG data modelling language |
-
-### Main Configuration Management Functions
-
-- Network-element configuration
-- Managed-resource creation and deletion
-- Configuration parameter modification
-- Software configuration management
-- Configuration backup and recovery
-- Configuration consistency checks
-- Change verification
-
-### Configuration Management Architecture
-
-```mermaid
-flowchart TD
-    A["Network Engineer"]
-    B["Network Management System"]
-    C["Configuration Validation"]
-    D["Management Service / EMS"]
-    E["Network Element"]
-    F["Configuration Verification"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-```
-
-### Example: LTE Cell Configuration
-
-A network engineer changes a cell parameter.
-
-1. Review current configuration.
-2. Prepare the proposed change.
-3. Validate the new settings.
-4. Apply the approved configuration.
-5. Verify that the change succeeded.
-6. Monitor the affected cell.
-7. Roll back if necessary.
-
-### Common Configuration Parameters
-
-| Parameter | Purpose |
-|---|---|
-| Cell ID | Identifies a cell |
-| PCI | Physical Cell Identity |
-| EARFCN | LTE radio channel identifier |
-| TAC | Tracking Area Code |
-| Transmit Power | Controls radio transmission |
-| Neighbour Relations | Supports handover and mobility |
-
----
-
-# 6. Accounting Management Standards
-
-## What Is Accounting Management?
-
-Accounting Management collects information about network resource consumption and service usage.
-
-In mobile telecommunications, accounting often works alongside charging and billing systems.
-
-### Important Standards
-
-| Standard | Main Subject |
-|---|---|
-| ITU-T M.3400 | Accounting management functions |
-| 3GPP TS 32.240 | Charging architecture and principles |
-| 3GPP TS 32.251 | Packet-switched domain charging |
-| 3GPP TS 32.298 | Charging Data Record parameter definitions |
-| 3GPP TS 32.299 | Diameter charging applications |
-| 3GPP TS 32.255 | 5G data connectivity domain charging |
-
-### Main Accounting Functions
-
-- Usage measurement
-- Service-consumption reporting
-- Charging information collection
-- Charging-record processing
-- Billing-system integration
-- Resource-usage analysis
-
-### Accounting and Charging Architecture
-
-```mermaid
-flowchart LR
-    A["Mobile Subscriber"]
-    B["Mobile Network"]
-    C["Charging Functions"]
-    D["Charging Records / Events"]
-    E["Billing / Balance System"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-```
-
-### Real-World Example
-
-A subscriber consumes mobile data.
-
-1. The device establishes a data session.
-2. The network measures relevant usage.
-3. Charging functions process the usage information.
-4. Charging data is delivered to relevant systems.
-5. Billing or prepaid balance processing occurs.
-
-### Important Terms
-
-| Term | Meaning |
-|---|---|
-| CDR | Charging Data Record |
-| OCS | Online Charging System |
-| OFCS | Offline Charging System |
-| CHF | Charging Function |
-| Billing | Customer charge processing |
-
-**Important:** Charging implementations differ across mobile generations. For example, the 5G charging system uses architectures that differ from traditional EPC charging.
-
----
-
-# 7. Performance Management Standards
-
-## What Is Performance Management?
-
-Performance Management collects and analyses network measurements to evaluate network quality and capacity.
-
-### Important Standards
-
-| Standard | Main Subject |
-|---|---|
-| ITU-T M.3400 | Performance management functions |
-| 3GPP TS 32.401 | PM concepts and requirements |
-| 3GPP TS 32.404 | Measurement definitions and template |
-| 3GPP TS 32.405 | 3G UTRAN measurements |
-| 3GPP TS 32.425 | LTE E-UTRAN measurements |
-| 3GPP TS 32.450 | LTE KPI definitions |
-| 3GPP TS 28.550 | Performance assurance |
-| 3GPP TS 28.552 | 5G performance measurements |
-| 3GPP TS 28.554 | 5G end-to-end KPIs |
-
-### Main PM Functions
-
-- Performance measurement collection
-- KPI calculation
-- Capacity monitoring
-- Performance analysis
-- Congestion detection
-- Network quality reporting
-- Network optimisation
-
-### Performance Management Architecture
-
-```mermaid
-flowchart TD
-    A["Mobile Network Elements"]
-    B["Performance Counters"]
-    C["Measurement Collection"]
-    D["Performance Database"]
-    E["KPI Calculation"]
-    F["Performance Dashboard"]
-    G["NOC / Optimisation"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-```
-
-### Common Mobile Network KPIs
-
-| KPI | Purpose |
-|---|---|
-| Availability | Measures operational availability |
-| Accessibility | Measures connection or service establishment |
-| Retainability | Measures service continuity |
-| Handover Success Rate | Measures mobility performance |
-| Throughput | Measures data transfer performance |
-| Latency | Measures communication delay |
-| PRB Utilisation | Measures radio resource usage |
-
-### Example: Handover Success Rate
-
-```text
-Handover Success Rate (%) =
-
-Successful Handovers
---------------------- × 100
-Handover Attempts
-```
-
-Example:
-
-- Successful handovers: 970
-- Handover attempts: 1,000
-
-```text
-Handover Success Rate = (970 / 1000) × 100
-
-Handover Success Rate = 97%
-```
-
-This is a simplified formula for learning. Operational KPI formulas must follow the applicable measurement and KPI definitions.
-
----
-
-# 8. Security Management Standards
-
-## What Is Security Management?
-
-Security Management controls access to management systems and protects network management information and resources.
-
-### Important Standards
-
-| Standard | Main Subject |
-|---|---|
-| ITU-T M.3400 | Security management functions |
-| ITU-T M.3410 | Security management system guidance |
-| ITU-T M.3411 | Identity and access management requirements |
-| 3GPP TS 33.501 | 5G security architecture and procedures |
-| ISO/IEC 27001 | Information security management system requirements |
-| IETF RFC 8446 | TLS 1.3 |
-| IETF RFC 4251 | SSH protocol architecture |
-
-### Main Security Management Functions
-
-- Authentication
-- Authorisation
-- Identity management
-- Role-based access control
-- Security auditing
-- Security-event monitoring
-- Secure management communications
-- Incident investigation
-
-### Security Management Architecture
-
-```mermaid
-flowchart TD
-    A["Network Administrator"]
-    B["Identity Management"]
-    C["Authentication"]
-    D["Authorisation"]
-    E["Network Management System"]
-    F["Managed Network Elements"]
-    G["Security Logging"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    E --> G
-```
-
-### Example: Unauthorised Configuration Change
-
-1. A user attempts to modify a gNodeB.
-2. The management platform checks their identity.
-3. The platform evaluates permissions.
-4. Unauthorised operations are rejected.
-5. The attempt may be logged and investigated.
-
-**Note:** 3GPP TS 33.501 addresses broader 5G system security. It complements, but does not exclusively define, FCAPS Security Management.
-
----
-
-# 9. Complete FCAPS Standards Mapping
-
-| FCAPS Function | Foundational Standard | Important 3GPP Standards | Complementary Standards |
-|---|---|---|---|
-| Fault | ITU-T M.3400 | TS 32.111 series, TS 28.532 | ITU-T TMN framework |
-| Configuration | ITU-T M.3400 | TS 32.101, TS 32.102, TS 28.532, TS 28.541 | NETCONF, YANG |
-| Accounting | ITU-T M.3400 | TS 32.240, TS 32.251, TS 32.255, TS 32.298, TS 32.299 | Charging and billing frameworks |
-| Performance | ITU-T M.3400 | TS 32.401, TS 32.425, TS 28.550, TS 28.552, TS 28.554 | PM collection and reporting tools |
-| Security | ITU-T M.3400 | TS 33.501 and applicable security specifications | ITU-T M.3410, M.3411, ISO/IEC 27001, TLS, SSH |
-
----
-
-# 10. FCAPS Across 2G, 3G, 4G and 5G
-
-| Generation | Common Managed Components | Management Approach |
-|---|---|---|
-| 2G | BTS, BSC, MSC | Traditional element and network management |
-| 3G | NodeB, RNC, SGSN, GGSN | Expanded mobile-network management |
-| 4G | eNodeB, MME, SGW, PGW | LTE/EPC performance and management |
-| 5G | gNodeB, AMF, SMF, UPF | Service-based management and orchestration |
-| 6G | Future radio and network functions | Management architecture under development |
-
-### Evolution Diagram
-
-```mermaid
-flowchart TD
-    A["2G Network Management"]
-    B["3G Network Management"]
-    C["4G Network Management"]
-    D["5G Management and Orchestration"]
-    E["6G Intelligent Management Research"]
-
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-```
-
----
-
-# 11. FCAPS in a Real Mobile Network
-
-## Simplified End-to-End Management Architecture
-
-```mermaid
-flowchart TD
-    A["Network Operations Centre"]
-    B["OSS / Network Management"]
-
-    C["Fault Management"]
-    D["Configuration Management"]
-    E["Accounting Management"]
-    F["Performance Management"]
-    G["Security Management"]
-
-    H["Element Management / Management Services"]
-    I["2G / 3G / 4G / 5G RAN"]
-    J["Mobile Core Network"]
-
-    A <--> B
-
-    B --> C
-    B --> D
-    B --> E
-    B --> F
-    B --> G
-
-    C <--> H
-    D <--> H
-    E <--> H
-    F <--> H
-    G <--> H
-
-    H <--> I
-    H <--> J
-```
-
-### Roles of Main Components
-
-| Component | Role |
-|---|---|
-| NOC | Monitors network health and coordinates incident response |
-| OSS | Supports telecommunications operations |
-| NMS | Manages network-wide resources |
-| EMS | Manages groups of network elements |
-| RAN | Provides mobile radio connectivity |
-| Core Network | Provides mobility, session control and connectivity services |
-| Charging Systems | Support charging and billing |
-| Security Systems | Monitor and control security-related activities |
-
----
-
-# 12. Practical FCAPS Troubleshooting Example
-
-## Scenario
-
-Customers report that a 5G cell is experiencing poor performance.
-
-### Fault Management
-
-Check:
-
-- Active alarms
-- Site availability
-- Transmission alarms
-- Equipment faults
-
-### Configuration Management
-
-Review:
-
-- Radio parameters
-- Cell configuration
-- Neighbour relationships
-- Recent changes
-
-### Accounting Management
-
-Review relevant network resource or usage information if needed for the investigation.
-
-### Performance Management
-
-Check:
-
-- Accessibility
-- Retainability
-- Throughput
-- PRB utilisation
-- Handover success
-- Latency
-
-### Security Management
-
-Check relevant security or access-control events if they may be related to the incident.
-
-## Troubleshooting Workflow
-
-```mermaid
-flowchart TD
-    A["5G Service Issue"]
-
-    A --> B["Check Fault Alarms"]
-    A --> C["Review Configuration"]
-    A --> D["Review Relevant Usage"]
-    A --> E["Analyse KPIs"]
-    A --> F["Review Security Events"]
-
-    B --> G["Root Cause Investigation"]
-    C --> G
-    D --> G
-    E --> G
-    F --> G
-
-    G --> H["Corrective Action"]
-    H --> I["Service Verification"]
-```
-
-Not every incident requires all five FCAPS areas. Engineers use the functions relevant to the problem.
-
----
-
-# 13. Recommended FCAPS Learning Roadmap
-
-## Beginner
-
-1. Learn the meaning of FCAPS.
-2. Study ITU-T M.3400.
-3. Understand TMN architecture and ITU-T M.3010.
-4. Learn OSS, NMS and EMS terminology.
-
-## Intermediate
-
-5. Study Fault Management and TS 32.111.
-6. Study Configuration Management and TS 28.532.
-7. Study charging architecture and TS 32.240.
-8. Study Performance Management and TS 32.401.
-9. Study management security and access control.
-
-## Advanced
-
-10. Study TS 28.541 for the 5G Network Resource Model.
-11. Study TS 28.552 for 5G performance measurements.
-12. Study TS 28.554 for 5G end-to-end KPIs.
-13. Study management automation and orchestration.
-14. Analyse a real mobile-network incident using FCAPS.
-
----
-
-# 14. Practice Questions
-
-## Beginner
-
-1. What does FCAPS stand for?
-2. What is the purpose of ITU-T M.3400?
-3. What is the difference between OSS and EMS?
-4. What is Fault Management?
-5. Why is Performance Management important?
-
-## Intermediate
-
-6. Which 3GPP standard family covers alarm management?
-7. What is the purpose of TS 28.541?
-8. How does charging differ from accounting?
-9. Which standards cover 5G performance measurements?
-10. How does Security Management protect an NMS?
-
-## Advanced
-
-11. How do ITU-T and 3GPP standards complement each other?
-12. How can FCAPS functions be integrated into a telecom OSS?
-13. How does 5G management differ from traditional management?
-14. What is the relationship between the TMN layers and FCAPS?
-15. How can FCAPS support automated network operations?
-
----
-
-# 15. Official Reference Documents
-
-## ITU-T
-
-- [ITU-T M.3010 — TMN Principles](https://www.itu.int/rec/T-REC-M.3010)
-- [ITU-T M.3400 — TMN Management Functions](https://www.itu.int/rec/T-REC-M.3400)
-- [ITU-T M.3410 — Security Management](https://www.itu.int/rec/T-REC-M.3410)
-- [ITU-T M.3411 — Identity and Access Management](https://www.itu.int/rec/T-REC-M.3411)
-
-## 3GPP
-
-- [3GPP Specifications Portal](https://portal.3gpp.org/)
-- [3GPP TS 32.101 — Management Principles](https://portal.3gpp.org/)
-- [3GPP TS 32.102 — Management Architecture](https://portal.3gpp.org/)
-- [3GPP TS 32.111 — Fault Management](https://portal.3gpp.org/)
-- [3GPP TS 32.240 — Charging Architecture](https://portal.3gpp.org/)
-- [3GPP TS 32.401 — Performance Management](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991)
-- [3GPP TS 28.532 — Generic Management Services](https://portal.3gpp.org/)
-- [3GPP TS 28.541 — 5G Network Resource Model](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3400)
-- [3GPP TS 28.552 — 5G Performance Measurements](https://portal.3gpp.org/)
-- [3GPP TS 33.501 — 5G Security Architecture](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3169)
-
-## Other References
-
-- [ETSI](https://www.etsi.org/)
-- [IETF](https://www.ietf.org/)
-- [ISO](https://www.iso.org/)
-
-**Version Note:** For implementation, always verify the applicable release, specification status and vendor support.
-
----
-
-# 16. Final Learning Summary
-
-The main standards governing FCAPS Network Management are:
-
-**Foundational Standards**
-
-- ITU-T M.3010 — TMN architecture
-- ITU-T M.3400 — TMN management functions
-
-**Cellular Network Management Standards**
-
-- 3GPP TS 32.111 series — Fault Management
-- 3GPP TS 28.532 / 28.541 — Management services and resource models
-- 3GPP TS 32.240 series — Charging Management
-- 3GPP TS 32.401 / TS 28.552 — Performance Management
-- 3GPP TS 33.501 — Complementary 5G security architecture
-
-**Learning Goal:**
-
-Understand how ITU-T, 3GPP, ETSI and IETF standards support Fault, Configuration, Accounting, Performance and Security Management in mobile telecommunications networks.
-
----
+Mobile Network Generations and Architecture
+A step-by-step learning guide from 1G to 6G
+
+This guide explains how mobile networks evolved from analogue voice calls to modern, software-driven mobile broadband and emerging AI-enabled networks. It is designed for beginners, students, and aspiring telecom engineers.
+Status note: 1G–5G are historical or deployed generations. 6G is under research and standardisation; its architecture and capabilities are evolving, so examples here are conceptual rather than a final deployed standard.
+
+Learning objectives
+By the end, you should be able to:
+- Explain the main purpose of each generation (1G–6G).
+- Identify the major network components and how they connect.
+- Describe the difference between the radio access network (RAN) and the core network.
+- Understand the shift from analogue voice to digital, packet data, all-IP networks, and cloud-native cores.
+- Recognise which proposed 6G capabilities are still under development.
+Start here: How a mobile network works
+A typical mobile system contains three main pieces:
+1. User equipment (UE): a phone, modem, sensor, or another connected device.
+2. Radio access network (RAN): radio sites and controllers that connect devices wirelessly to the operator network.
+3. Core network: authenticates subscribers, manages connections and mobility, and routes voice or data to other networks.
+Simplified view:
+[Phone / Device] ))) [Radio Access Network] ---> [Core Network] ---> [Internet / Telephone Network]
+The details change considerably between generations.
+Step 1 — 1G: Analogue voice
+Era: Commercially introduced in the late 1970s and 1980s (depending on country).
+
+Main purpose: Wireless voice calling.
+[1G Mobile Phone] ))) [Analogue Cell Site] ---> [Mobile Switching Network] ---> [PSTN / Telephone]
+Learn:
+1. A handset turns speech into an analogue electrical signal.
+2. The handset transmits the signal by radio to a nearby cell site.
+3. The mobile switching network connects the call to another phone.
+4. A handoff may transfer the call when the user moves between cells.
+Limitations: Analogue voice, limited capacity and security, and no modern packet-based mobile internet.
+
+Key terms: AMPS, analogue radio, frequency division multiple access (FDMA), handoff, PSTN.
+Step 2 — 2G: Digital voice and SMS
+Era: Early 1990s onward.
+
+Main purpose: Digital voice and text messaging; later, basic packet data.
+
+Example: GSM architecture
+[2G Phone] ))) [BTS] ---> [BSC] ---> [MSC] ---> [PSTN / Other Voice Networks]
+                         |
+                         +-- (GPRS/EDGE packet path via SGSN/GGSN) ---> [Internet]
+Learn:
+1. BTS (Base Transceiver Station) exchanges radio signals with the phone.
+2. BSC (Base Station Controller) manages multiple BTS sites and radio resources.
+3. MSC (Mobile Switching Centre) supports circuit-switched voice calls.
+4. SMS allows short text messages; GPRS/EDGE later add mobile packet data through separate packet-core nodes.
+Key terms: GSM, BTS, BSC, MSC, SIM, SMS, GPRS, EDGE.
+Step 3 — 3G: Mobile internet
+Era: Early 2000s onward.
+
+Main purpose: Better mobile data, web access, multimedia, and video calls.
+
+Example: UMTS architecture
+[3G Phone] ))) [NodeB] ---> [RNC] ---> [3G Core Network] ---> [Internet / Telephone Network]
+Learn:
+1. NodeB is the 3G radio base station.
+2. RNC (Radio Network Controller) controls groups of NodeBs and manages radio resources.
+3. The core network supports voice and packet data, using different domains in classic UMTS deployments.
+4. HSPA/HSPA+ improve data rates over early 3G systems.
+Key terms: UMTS, WCDMA, NodeB, RNC, SGSN, GGSN, HSPA.
+Step 4 — 4G: Mobile broadband and all-IP data
+Era: Around 2009–2010 onward.
+
+Main purpose: Fast mobile broadband, streaming, apps, and IP-based communication.
+
+Example: LTE architecture
+[4G Smartphone] ))) [eNodeB] ---> [EPC] ---> [Internet / IP Services]
+                                     |
+                                     +-- [IMS] ---> [VoLTE Calls]
+Learn:
+1. eNodeB (eNB) provides LTE radio access and handles many functions previously split across radio controllers.
+2. EPC (Evolved Packet Core) handles mobility, authentication, and packet routing.
+3. LTE uses an all-IP packet core rather than 2G/3G-style circuit-switched voice in its radio/core design.
+4. IMS/VoLTE supports voice calling over LTE; early deployments also used fallbacks to older networks.
+Key terms: LTE, eNodeB, EPC, MME, SGW, PGW, IMS, VoLTE.
+Step 5 — 5G: Flexible, high-capacity connectivity
+Era: Commercial deployments began in 2019.
+
+Main purpose: Enhanced mobile broadband, lower-latency services, and connectivity for large numbers of devices.
+
+Example: Standalone (SA) 5G architecture
+[Phone / IoT Device] ))) [gNodeB (5G NR)] ---> [5G Core (service-based)] ---> [Data Network]
+                                                   |
+                                                   +-- [Edge Applications]
+Learn:
+1. gNodeB (gNB) provides 5G New Radio access.
+2. The 5G Core (5GC) separates control functions and user-plane forwarding and uses a service-based architecture for many control-plane interactions.
+3. Network slicing enables logical network arrangements for differing service requirements.
+4. Edge computing may place applications close to users to reduce end-to-end delay.
+5. Distinguish NSA (Non-Standalone) 5G, which relies on existing LTE infrastructure in some parts of the network, from SA (Standalone) 5G with a 5G Core.
+Key terms: 5G NR, gNodeB, 5GC, AMF, SMF, UPF, SBA, slicing, MEC, NSA, SA.
+Step 6 — 6G: Research and emerging architecture
+Status: In research and standardisation; not yet a broadly deployed commercial generation as of October 2026.
+
+Areas being explored: AI-assisted or AI-native networking, integrated sensing and communication, new spectrum options, advanced automation, and closer integration of terrestrial and non-terrestrial networks.
+
+Illustrative concept — not a final 6G standard:
+[Future Devices / Sensors] ))) [Advanced Radio Access]
+                                      |
+                            [Intelligent Network Functions]
+                                      |
+                       [Cloud / Edge / Satellite Services]
+Learn:
+1. Study how AI may help optimise network operation and resource management.
+2. Explore proposed integrated sensing and communication (ISAC) capabilities.
+3. Understand possible roles for non-terrestrial networks (NTN), such as satellite-based connectivity.
+4. Separate research goals and marketing claims from features confirmed by standards and real deployments.
+Key terms: IMT-2030, AI-native networks, ISAC, NTN, edge intelligence, 6G research.
+Comparison at a glance
+Generation	Primary shift	Representative radio access	Representative core/network
+1G	Analogue mobile voice	Analogue cell site	Mobile switching network
+2G	Digital voice and SMS	BTS + BSC (GSM)	MSC; packet nodes for GPRS/EDGE
+3G	Richer mobile data	NodeB + RNC (UMTS)	Circuit/packet core domains
+4G	All-IP mobile broadband	eNodeB (LTE)	EPC; IMS for VoLTE
+5G	Advanced broadband and flexible services	gNodeB (5G NR)	5G Core (SBA)
+6G	Proposed intelligent and integrated capabilities	Future advanced RAN (under study)	Architecture still evolving
+
+
+Suggested seven-session study plan
+1. Session 1 — Foundations: Learn UE, cells, spectrum, RAN, core, and PSTN.
+2. Session 2 — 1G and 2G: Compare analogue and digital voice; trace a GSM call.
+3. Session 3 — 3G: Draw NodeB → RNC → core and explain mobile data.
+4. Session 4 — 4G: Trace an LTE data session and learn what EPC and IMS do.
+5. Session 5 — 5G: Compare NSA versus SA; map gNodeB and 5G Core functions.
+6. Session 6 — 6G: Review research directions and identify what is not yet standardised.
+7. Session 7 — Review: Redraw all six architectures from memory and explain their differences.
+Quick self-check
+1. What does the letter G mean?
+2. Why was the transition from 1G to 2G important?
+3. What is the difference between a NodeB, eNodeB, and gNodeB?
+4. What does the EPC do in 4G?
+5. What is the difference between 5G NSA and SA?
+6. Why should 6G diagrams be labelled conceptual?
+Further reading
+- 3GPP — Mobile telecommunications specifications
+- ITU — International Telecommunication Union
+- ETSI — European Telecommunications Standards Institute
+Learning goal: Understand not only what changed between 1G and 6G, but where each function lives in the network and why the architecture changed.
