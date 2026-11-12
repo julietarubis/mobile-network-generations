@@ -2,7 +2,7 @@
 
 **Step-by-step learning guide | Mobile networks · Standards · FCAPS · Performance Management**
 
-![Mobile Network Generations and Architecture — learning cover](assets/mobile_network_generations_1g_to_6g.png)
+![Mobile Network Generations and Architecture — learning cover](mobile_network_generations_1g_to_6g.png)
 
 > **How to use this repository:** Start at Chapter 1, follow the diagrams, learn each component's role, and complete the exercises. All diagrams are **normal PNG images** linked using relative paths: no Mermaid renderer, browser plugin, or external diagram service is required. Keep the `assets` directory alongside this `README.md`.
 >
