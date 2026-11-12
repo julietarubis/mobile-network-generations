@@ -35,11 +35,11 @@
 
 **G = Generation.** Generations refer to families of mobile-network technologies that introduce different radio and network capabilities. A generation is **not** a single frequency, antenna type or device model.
 
-![Evolution from 1G to 6G](assets/diagrams/generation-roadmap.png)
+![Evolution from 1G to 6G](generation-roadmap.png)
 
 ### 1.2 Three main parts of a mobile network
 
-![Generic mobile network architecture](assets/diagrams/network-overview.png)
+![Generic mobile network architecture](network-overview.png)
 
 | Part | Full name | Role |
 |---|---|---|
@@ -64,7 +64,7 @@
 
 **Objective:** Trace an analogue mobile call and explain the jobs of the main network components.
 
-![1G architecture](assets/diagrams/1g-architecture.png)
+![1G architecture](1g-architecture.png)
 
 ### 2.1 Main components and roles
 
@@ -95,7 +95,7 @@
 
 ## 3.1 GSM voice architecture
 
-![2G GSM voice architecture](assets/diagrams/2g-voice.png)
+![2G GSM voice architecture](2g-voice.png)
 
 | Component | Full form | Role |
 |---|---|---|
@@ -119,7 +119,7 @@
 
 ## 3.2 GPRS/EDGE packet-data architecture
 
-![2G GPRS/EDGE architecture](assets/diagrams/2g-data.png)
+![2G GPRS/EDGE architecture](2g-data.png)
 
 | Component | Role |
 |---|---|
@@ -145,7 +145,7 @@
 
 **Objective:** Understand NodeB, RNC and the separate 3G voice/data service paths.
 
-![3G UMTS architecture](assets/diagrams/3g-architecture.png)
+![3G UMTS architecture](3g-architecture.png)
 
 | Component | Role |
 |---|---|
@@ -178,7 +178,7 @@
 
 **Objective:** Identify the eNodeB, EPC control plane and user plane, and explain how VoLTE works.
 
-![4G LTE architecture](assets/diagrams/4g-architecture.png)
+![4G LTE architecture](4g-architecture.png)
 
 | Component | Full form | Role |
 |---|---|---|
@@ -215,7 +215,7 @@
 
 ## 6.1 Standalone (SA) 5G architecture
 
-![5G standalone architecture](assets/diagrams/5g-sa.png)
+![5G standalone architecture](5g-sa.png)
 
 | Function | Full form | Role |
 |---|---|---|
@@ -241,7 +241,7 @@ The **5G Core service-based architecture** mainly concerns control-plane network
 
 ## 6.2 Non-Standalone (NSA) 5G architecture
 
-![5G NSA architecture](assets/diagrams/5g-nsa.png)
+![5G NSA architecture](5g-nsa.png)
 
 An important NSA deployment model uses LTE as an anchor and adds NR capacity while retaining the EPC. The diagram is one representative arrangement, not every 5G NSA option.
 
@@ -267,7 +267,7 @@ An important NSA deployment model uses LTE as an anchor and adds NR capacity whi
 
 **Objective:** Separate current deployments and published standards from research concepts.
 
-![Conceptual 6G architecture](assets/diagrams/6g-concept.png)
+![Conceptual 6G architecture](6g-concept.png)
 
 **This is a conceptual architecture, not a final 6G standard.** The diagram illustrates research directions only.
 
@@ -358,7 +358,7 @@ An LTE-compatible smartphone can communicate with a compatible LTE eNodeB even i
 
 # Chapter 10 — Who Develops and Regulates Standards?
 
-![Standards and regulation ecosystem](assets/diagrams/standards-organisations.png)
+![Standards and regulation ecosystem](standards-organisations.png)
 
 | Organisation | Type | Main responsibility |
 |---|---|---|
@@ -388,7 +388,7 @@ An LTE-compatible smartphone can communicate with a compatible LTE eNodeB even i
 
 **FCAPS** is a functional way to organise operations, not a single wire protocol. It is linked to the ITU-T Telecommunications Management Network (TMN) framework.
 
-![FCAPS functions](assets/diagrams/fcaps-functions.png)
+![FCAPS functions](fcaps-functions.png)
 
 | Area | What it does | Example operational task |
 |---|---|---|
@@ -400,7 +400,7 @@ An LTE-compatible smartphone can communicate with a compatible LTE eNodeB even i
 
 ### 11.1 TMN management levels
 
-![TMN layers](assets/diagrams/fcaps-tmn.png)
+![TMN layers](fcaps-tmn.png)
 
 | Level | Role |
 |---|---|
@@ -414,31 +414,31 @@ An LTE-compatible smartphone can communicate with a compatible LTE eNodeB even i
 
 ### 11.2 Fault Management (F)
 
-![Fault workflow](assets/diagrams/fault-workflow.png)
+![Fault workflow](fault-workflow.png)
 
 **Step by step:** detect alarm → collect in EMS/NMS → correlate and prioritise → investigate root cause → repair/restore → verify service. Relevant 3GPP sources include the **TS 32.111** fault-management family. Alarm severity commonly includes critical, major, minor, warning and cleared states.
 
 ### 11.3 Configuration Management (C)
 
-![Configuration workflow](assets/diagrams/configuration-workflow.png)
+![Configuration workflow](configuration-workflow.png)
 
 **Step by step:** request change → validate impact → approve → apply using management services/EMS → verify configuration and service → roll back if necessary. Examples: radio parameters, neighbour relations, tracking area and resource models. 3GPP **TS 28.532** and **TS 28.541** support modern 5G management services and network resource modelling.
 
 ### 11.4 Accounting Management (A)
 
-![Accounting and charging workflow](assets/diagrams/accounting-workflow.png)
+![Accounting and charging workflow](accounting-workflow.png)
 
 **Step by step:** subscriber uses a service → network observes relevant usage → charging functions create/process events → billing/balance systems process outputs. Standards include 3GPP **TS 32.240** and related charging specifications. Usage accounting, online/offline charging and final customer billing are distinct processes.
 
 ### 11.5 Performance Management (P)
 
-![PM workflow](assets/diagrams/pm-workflow.png)
+![PM workflow](pm-workflow.png)
 
 **Step by step:** collect raw counters → validate and aggregate → calculate KPIs → display and analyse trends → optimise and verify. Important standards include **TS 32.401**, **TS 32.425** (LTE), **TS 28.552** (5G measurements), and **TS 28.554** (5G KPIs).
 
 ### 11.6 Security Management (S)
 
-![Security management workflow](assets/diagrams/security-workflow.png)
+![Security management workflow](security-workflow.png)
 
 **Step by step:** authenticate administrator → check assigned privileges → apply allowed management operation → retain audit logs → investigate abnormal behaviour. Relevant topics include RBAC, TLS/SSH, security monitoring and 3GPP security specifications (such as **TS 33.501** for 5G system security).
 
@@ -489,7 +489,7 @@ An LTE-compatible smartphone can communicate with a compatible LTE eNodeB even i
 
 ### 13.1 End-to-end collection
 
-![Performance measurement workflow](assets/diagrams/pm-workflow.png)
+![Performance measurement workflow](pm-workflow.png)
 
 1. Decide which managed network objects (cells, sites, functions, slices) to monitor.
 2. Select standardised or vendor counters and an appropriate collection granularity.
@@ -540,7 +540,7 @@ These are **teaching calculations**. A production KPI can have special counting 
 
 ### 13.5 5G performance management
 
-![5G performance management](assets/diagrams/5g-pm.png)
+![5G performance management](5g-pm.png)
 
 1. Collect relevant **NG-RAN** and **5GC** measurements (see **TS 28.552**).
 2. Use performance-assurance management concepts (**TS 28.550**).
@@ -573,7 +573,7 @@ Not every incident requires all five categories. Prioritise evidence that relate
 
 **Learning outcomes:** Identify O-RAN elements, trace interfaces, distinguish SMO and RIC functions, connect O-RAN management to FCAPS, and locate official specifications.
 
-![O-RAN logical architecture](assets/diagrams/oran-architecture.png)
+![O-RAN logical architecture](oran-architecture.png)
 
 ## 14.2 Why Open RAN matters
 
@@ -600,7 +600,7 @@ Not every incident requires all five categories. Prioritise evidence that relate
 
 ## 14.4 Key O-RAN interfaces
 
-![O-RAN interfaces and relationships](assets/diagrams/oran-interfaces.png)
+![O-RAN interfaces and relationships](oran-interfaces.png)
 
 | Interface | Typical endpoints | Purpose | O-RAN workgroup |
 |---|---|---|---|
@@ -649,7 +649,7 @@ Not every incident requires all five categories. Prioritise evidence that relate
 
 ## 14.7 O-RAN and FCAPS Network Management
 
-![O-RAN FCAPS management overview](assets/diagrams/oran-fcaps.png)
+![O-RAN FCAPS management overview](oran-fcaps.png)
 
 | FCAPS area | O-RAN example | Relevant management scope |
 |---|---|---|
@@ -793,7 +793,7 @@ The availability of specific E2 service models, KPIs and controls is implementat
 **This README deliberately does not contain Mermaid diagrams.** Every diagram is a `.png` image created locally, and linked with ordinary Markdown syntax:
 
 ```markdown
-![1G architecture](assets/diagrams/1g-architecture.png)
+![1G architecture](1g-architecture.png)
 ```
 
 GitHub supports PNG images in Markdown. **You must upload the folder structure as provided.** If only `README.md` is uploaded, its images will be missing.
