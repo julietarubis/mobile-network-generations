@@ -1,2945 +1,777 @@
-Mobile Network Generations and Architecture
-A step-by-step learning guide from 1G to 6G
-This README is designed for beginners, students, and telecom learners who want to understand mobile network generations, their main components, the role of each component, and the architecture flow from 1G to 6G.
-> **Note:** 1G to 5G are historical or deployed generations. **6G is still under research and standardisation**, so its architecture is conceptual.
----
-Learning Cover
-![Mobile Network Generations and Architecture](mobile_network_generations_1g_to_6g.png)
-This infographic shows the learning path from 1G → 2G → 3G → 4G → 5G → 6G, highlighting the evolution from voice communication to AI-native and space-connected networks.
----
-> **Diagram tip:** GitHub renders `mermaid` code blocks as flowcharts. In VS Code, use a Mermaid-capable Markdown preview extension if your built-in preview displays code instead of a diagram.
-> **Diagram rendering:** Architecture diagrams are included as SVG images so they display reliably on GitHub without Mermaid rendering errors. Each diagram links to its editable `.mmd` Mermaid source. To edit one, change the source and regenerate its SVG with a Mermaid-compatible editor or renderer.
-Learning Objectives
-By the end of this guide, you should be able to:
-Explain what 1G, 2G, 3G, 4G, 5G, and 6G mean.
-Identify the main components in each generation.
-Describe the role of each component.
-Understand the network architecture for every mobile generation.
-Compare how mobile networks evolved from analogue voice to cloud-native and AI-driven systems.
----
-Basic Idea of Mobile Network Architecture
-A mobile network usually has three broad parts:
-User Device / User Equipment (UE)  
-The mobile phone, modem, tablet, IoT sensor, or any connected device.
-Radio Access Network (RAN)  
-The radio towers and controllers that connect devices wirelessly.
-Core Network  
-The central network that handles switching, routing, authentication, mobility, voice, and data services.
-Generic architecture
-
-![Network architecture diagram](diagrams/network-001.svg)
-Edit diagram source
-1G — First Generation
-Main Idea
-1G was the first generation of mobile communication. It was designed mainly for analogue voice calls.
-Main Components
-Mobile Phone (1G handset)
-Cell Tower / Base Station (Analogue)
-Telephone Network / Mobile Switching Network
-PSTN / Landline Network
-Role of Each Component
-Mobile Phone: sends and receives analogue voice.
-Cell Tower: receives radio signals from the phone and forwards them into the network.
-Telephone Network / Switching Network: connects the call to another user.
-PSTN: allows calls to landline phones.
-1G Architecture
-
-![Network architecture diagram](diagrams/network-002.svg)
-Edit diagram source
-What 1G Did Well
-Introduced wireless voice calling.
-Limitations
-Analogue only
-Poor security
-Low capacity
-No SMS or internet
----
-2G — Second Generation
-Main Idea
-2G introduced digital communication, improving voice quality and enabling SMS. Later enhancements like GPRS/EDGE added basic mobile data.
-Main Components
-Mobile Phone (2G)
-BTS (Base Transceiver Station)
-BSC (Base Station Controller)
-MSC (Mobile Switching Center)
-PSTN / Telecom Network
-SMS system
-GPRS/EDGE packet nodes (in data-capable 2G networks)
-Role of Each Component
-Mobile Phone: communicates digitally with the network.
-BTS: handles radio communication with the phone.
-BSC: controls multiple BTS sites and manages radio resources.
-MSC: switches voice calls and supports mobility management.
-PSTN / Telecom Network: connects external calls.
-SMS system: handles text messages.
-GPRS/EDGE nodes: provide basic packet data service.
-2G Architecture
-Voice path
-![Network architecture diagram](diagrams/network-003.svg)
-Edit diagram source
-Basic data path
-![Network architecture diagram](diagrams/network-004.svg)
-Edit diagram source
-Key Improvement Over 1G
-Digital voice
-SMS
-Better capacity and security
----
-3G — Third Generation
-Main Idea
-3G brought mobile internet into mainstream use. It supported web browsing, multimedia, email, and video calling.
-Main Components
-Mobile Phone (3G)
-NodeB
-RNC (Radio Network Controller)
-Core Network
-Internet / Multimedia Services
-Role of Each Component
-Mobile Phone: uses mobile internet and multimedia services.
-NodeB: acts as the 3G base station.
-RNC: controls NodeBs, radio resources, and handovers.
-Core Network: manages voice and data sessions.
-Internet / Multimedia Services: provide web and media connectivity.
-3G Architecture
-
-![Network architecture diagram](diagrams/network-005.svg)
-Edit diagram source
-Key Improvement Over 2G
-Faster mobile data
-Video calls
-Better support for multimedia and internet access
----
-4G — Fourth Generation
-Main Idea
-4G introduced high-speed broadband data and an all-IP architecture. It enabled streaming, mobile apps, online gaming, and better video experiences.
-Main Components
-Smartphone
-eNodeB (LTE base station)
-EPC (Evolved Packet Core)
-Internet / Cloud
-IMS / VoLTE services (in many deployments)
-Role of Each Component
-Smartphone: uses apps, streaming, and broadband services.
-eNodeB: provides LTE radio access and handles major base-station functions.
-EPC: manages mobility, session control, policy, and packet routing.
-Internet / Cloud: delivers online services and applications.
-IMS / VoLTE: enables voice over LTE in packet-based form.
-4G Architecture
-
-![Network architecture diagram](diagrams/network-006.svg)
-Edit diagram source
-Key Improvement Over 3G
-Much faster internet
-Better video streaming
-Mobile app ecosystem growth
-Lower latency than 3G
----
-5G — Fifth Generation
-Main Idea
-5G focuses on ultra-fast speed, low latency, and massive connectivity for smartphones, industry, and IoT.
-Main Components
-Devices (Smartphone / IoT)
-gNodeB (5G NR)
-5G Core (5GC)
-Edge Cloud
-IoT / Enterprise / Cloud services
-Role of Each Component
-Devices: include phones, sensors, vehicles, cameras, and industrial systems.
-gNodeB: provides 5G radio access.
-5G Core: manages sessions, policy, mobility, authentication, and service-based functions.
-Edge Cloud: processes data closer to the user for lower latency.
-IoT / Enterprise / Cloud services: consume the connectivity for real-time and large-scale applications.
-5G Architecture
-
-![Network architecture diagram](diagrams/network-007.svg)
-Edit diagram source
-Key Improvement Over 4G
-Higher throughput
-Lower latency
-Massive IoT support
-Network slicing and service flexibility
-5G Modes
-NSA (Non-Standalone): 5G radio with some reliance on 4G core infrastructure.
-SA (Standalone): full 5G core and 5G radio architecture.
----
-6G — Sixth Generation
-Main Idea
-6G is expected to go beyond 5G with AI-native networking, integrated sensing, holographic communication, and space-air-ground integration.
-Main Components
-Intelligent Device
-Smart Radio Access (AI-driven)
-AI Core (Network + AI)
-Cloud / Satellite / Holographic Connectivity
-Integrated sensing and communication systems
-Role of Each Component
-Intelligent Device: future device with advanced sensing, AI, AR/VR, and immersive capabilities.
-Smart Radio Access: dynamically adapts radio resources using AI.
-AI Core: combines networking and intelligence for automated operation.
-Cloud / Satellite / Holographic Connectivity: extends coverage and supports rich future services.
-Integrated sensing systems: may allow communication and environmental sensing together.
-6G Architecture (Conceptual)
-
-![Network architecture diagram](diagrams/network-008.svg)
-Edit diagram source
-Expected Improvement Over 5G
-More intelligence and automation
-Better integration with satellite and non-terrestrial networks
-Stronger support for immersive applications
-Ubiquitous connectivity
-> **Important:** 6G is still under development, so this is a **learning model**, not a final standard deployment diagram.
----
-Quick Comparison Table
-Generation	Main Service	Main Components	Main Architecture Style
-1G	Analogue voice	Mobile Phone, Cell Tower, PSTN	Analogue voice switching
-2G	Digital voice + SMS	BTS, BSC, MSC	Digital circuit-switched with basic data extensions
-3G	Mobile internet	NodeB, RNC, Core Network	Voice + packet data architecture
-4G	Broadband data	eNodeB, EPC, IMS	All-IP mobile broadband
-5G	High speed + low latency + IoT	gNodeB, 5G Core, Edge Cloud	Cloud-ready, service-based architecture
-6G	AI-native future networks	Smart Radio Access, AI Core, Satellite/Cloud	Conceptual intelligent and integrated architecture
----
-Evolution Summary
-1G: Voice
-2G: Voice + SMS
-3G: Web / Mobile Internet
-4G: Streaming / Mobile Apps
-5G: IoT / Low Latency / Massive Connectivity
-6G: AI + Space + Ubiquitous Intelligent Connectivity
----
-Mobile Network Technologies and Standards: 1G to 6G
-Learning Objectives
-In this section, you will learn:
-What FDMA, GSM, IS-95 CDMA, UMTS, WCDMA, CDMA2000, LTE, OFDMA, MIMO, and ISAC mean.
-Which mobile generations use these technologies.
-How each technology works.
-The difference between network standards, multiple-access methods, and antenna technologies.
-How radio communication evolved from 1G to 6G.
----
-1. FDMA — Frequency Division Multiple Access
-Generation: Mainly 1G  
-Category: Multiple-access technique  
-Purpose: Allow multiple users to share available radio spectrum.
-What is FDMA?
-FDMA divides the available frequency spectrum into separate channels.
-Different users are assigned different frequency channels, allowing them to communicate simultaneously.
-How FDMA Works
-The mobile operator has an allocated frequency band.
-The band is divided into smaller frequency channels.
-Each active call is assigned a channel.
-Users communicate on different frequencies.
-Example
-User A → Frequency Channel 1
-User B → Frequency Channel 2
-User C → Frequency Channel 3
-FDMA Architecture
-![Network architecture diagram](diagrams/network-009.svg)
-Edit diagram source
-Advantages
-Simple implementation
-Supports simultaneous calls on different channels
-Limitations
-Limited spectral efficiency
-Fixed channel allocation can waste capacity
-Requires separation between adjacent channels
----
-2. GSM — Global System for Mobile Communications
-Generation: 2G  
-Category: Mobile network standard  
-Purpose: Digital voice communication and SMS.
-What is GSM?
-GSM is a digital cellular network standard that became widely used around the world.
-It introduced digital voice services and SMS, with later enhancements supporting basic internet connectivity.
-Main Components
-Component	Full Form	Role
-MS	Mobile Station	User's mobile phone and SIM
-BTS	Base Transceiver Station	Radio communication
-BSC	Base Station Controller	Controls multiple BTS sites
-MSC	Mobile Switching Centre	Switches voice calls
-HLR	Home Location Register	Stores subscriber records
-VLR	Visitor Location Register	Holds temporary subscriber information
-GSM Architecture
-![Network architecture diagram](diagrams/network-010.svg)
-Edit diagram source
-How GSM Works
-The mobile phone connects to a BTS.
-The BTS forwards signals to the BSC.
-The BSC manages radio resources.
-The MSC handles call switching.
-The telephone network connects the call.
-Key Features
-Digital voice
-SMS
-Subscriber authentication
-International roaming
-GPRS and EDGE extensions for data
----
-3. IS-95 CDMA — Interim Standard 95
-Generation: 2G  
-Other Name: cdmaOne  
-Category: Mobile network standard  
-Purpose: Digital cellular communication using CDMA.
-What is IS-95?
-IS-95 is a digital cellular standard based on Code Division Multiple Access.
-Unlike FDMA, CDMA allows multiple users to share the same frequency band using different spreading codes.
-How CDMA Works
-Multiple users share a radio frequency band.
-Each user's signal is spread using a code.
-The receiver uses the corresponding code to recover the intended signal.
-Power control helps manage interference.
-Conceptual Diagram
-![Network architecture diagram](diagrams/network-011.svg)
-Edit diagram source
-Key Features
-Spread-spectrum communication
-Multiple users on a shared frequency band
-Power control
-Soft handoff support
----
-4. UMTS — Universal Mobile Telecommunications System
-Generation: 3G  
-Category: Mobile network system  
-Purpose: Mobile internet, multimedia, and digital voice.
-What is UMTS?
-UMTS is a third-generation mobile communications system developed within the 3GPP standards family.
-It supports voice, packet data, web browsing, email, and multimedia applications.
-Main Components
-Component	Role
-UE	User Equipment
-NodeB	3G radio base station
-RNC	Radio Network Controller
-MSC	Circuit-switched voice services
-SGSN	Packet mobility and session support
-GGSN	Gateway to external packet networks
-UMTS Architecture
-![Network architecture diagram](diagrams/network-012.svg)
-Edit diagram source
-How UMTS Works
-The phone communicates with NodeB.
-NodeB connects to the RNC.
-The RNC controls radio resources.
-The core network handles voice and data.
-Users access telephone or internet services.
----
-5. WCDMA — Wideband Code Division Multiple Access
-Generation: 3G  
-Category: Radio access technology  
-Purpose: Support multiple users and higher data rates.
-What is WCDMA?
-WCDMA is the main radio interface technology used by conventional UMTS networks.
-It uses wideband channels and spreading codes to support simultaneous users.
-How WCDMA Works
-Data is encoded and spread across a wideband radio channel.
-Multiple users can transmit using different codes.
-The receiver processes the appropriate code to recover data.
-Radio resource and power control help maintain communication quality.
-Relationship Between UMTS and WCDMA
-![Network architecture diagram](diagrams/network-013.svg)
-Edit diagram source
-Remember: UMTS is the complete mobile system, while WCDMA is its radio access technology.
----
-6. CDMA2000 — Code Division Multiple Access 2000
-Generation: 3G  
-Category: Mobile network standards family  
-Purpose: Improved digital voice and mobile packet data.
-What is CDMA2000?
-CDMA2000 is a 3G family of standards that evolved from IS-95.
-It was an alternative evolution path to UMTS/WCDMA.
-Major Technologies
-CDMA2000 1x: Voice and packet data
-EV-DO: Higher-speed mobile packet data
-Spread-spectrum CDMA: Shared radio channels using spreading codes
-Simplified Architecture
-![Network architecture diagram](diagrams/network-014.svg)
-Edit diagram source
-Key Features
-Improved voice capacity
-Mobile internet access
-Packet data services
-Compatibility evolution from IS-95
----
-7. LTE — Long Term Evolution
-Generation: 4G  
-Category: Mobile network technology  
-Purpose: High-speed mobile broadband and all-IP communication.
-What is LTE?
-LTE is a mobile communication technology developed by 3GPP.
-It uses an all-IP packet core and efficient radio techniques to provide high-speed mobile connectivity.
-Main Components
-Component	Full Form	Role
-UE	User Equipment	Mobile device
-eNodeB	Evolved NodeB	LTE radio base station
-MME	Mobility Management Entity	Control-plane mobility and signalling
-SGW	Serving Gateway	User-data forwarding
-PGW	Packet Data Network Gateway	External data-network connectivity
-HSS	Home Subscriber Server	Subscriber information
-IMS	IP Multimedia Subsystem	IP-based multimedia and voice services
-LTE Architecture
-![Network architecture diagram](diagrams/network-015.svg)
-Edit diagram source
-How LTE Works
-The smartphone connects to an eNodeB.
-The eNodeB communicates with the EPC.
-The EPC manages connectivity, mobility, and routing.
-Data reaches the internet through the packet gateway.
-Voice services can be provided through IMS/VoLTE.
-Key Technologies
-OFDMA downlink
-SC-FDMA uplink in conventional LTE
-MIMO
-All-IP packet network
----
-8. OFDMA — Orthogonal Frequency Division Multiple Access
-Generation: 4G and 5G  
-Category: Multiple-access technique  
-Purpose: Efficiently share radio resources among users.
-What is OFDMA?
-OFDMA divides a radio channel into multiple orthogonal subcarriers.
-Groups of subcarriers can be allocated to different users.
-How OFDMA Works
-The frequency channel is divided into many subcarriers.
-Orthogonal subcarriers are used to minimise mutual interference.
-The base station assigns radio resources to different users.
-Multiple users transmit or receive through allocated resources.
-OFDMA Diagram
-![Network architecture diagram](diagrams/network-016.svg)
-Edit diagram source
-Advantages
-Efficient spectrum usage
-Flexible resource scheduling
-Supports high data rates
-Suitable for broadband mobile systems
----
-9. MIMO — Multiple Input Multiple Output
-Generation: 4G and 5G  
-Category: Antenna technology  
-Purpose: Improve throughput, reliability, and radio performance.
-What is MIMO?
-MIMO uses multiple transmitting and receiving antennas.
-It can improve communication through spatial multiplexing, diversity, and beamforming techniques.
-Example: 4×4 MIMO
-A 4×4 MIMO configuration uses:
-Four transmitting antennas
-Four receiving antennas
-MIMO Concept
-![Network architecture diagram](diagrams/network-017.svg)
-Edit diagram source
-Key Benefits
-Higher potential throughput
-Better link reliability
-Improved spectral efficiency
-Support for advanced beamforming
-Important: The number of antennas does not always equal the number of independent data streams.
----
-10. ISAC — Integrated Sensing and Communication
-Generation: 6G research and future networks  
-Category: Integrated radio technology  
-Purpose: Combine wireless communication and environmental sensing.
-What is ISAC?
-ISAC is a research area where wireless systems support both communication and sensing.
-Future radio networks may exchange user data while also estimating information about nearby objects, movement, distance, or environments.
-How ISAC Could Work
-A radio system transmits wireless signals.
-Devices receive signals for communication.
-The system also analyses radio propagation or reflections.
-Signal processing estimates environmental information.
-Communication and sensing functions can share resources.
-Conceptual ISAC Architecture
-![Network architecture diagram](diagrams/network-018.svg)
-Edit diagram source
-Potential Applications
-Connected vehicles
-Smart cities
-Industrial automation
-Environmental monitoring
-Robotics
-Next-generation intelligent networks
-Note: ISAC is an emerging research and standardisation topic. Specific capabilities and architectures are not finalised for 6G.
----
-Technology Comparison Table
-Technology	Full Form	Generation	Category	Main Purpose
-FDMA	Frequency Division Multiple Access	1G	Multiple access	Separate frequency channels
-GSM	Global System for Mobile Communications	2G	Mobile standard	Digital voice and SMS
-IS-95 CDMA	Interim Standard 95	2G	Mobile standard	Code-based digital access
-UMTS	Universal Mobile Telecommunications System	3G	Mobile system	Mobile internet and multimedia
-WCDMA	Wideband Code Division Multiple Access	3G	Radio technology	Wideband code-based communication
-CDMA2000	Code Division Multiple Access 2000	3G	Standards family	Voice and mobile data
-LTE	Long Term Evolution	4G	Mobile technology	High-speed all-IP mobile broadband
-OFDMA	Orthogonal Frequency Division Multiple Access	4G / 5G	Multiple access	Flexible subcarrier allocation
-MIMO	Multiple Input Multiple Output	4G / 5G	Antenna technology	Higher throughput and reliability
-ISAC	Integrated Sensing and Communication	6G research	Integrated technology	Communication and radio sensing
----
-Technology Evolution: 1G to 6G
-![Network architecture diagram](diagrams/network-019.svg)
-Edit diagram source
-Mobile Telecommunications Standards
-1. Introduction
-Mobile telecommunications standards are technical specifications and agreed rules that define how mobile devices, base stations, core networks, and other telecommunications systems communicate.
-Standards make it possible for network equipment and mobile devices from different manufacturers to work together.
-Why Are Standards Important?
-Interoperability: Devices from different manufacturers can communicate.
-Compatibility: Mobile equipment can operate on supported networks.
-Roaming: Users can access compatible networks in other countries.
-Security: Standards specify authentication and security mechanisms.
-Network Performance: Standards define radio interfaces, protocols, and network functions.
-Global Development: Manufacturers and operators can build interoperable systems.
-Basic Concept
-![Network architecture diagram](diagrams/network-020.svg)
-Edit diagram source
-2. Telecommunications Standardisation Organisations
-Different organisations contribute to mobile telecommunications standards.
-Main Organisations
-Organisation	Full Name	Main Responsibility
-ITU	International Telecommunication Union	Global telecom coordination and IMT frameworks
-3GPP	3rd Generation Partnership Project	GSM evolution, UMTS, LTE, 5G and ongoing specifications
-ETSI	European Telecommunications Standards Institute	European ICT and telecom standards
-IEEE	Institute of Electrical and Electronics Engineers	Networking standards including Wi-Fi
-3GPP2	3rd Generation Partnership Project 2	Historical CDMA2000 specifications
-IETF	Internet Engineering Task Force	Internet protocols such as IP, TCP and related technologies
-How Standards Are Developed
-![Network architecture diagram](diagrams/network-021.svg)
-Edit diagram source
-Understanding ITU and 3GPP
-ITU establishes international frameworks and requirements for mobile telecommunications.
-Examples:
-IMT-2000: Third-generation mobile systems
-IMT-Advanced: Advanced fourth-generation mobile systems
-IMT-2020: Fifth-generation mobile systems
-IMT-2030: Framework for future sixth-generation systems
-3GPP develops detailed technical specifications for mobile networks.
-Examples:
-GSM and GPRS/EDGE specifications
-UMTS and HSPA
-LTE and LTE-Advanced
-5G NR and 5G Core
-Ongoing mobile-network evolution
-Important: ITU defines broad international IMT frameworks, while 3GPP produces many of the detailed cellular technical specifications.
----
-3. Mobile Telecommunications Standards by Generation
-Generation	Important Standards	Radio Technologies	Main Services
-1G	AMPS, NMT, TACS	Analogue FM, FDMA	Analogue voice
-2G	GSM, IS-95, IS-136	TDMA, CDMA	Digital voice and SMS
-2.5G / 2.75G	GPRS, EDGE	Packet-data enhancements	Basic mobile internet
-3G	UMTS, CDMA2000	WCDMA, CDMA	Mobile internet and multimedia
-3G Enhancements	HSPA, HSPA+, EV-DO	Enhanced packet radio	Faster mobile data
-4G	LTE, LTE-Advanced	OFDMA, SC-FDMA, MIMO	Mobile broadband
-5G	5G NR, 5G Core	OFDM-based radio, Massive MIMO	Broadband, IoT, low-latency services
-6G	IMT-2030 framework; standards under development	Advanced radio, AI and sensing research	Future intelligent connectivity
----
-4. First Generation (1G) Standards
-4.1 AMPS — Advanced Mobile Phone System
-Generation: 1G  
-Type: Analogue cellular standard  
-Main Market: Initially North America
-What Is AMPS?
-AMPS was an early analogue cellular telephone system.
-It used frequency-division multiple access and supported voice calls.
-Main Components
-Component	Role
-Mobile Station	User's analogue mobile phone
-Base Station	Radio communication with the phone
-Mobile Switching Centre	Call switching and mobility support
-PSTN	Connection to telephone networks
-AMPS Architecture
-![Network architecture diagram](diagrams/network-022.svg)
-Edit diagram source
-Key Technologies
-Analogue frequency modulation
-FDMA
-Circuit-switched voice communication
----
-4.2 NMT — Nordic Mobile Telephone
-Generation: 1G
-NMT was an analogue cellular system introduced in Nordic countries.
-Features
-Analogue voice calls
-Cellular coverage and roaming
-Frequency-based channel allocation
----
-4.3 TACS — Total Access Communication System
-Generation: 1G
-TACS was an analogue mobile telephone standard derived from AMPS and used in several markets, including the United Kingdom.
-Features
-Analogue voice
-FDMA
-Cellular handover
-Circuit-switched communication
----
-5. Second Generation (2G) Standards
-5.1 GSM — Global System for Mobile Communications
-Generation: 2G  
-Standard Family: GSM  
-Main Technology: FDMA and TDMA
-What Is GSM?
-GSM is a digital cellular communication standard.
-It supports:
-Digital voice calls
-SMS
-Subscriber authentication
-International roaming
-Basic data services through extensions
-Main Components
-Component	Full Form	Role
-MS	Mobile Station	User's device
-BTS	Base Transceiver Station	Radio transmission
-BSC	Base Station Controller	Radio resource management
-MSC	Mobile Switching Centre	Voice call switching
-HLR	Home Location Register	Subscriber database
-VLR	Visitor Location Register	Temporary subscriber information
-AuC	Authentication Centre	Authentication support
-GSM Architecture
-![Network architecture diagram](diagrams/network-023.svg)
-Edit diagram source
-How GSM Works
-The phone connects to a BTS.
-BTS transfers signalling and user traffic to BSC.
-BSC manages the radio resources.
-MSC controls circuit-switched calls.
-Subscriber databases support authentication and mobility.
-Calls connect to internal or external telephone networks.
----
-5.2 IS-95 — Interim Standard 95
-Generation: 2G  
-Also Known As: cdmaOne  
-Technology: CDMA
-IS-95 uses code division multiple access to support multiple users within a shared frequency band.
-Main Features
-Digital voice
-Spread-spectrum radio communication
-Power control
-Soft handoff support
-IS-95 Architecture
-![Network architecture diagram](diagrams/network-024.svg)
-Edit diagram source
-5.3 GPRS — General Packet Radio Service
-Generation: 2G enhancement  
-Purpose: Packet-switched mobile data
-GPRS added packet-based internet connectivity to GSM networks.
-Main Components
-BTS
-BSC / PCU
-SGSN
-GGSN
-GPRS Architecture
-![Network architecture diagram](diagrams/network-025.svg)
-Edit diagram source
-Component Roles
-Component	Role
-PCU	Packet Control Unit: handles packet-radio resource functions
-SGSN	Serving GPRS Support Node: packet mobility and session support
-GGSN	Gateway GPRS Support Node: external packet-network connectivity
----
-5.4 EDGE — Enhanced Data Rates for GSM Evolution
-Generation: 2G enhancement
-EDGE improved data performance through more efficient radio modulation and coding.
-Main Features
-Faster packet data than basic GPRS
-Improved spectral efficiency
-Continued use of evolved GSM infrastructure
----
-6. Third Generation (3G) Standards
-6.1 UMTS — Universal Mobile Telecommunications System
-Generation: 3G  
-Standardisation: 3GPP  
-Radio Technology: WCDMA
-UMTS supports mobile internet, voice communication, multimedia, and video calls.
-UMTS Architecture
-![Network architecture diagram](diagrams/network-026.svg)
-Edit diagram source
-Main Components
-Component	Role
-UE	User Equipment
-NodeB	3G radio base station
-RNC	Radio resource management
-MSC	Circuit-switched voice support
-SGSN	Packet data mobility management
-GGSN	Gateway to external data networks
----
-6.2 WCDMA — Wideband Code Division Multiple Access
-Generation: 3G  
-Category: Radio interface technology
-WCDMA is the main radio access technology used by conventional UMTS systems.
-Characteristics
-Wideband spread-spectrum radio interface
-Code-based user separation
-Power control
-Voice and packet data support
----
-6.3 CDMA2000
-Generation: 3G  
-Standards Organisation: Historically 3GPP2
-CDMA2000 evolved from IS-95.
-Main Variants
-CDMA2000 1x
-CDMA2000 EV-DO
-Main Services
-Digital voice
-Packet-based mobile data
-Mobile internet
----
-6.4 HSPA — High Speed Packet Access
-Generation: 3G enhancement
-HSPA improved the packet-data capabilities of UMTS networks.
-Main Technologies
-HSDPA: High Speed Downlink Packet Access
-HSUPA: High Speed Uplink Packet Access
-HSPA+: Evolved High Speed Packet Access
-Purpose
-Increase mobile-data performance without replacing the entire UMTS network architecture.
----
-7. Fourth Generation (4G) Standards
-7.1 LTE — Long Term Evolution
-Generation: 4G-era mobile technology  
-Standards Organisation: 3GPP
-LTE was developed for high-speed, packet-based mobile communication.
-LTE Main Components
-Component	Full Form	Role
-UE	User Equipment	User device
-eNodeB	Evolved NodeB	LTE base station
-MME	Mobility Management Entity	Control-plane mobility
-SGW	Serving Gateway	User-plane packet forwarding
-PGW	Packet Data Network Gateway	External packet-network access
-HSS	Home Subscriber Server	Subscriber information
-LTE Architecture
-![Network architecture diagram](diagrams/network-027.svg)
-Edit diagram source
-Key Technologies
-OFDMA downlink
-SC-FDMA uplink
-MIMO
-Packet-based EPC architecture
----
-7.2 LTE-Advanced
-Generation: 4G  
-Standardisation: 3GPP
-LTE-Advanced enhanced LTE performance and supported capabilities aligned with IMT-Advanced requirements.
-Main Technologies
-Carrier aggregation
-Higher-order MIMO
-Improved radio resource management
-Enhanced spectral efficiency
-What Is Carrier Aggregation?
-Carrier aggregation combines multiple component carriers to increase available bandwidth.
-![Network architecture diagram](diagrams/network-028.svg)
-Edit diagram source
-8. Fifth Generation (5G) Standards
-8.1 5G NR — Fifth Generation New Radio
-Generation: 5G  
-Standards Organisation: 3GPP
-5G NR defines the radio access technology used by 5G networks.
-Main Features
-Flexible OFDM-based numerology
-Massive MIMO
-Beamforming
-Enhanced mobile broadband
-Support for low-latency and large-scale IoT scenarios
----
-8.2 5G Core (5GC)
-The 5G Core introduces a service-based architecture for control-plane network functions.
-Important Components
-Component	Full Form	Main Role
-AMF	Access and Mobility Management Function	Registration and mobility
-SMF	Session Management Function	Session management
-UPF	User Plane Function	User-data forwarding
-AUSF	Authentication Server Function	Authentication
-UDM	Unified Data Management	Subscriber data management
-PCF	Policy Control Function	Network policies
-NRF	Network Repository Function	Network-function discovery
-Simplified 5G Standalone Architecture
-![Network architecture diagram](diagrams/network-029.svg)
-Edit diagram source
-Note: This is a simplified learning diagram. Actual 5G Core architecture contains additional interfaces and network functions.
----
-8.3 5G NSA and SA
-NSA — Non-Standalone
-Uses 5G radio with existing LTE infrastructure.
-Common early deployment approach.
-Often relies on the EPC.
-SA — Standalone
-Uses 5G NR and 5G Core.
-Supports a fuller set of 5G architecture capabilities.
-Enables flexible network slicing and cloud-native deployment approaches.
----
-8.4 5G-Advanced
-Standards Evolution: 3GPP Release 18 and later
-5G-Advanced introduces further improvements to 5G systems.
-Areas of Development
-AI/ML-supported network optimisation
-Enhanced MIMO
-Improved energy efficiency
-Extended support for non-terrestrial networks
-Advanced positioning and radio performance
----
-9. Sixth Generation (6G) Standards
-9.1 IMT-2030
-Generation: 6G framework  
-Organisation: ITU-R
-IMT-2030 provides a framework for future sixth-generation mobile systems.
-As of October 2026, detailed 6G technologies and system specifications are still under development.
-Research Areas
-AI-assisted and AI-native networks
-Integrated Sensing and Communication (ISAC)
-Non-Terrestrial Networks (NTN)
-Advanced antenna systems
-Future radio spectrum technologies
-Immersive connectivity
-Energy-efficient communication
----
-9.2 Conceptual 6G Architecture
-![Network architecture diagram](diagrams/network-030.svg)
-Edit diagram source
-Important: This is a conceptual architecture for learning, not a completed 6G standard.
----
-10. Mobile Network Standards Evolution
-![Network architecture diagram](diagrams/network-031.svg)
-Edit diagram source
-Mobile Telecommunications Standards
-1. Introduction
-Mobile telecommunications standards are technical specifications and agreed rules that define how mobile devices, base stations, core networks, and other telecommunications systems communicate.
-Standards make it possible for network equipment and mobile devices from different manufacturers to work together.
-Why Are Standards Important?
-Interoperability: Devices from different manufacturers can communicate.
-Compatibility: Mobile equipment can operate on supported networks.
-Roaming: Users can access compatible networks in other countries.
-Security: Standards specify authentication and security mechanisms.
-Network Performance: Standards define radio interfaces, protocols, and network functions.
-Global Development: Manufacturers and operators can build interoperable systems.
-Basic Concept
-![Network architecture diagram](diagrams/network-020.svg)
-Edit diagram source
-2. Telecommunications Standardisation Organisations
-Different organisations contribute to mobile telecommunications standards.
-Main Organisations
-Organisation	Full Name	Main Responsibility
-ITU	International Telecommunication Union	Global telecom coordination and IMT frameworks
-3GPP	3rd Generation Partnership Project	GSM evolution, UMTS, LTE, 5G and ongoing specifications
-ETSI	European Telecommunications Standards Institute	European ICT and telecom standards
-IEEE	Institute of Electrical and Electronics Engineers	Networking standards including Wi-Fi
-3GPP2	3rd Generation Partnership Project 2	Historical CDMA2000 specifications
-IETF	Internet Engineering Task Force	Internet protocols such as IP, TCP and related technologies
-How Standards Are Developed
-![Network architecture diagram](diagrams/network-021.svg)
-Edit diagram source
-Understanding ITU and 3GPP
-ITU establishes international frameworks and requirements for mobile telecommunications.
-Examples:
-IMT-2000: Third-generation mobile systems
-IMT-Advanced: Advanced fourth-generation mobile systems
-IMT-2020: Fifth-generation mobile systems
-IMT-2030: Framework for future sixth-generation systems
-3GPP develops detailed technical specifications for mobile networks.
-Examples:
-GSM and GPRS/EDGE specifications
-UMTS and HSPA
-LTE and LTE-Advanced
-5G NR and 5G Core
-Ongoing mobile-network evolution
-Important: ITU defines broad international IMT frameworks, while 3GPP produces many of the detailed cellular technical specifications.
----
-3. Mobile Telecommunications Standards by Generation
-Generation	Important Standards	Radio Technologies	Main Services
-1G	AMPS, NMT, TACS	Analogue FM, FDMA	Analogue voice
-2G	GSM, IS-95, IS-136	TDMA, CDMA	Digital voice and SMS
-2.5G / 2.75G	GPRS, EDGE	Packet-data enhancements	Basic mobile internet
-3G	UMTS, CDMA2000	WCDMA, CDMA	Mobile internet and multimedia
-3G Enhancements	HSPA, HSPA+, EV-DO	Enhanced packet radio	Faster mobile data
-4G	LTE, LTE-Advanced	OFDMA, SC-FDMA, MIMO	Mobile broadband
-5G	5G NR, 5G Core	OFDM-based radio, Massive MIMO	Broadband, IoT, low-latency services
-6G	IMT-2030 framework; standards under development	Advanced radio, AI and sensing research	Future intelligent connectivity
----
-4. First Generation (1G) Standards
-4.1 AMPS — Advanced Mobile Phone System
-Generation: 1G  
-Type: Analogue cellular standard  
-Main Market: Initially North America
-What Is AMPS?
-AMPS was an early analogue cellular telephone system.
-It used frequency-division multiple access and supported voice calls.
-Main Components
-Component	Role
-Mobile Station	User's analogue mobile phone
-Base Station	Radio communication with the phone
-Mobile Switching Centre	Call switching and mobility support
-PSTN	Connection to telephone networks
-AMPS Architecture
-![Network architecture diagram](diagrams/network-022.svg)
-Edit diagram source
-Key Technologies
-Analogue frequency modulation
-FDMA
-Circuit-switched voice communication
----
-4.2 NMT — Nordic Mobile Telephone
-Generation: 1G
-NMT was an analogue cellular system introduced in Nordic countries.
-Features
-Analogue voice calls
-Cellular coverage and roaming
-Frequency-based channel allocation
----
-4.3 TACS — Total Access Communication System
-Generation: 1G
-TACS was an analogue mobile telephone standard derived from AMPS and used in several markets, including the United Kingdom.
-Features
-Analogue voice
-FDMA
-Cellular handover
-Circuit-switched communication
----
-5. Second Generation (2G) Standards
-5.1 GSM — Global System for Mobile Communications
-Generation: 2G  
-Standard Family: GSM  
-Main Technology: FDMA and TDMA
-What Is GSM?
-GSM is a digital cellular communication standard.
-It supports:
-Digital voice calls
-SMS
-Subscriber authentication
-International roaming
-Basic data services through extensions
-Main Components
-Component	Full Form	Role
-MS	Mobile Station	User's device
-BTS	Base Transceiver Station	Radio transmission
-BSC	Base Station Controller	Radio resource management
-MSC	Mobile Switching Centre	Voice call switching
-HLR	Home Location Register	Subscriber database
-VLR	Visitor Location Register	Temporary subscriber information
-AuC	Authentication Centre	Authentication support
-GSM Architecture
-![Network architecture diagram](diagrams/network-023.svg)
-Edit diagram source
-How GSM Works
-The phone connects to a BTS.
-BTS transfers signalling and user traffic to BSC.
-BSC manages the radio resources.
-MSC controls circuit-switched calls.
-Subscriber databases support authentication and mobility.
-Calls connect to internal or external telephone networks.
----
-5.2 IS-95 — Interim Standard 95
-Generation: 2G  
-Also Known As: cdmaOne  
-Technology: CDMA
-IS-95 uses code division multiple access to support multiple users within a shared frequency band.
-Main Features
-Digital voice
-Spread-spectrum radio communication
-Power control
-Soft handoff support
-IS-95 Architecture
-![Network architecture diagram](diagrams/network-024.svg)
-Edit diagram source
-5.3 GPRS — General Packet Radio Service
-Generation: 2G enhancement  
-Purpose: Packet-switched mobile data
-GPRS added packet-based internet connectivity to GSM networks.
-Main Components
-BTS
-BSC / PCU
-SGSN
-GGSN
-GPRS Architecture
-![Network architecture diagram](diagrams/network-025.svg)
-Edit diagram source
-Component Roles
-Component	Role
-PCU	Packet Control Unit: handles packet-radio resource functions
-SGSN	Serving GPRS Support Node: packet mobility and session support
-GGSN	Gateway GPRS Support Node: external packet-network connectivity
----
-5.4 EDGE — Enhanced Data Rates for GSM Evolution
-Generation: 2G enhancement
-EDGE improved data performance through more efficient radio modulation and coding.
-Main Features
-Faster packet data than basic GPRS
-Improved spectral efficiency
-Continued use of evolved GSM infrastructure
----
-6. Third Generation (3G) Standards
-6.1 UMTS — Universal Mobile Telecommunications System
-Generation: 3G  
-Standardisation: 3GPP  
-Radio Technology: WCDMA
-UMTS supports mobile internet, voice communication, multimedia, and video calls.
-UMTS Architecture
-![Network architecture diagram](diagrams/network-026.svg)
-Edit diagram source
-Main Components
-Component	Role
-UE	User Equipment
-NodeB	3G radio base station
-RNC	Radio resource management
-MSC	Circuit-switched voice support
-SGSN	Packet data mobility management
-GGSN	Gateway to external data networks
----
-6.2 WCDMA — Wideband Code Division Multiple Access
-Generation: 3G  
-Category: Radio interface technology
-WCDMA is the main radio access technology used by conventional UMTS systems.
-Characteristics
-Wideband spread-spectrum radio interface
-Code-based user separation
-Power control
-Voice and packet data support
----
-6.3 CDMA2000
-Generation: 3G  
-Standards Organisation: Historically 3GPP2
-CDMA2000 evolved from IS-95.
-Main Variants
-CDMA2000 1x
-CDMA2000 EV-DO
-Main Services
-Digital voice
-Packet-based mobile data
-Mobile internet
----
-6.4 HSPA — High Speed Packet Access
-Generation: 3G enhancement
-HSPA improved the packet-data capabilities of UMTS networks.
-Main Technologies
-HSDPA: High Speed Downlink Packet Access
-HSUPA: High Speed Uplink Packet Access
-HSPA+: Evolved High Speed Packet Access
-Purpose
-Increase mobile-data performance without replacing the entire UMTS network architecture.
----
-7. Fourth Generation (4G) Standards
-7.1 LTE — Long Term Evolution
-Generation: 4G-era mobile technology  
-Standards Organisation: 3GPP
-LTE was developed for high-speed, packet-based mobile communication.
-LTE Main Components
-Component	Full Form	Role
-UE	User Equipment	User device
-eNodeB	Evolved NodeB	LTE base station
-MME	Mobility Management Entity	Control-plane mobility
-SGW	Serving Gateway	User-plane packet forwarding
-PGW	Packet Data Network Gateway	External packet-network access
-HSS	Home Subscriber Server	Subscriber information
-LTE Architecture
-![Network architecture diagram](diagrams/network-027.svg)
-Edit diagram source
-Key Technologies
-OFDMA downlink
-SC-FDMA uplink
-MIMO
-Packet-based EPC architecture
----
-7.2 LTE-Advanced
-Generation: 4G  
-Standardisation: 3GPP
-LTE-Advanced enhanced LTE performance and supported capabilities aligned with IMT-Advanced requirements.
-Main Technologies
-Carrier aggregation
-Higher-order MIMO
-Improved radio resource management
-Enhanced spectral efficiency
-What Is Carrier Aggregation?
-Carrier aggregation combines multiple component carriers to increase available bandwidth.
-![Network architecture diagram](diagrams/network-028.svg)
-Edit diagram source
-8. Fifth Generation (5G) Standards
-8.1 5G NR — Fifth Generation New Radio
-Generation: 5G  
-Standards Organisation: 3GPP
-5G NR defines the radio access technology used by 5G networks.
-Main Features
-Flexible OFDM-based numerology
-Massive MIMO
-Beamforming
-Enhanced mobile broadband
-Support for low-latency and large-scale IoT scenarios
----
-8.2 5G Core (5GC)
-The 5G Core introduces a service-based architecture for control-plane network functions.
-Important Components
-Component	Full Form	Main Role
-AMF	Access and Mobility Management Function	Registration and mobility
-SMF	Session Management Function	Session management
-UPF	User Plane Function	User-data forwarding
-AUSF	Authentication Server Function	Authentication
-UDM	Unified Data Management	Subscriber data management
-PCF	Policy Control Function	Network policies
-NRF	Network Repository Function	Network-function discovery
-Simplified 5G Standalone Architecture
-![Network architecture diagram](diagrams/network-029.svg)
-Edit diagram source
-Note: This is a simplified learning diagram. Actual 5G Core architecture contains additional interfaces and network functions.
----
-8.3 5G NSA and SA
-NSA — Non-Standalone
-Uses 5G radio with existing LTE infrastructure.
-Common early deployment approach.
-Often relies on the EPC.
-SA — Standalone
-Uses 5G NR and 5G Core.
-Supports a fuller set of 5G architecture capabilities.
-Enables flexible network slicing and cloud-native deployment approaches.
----
-8.4 5G-Advanced
-Standards Evolution: 3GPP Release 18 and later
-5G-Advanced introduces further improvements to 5G systems.
-Areas of Development
-AI/ML-supported network optimisation
-Enhanced MIMO
-Improved energy efficiency
-Extended support for non-terrestrial networks
-Advanced positioning and radio performance
----
-9. Sixth Generation (6G) Standards
-9.1 IMT-2030
-Generation: 6G framework  
-Organisation: ITU-R
-IMT-2030 provides a framework for future sixth-generation mobile systems.
-As of October 2026, detailed 6G technologies and system specifications are still under development.
-Research Areas
-AI-assisted and AI-native networks
-Integrated Sensing and Communication (ISAC)
-Non-Terrestrial Networks (NTN)
-Advanced antenna systems
-Future radio spectrum technologies
-Immersive connectivity
-Energy-efficient communication
----
-9.2 Conceptual 6G Architecture
-![Network architecture diagram](diagrams/network-030.svg)
-Edit diagram source
-Important: This is a conceptual architecture for learning, not a completed 6G standard.
----
-10. Mobile Network Standards Evolution
-![Network architecture diagram](diagrams/network-031.svg)
-Edit diagram source
-This is a learning timeline of major standards families and enhancements, not a claim that every technology directly evolved from the previous one.
 
 ---
-Why Do We Need Mobile Communication Standards?
-1. Introduction
-Mobile communication standards are agreed technical rules, protocols, and specifications that allow mobile phones, base stations, core networks, and telecommunications equipment to communicate.
-Standards are essential because mobile communication involves equipment from different manufacturers, mobile operators, and countries.
-The main purpose of mobile communication standards is to ensure compatibility, interoperability, security, reliability, and efficient wireless communication.
-Simple Example
-Imagine:
-You have a Samsung smartphone.
-Your friend has an Apple iPhone.
-You use one mobile network operator.
-Your friend uses another mobile network operator.
-Even though your phones and mobile operators are different, you can still communicate because they use compatible telecommunications standards and interconnected networks.
----
-2. What Would Happen Without Mobile Communication Standards?
-Without common standards, mobile networks would face several problems.
-Main Problems
-Devices from different manufacturers might not communicate.
-Phones might work with only one manufacturer's equipment.
-International roaming would become more difficult.
-Network equipment would require proprietary integration.
-Security mechanisms could be inconsistent.
-Network expansion would become more expensive.
-Different technologies could create compatibility problems.
-Without Standards
-![Network architecture diagram](diagrams/network-032.svg)
-Edit diagram source
-With Standards
-![Network architecture diagram](diagrams/network-033.svg)
-Edit diagram source
-3. Main Reasons We Need Mobile Communication Standards
-3.1 Interoperability
-Interoperability means different telecommunications systems can work together.
-Mobile networks use equipment from different manufacturers.
-For example:
-Ericsson radio equipment
-Nokia network equipment
-Samsung smartphones
-Apple iPhones
-Qualcomm modems
-Standards define common interfaces and protocols that allow compatible products to communicate.
-Example Architecture
-![Network architecture diagram](diagrams/network-034.svg)
-Edit diagram source
-Why is this important?
-Mobile operators can integrate equipment from multiple manufacturers rather than being completely dependent on one supplier.
----
-3.2 Device Compatibility
-Standards allow compatible mobile devices to connect to mobile networks.
-For example, a smartphone supporting the required LTE frequency bands and network features can connect to a compatible LTE network.
-How It Works
-The mobile device supports a cellular standard.
-The base station supports the corresponding radio technology.
-The device detects a compatible network.
-The device follows standard access and authentication procedures.
-The network establishes communication.
-Important: Supporting the same generation does not automatically guarantee compatibility. Frequency bands, device capabilities, operator policies, and provisioning must also match.
----
-3.3 International Roaming
-International roaming allows mobile subscribers to use compatible mobile networks when travelling abroad.
-Standards define procedures that help networks identify, authenticate, and serve roaming subscribers.
-Simplified Roaming Architecture
-![Network architecture diagram](diagrams/network-035.svg)
-Edit diagram source
-Example
-You travel from Ireland to France.
-Your phone detects a compatible French mobile network.
-The visited operator exchanges necessary signalling with your home network.
-Your subscription and roaming permissions are checked.
-Your phone can use authorised roaming services.
-Note: Roaming also requires commercial agreements, suitable network support, and appropriate subscriber permissions.
----
-3.4 Security and Authentication
-Mobile communication standards specify security procedures to help protect users and network infrastructure.
-Main Security Functions
-Security Function	Purpose
-Authentication	Verify subscriber or network credentials
-Encryption	Help protect information transmitted over the radio interface
-Integrity Protection	Detect unauthorised modification of protected signalling
-Key Management	Establish and manage security keys
-Subscriber Identity Protection	Reduce unnecessary exposure of subscriber identity
-Simplified Security Process
-![Network architecture diagram](diagrams/network-036.svg)
-Edit diagram source
-Why is this important?
-Standards provide a consistent foundation for implementing security across compatible telecommunications equipment.
-However, standards alone do not guarantee complete security. Correct implementation, configuration, updates, and operational controls are also necessary.
----
-3.5 Efficient Use of Radio Spectrum
-Radio spectrum is a limited resource.
-Mobile standards define radio transmission methods that help operators use allocated spectrum effectively.
-Examples
-Technology	Spectrum Access Method
-1G	FDMA
-GSM	FDMA and TDMA
-IS-95	CDMA
-UMTS / WCDMA	Wideband CDMA
-LTE	OFDMA downlink, SC-FDMA uplink
-5G NR	OFDM-based radio with flexible resource allocation
-Why Does Spectrum Efficiency Matter?
-Supports more users.
-Improves network capacity.
-Enables higher data rates.
-Reduces unnecessary interference through coordinated radio design.
-Helps operators use licensed frequencies effectively.
----
-3.6 Reliable Communication and Mobility
-Mobile users move between different coverage areas.
-Standards define procedures that help networks manage mobility, including handovers.
-Handover Example
-![Network architecture diagram](diagrams/network-037.svg)
-Edit diagram source
-How Handover Works
-The phone communicates with a serving cell.
-The phone or network measures radio conditions.
-The network determines whether a handover is needed.
-The connection moves to a suitable target cell.
-Communication continues, ideally with minimal interruption.
-The exact handover procedure depends on the cellular generation and radio technology.
----
-3.7 Lower Costs and Global Innovation
-Standards reduce the need for every company to invent completely separate communication protocols.
-Main Benefits
-Shared technical specifications
-Larger markets for compatible equipment
-Multi-vendor equipment sourcing
-Easier technology development
-More scalable network deployment
-Wider competition and innovation
-For example, manufacturers can develop devices based on widely adopted 3GPP specifications rather than producing entirely different products for every operator.
----
-4. Who Creates Mobile Communication Standards?
-Mobile communication standards are developed and coordinated by several organisations.
-Organisation	Responsibility
-ITU	International telecommunications coordination and IMT frameworks
-3GPP	Detailed specifications for GSM evolution, UMTS, LTE, and 5G
-ETSI	European telecommunications and ICT standards
-IEEE	Networking and wireless technologies such as Wi-Fi
-IETF	Internet protocols used by telecommunications networks
-3GPP2	Historical development of CDMA2000 specifications
-Relationship Between Standards Organisations
-![Network architecture diagram](diagrams/network-038.svg)
-Edit diagram source
-5. Why Do Mobile Standards Change From 1G to 6G?
-Mobile standards evolve because communication requirements change.
-Evolution of Requirements
-Generation	Main Requirement	Standards / Technologies
-1G	Mobile voice communication	AMPS, NMT, TACS
-2G	Digital voice and SMS	GSM, IS-95
-3G	Mobile internet and multimedia	UMTS, CDMA2000
-4G	High-speed mobile broadband	LTE, LTE-Advanced
-5G	Higher capacity, low latency, massive connectivity	5G NR, 5G Core
-6G	Future intelligent and integrated connectivity	IMT-2030 and emerging research
-Standards Evolution Diagram
-![Network architecture diagram](diagrams/network-039.svg)
-Edit diagram source
-Important: The 6G stage represents future research and standardisation. It is not a completed commercial mobile-network generation.
----
-6. Real-World Example: Making a Mobile Call
-Imagine two people using phones from different manufacturers and different mobile operators.
-Communication Process
-User A initiates a call.
-The phone connects to a compatible radio network.
-The network authenticates and authorises the subscriber.
-Standardised signalling establishes the call.
-Interconnected networks route the call.
-User B receives the call.
-Audio is exchanged through the established communication path.
-Simplified Architecture
-![Network architecture diagram](diagrams/network-040.svg)
-Edit diagram source
-The actual implementation depends on whether the call uses GSM, UMTS, VoLTE, VoNR, or another supported voice technology.
----
-7. Summary: Main Benefits of Standards
-Benefit	Explanation
-Interoperability	Compatible equipment can communicate across vendors
-Device Compatibility	Supported devices can access compatible networks
-International Roaming	Subscribers can use supported foreign networks
-Security	Common authentication and security mechanisms
-Spectrum Efficiency	More effective use of allocated radio resources
-Reliability	Defined procedures for signalling, mobility, and communication
-Scalability	Network operators can expand using common technologies
-Innovation	Shared standards provide a foundation for new products
-Competition	Multiple vendors can implement compatible technologies
-Network Evolution	Technologies can develop through successive generations
----
 
-Remember
-Mobile Communication Standards = Common Rules + Compatible Equipment + Reliable Network Communication
----
-Why Do We Need Mobile Communication Standards?
-1. Introduction
-Mobile communication standards are agreed technical rules, protocols, and specifications that allow mobile phones, base stations, core networks, and telecommunications equipment to communicate.
-Standards are essential because mobile communication involves equipment from different manufacturers, mobile operators, and countries.
-The main purpose of mobile communication standards is to ensure compatibility, interoperability, security, reliability, and efficient wireless communication.
-Simple Example
-Imagine:
-You have a Samsung smartphone.
-Your friend has an Apple iPhone.
-You use one mobile network operator.
-Your friend uses another mobile network operator.
-Even though your phones and mobile operators are different, you can still communicate because they use compatible telecommunications standards and interconnected networks.
----
-2. What Would Happen Without Mobile Communication Standards?
-Without common standards, mobile networks would face several problems.
-Main Problems
-Devices from different manufacturers might not communicate.
-Phones might work with only one manufacturer's equipment.
-International roaming would become more difficult.
-Network equipment would require proprietary integration.
-Security mechanisms could be inconsistent.
-Network expansion would become more expensive.
-Different technologies could create compatibility problems.
-Without Standards
-![Network architecture diagram](diagrams/network-032.svg)
-Edit diagram source
-With Standards
-![Network architecture diagram](diagrams/network-033.svg)
-Edit diagram source
-3. Main Reasons We Need Mobile Communication Standards
-3.1 Interoperability
-Interoperability means different telecommunications systems can work together.
-Mobile networks use equipment from different manufacturers.
-For example:
-Ericsson radio equipment
-Nokia network equipment
-Samsung smartphones
-Apple iPhones
-Qualcomm modems
-Standards define common interfaces and protocols that allow compatible products to communicate.
-Example Architecture
-![Network architecture diagram](diagrams/network-034.svg)
-Edit diagram source
-Why is this important?
-Mobile operators can integrate equipment from multiple manufacturers rather than being completely dependent on one supplier.
----
-3.2 Device Compatibility
-Standards allow compatible mobile devices to connect to mobile networks.
-For example, a smartphone supporting the required LTE frequency bands and network features can connect to a compatible LTE network.
-How It Works
-The mobile device supports a cellular standard.
-The base station supports the corresponding radio technology.
-The device detects a compatible network.
-The device follows standard access and authentication procedures.
-The network establishes communication.
-Important: Supporting the same generation does not automatically guarantee compatibility. Frequency bands, device capabilities, operator policies, and provisioning must also match.
----
-3.3 International Roaming
-International roaming allows mobile subscribers to use compatible mobile networks when travelling abroad.
-Standards define procedures that help networks identify, authenticate, and serve roaming subscribers.
-Simplified Roaming Architecture
-![Network architecture diagram](diagrams/network-035.svg)
-Edit diagram source
-Example
-You travel from Ireland to France.
-Your phone detects a compatible French mobile network.
-The visited operator exchanges necessary signalling with your home network.
-Your subscription and roaming permissions are checked.
-Your phone can use authorised roaming services.
-Note: Roaming also requires commercial agreements, suitable network support, and appropriate subscriber permissions.
----
-3.4 Security and Authentication
-Mobile communication standards specify security procedures to help protect users and network infrastructure.
-Main Security Functions
-Security Function	Purpose
-Authentication	Verify subscriber or network credentials
-Encryption	Help protect information transmitted over the radio interface
-Integrity Protection	Detect unauthorised modification of protected signalling
-Key Management	Establish and manage security keys
-Subscriber Identity Protection	Reduce unnecessary exposure of subscriber identity
-Simplified Security Process
-![Network architecture diagram](diagrams/network-036.svg)
-Edit diagram source
-Why is this important?
-Standards provide a consistent foundation for implementing security across compatible telecommunications equipment.
-However, standards alone do not guarantee complete security. Correct implementation, configuration, updates, and operational controls are also necessary.
----
-3.5 Efficient Use of Radio Spectrum
-Radio spectrum is a limited resource.
-Mobile standards define radio transmission methods that help operators use allocated spectrum effectively.
-Examples
-Technology	Spectrum Access Method
-1G	FDMA
-GSM	FDMA and TDMA
-IS-95	CDMA
-UMTS / WCDMA	Wideband CDMA
-LTE	OFDMA downlink, SC-FDMA uplink
-5G NR	OFDM-based radio with flexible resource allocation
-Why Does Spectrum Efficiency Matter?
-Supports more users.
-Improves network capacity.
-Enables higher data rates.
-Reduces unnecessary interference through coordinated radio design.
-Helps operators use licensed frequencies effectively.
----
-3.6 Reliable Communication and Mobility
-Mobile users move between different coverage areas.
-Standards define procedures that help networks manage mobility, including handovers.
-Handover Example
-![Network architecture diagram](diagrams/network-037.svg)
-Edit diagram source
-How Handover Works
-The phone communicates with a serving cell.
-The phone or network measures radio conditions.
-The network determines whether a handover is needed.
-The connection moves to a suitable target cell.
-Communication continues, ideally with minimal interruption.
-The exact handover procedure depends on the cellular generation and radio technology.
----
-3.7 Lower Costs and Global Innovation
-Standards reduce the need for every company to invent completely separate communication protocols.
-Main Benefits
-Shared technical specifications
-Larger markets for compatible equipment
-Multi-vendor equipment sourcing
-Easier technology development
-More scalable network deployment
-Wider competition and innovation
-For example, manufacturers can develop devices based on widely adopted 3GPP specifications rather than producing entirely different products for every operator.
----
-4. Who Creates Mobile Communication Standards?
-Mobile communication standards are developed and coordinated by several organisations.
-Organisation	Responsibility
-ITU	International telecommunications coordination and IMT frameworks
-3GPP	Detailed specifications for GSM evolution, UMTS, LTE, and 5G
-ETSI	European telecommunications and ICT standards
-IEEE	Networking and wireless technologies such as Wi-Fi
-IETF	Internet protocols used by telecommunications networks
-3GPP2	Historical development of CDMA2000 specifications
-Relationship Between Standards Organisations
-![Network architecture diagram](diagrams/network-038.svg)
-Edit diagram source
-5. Why Do Mobile Standards Change From 1G to 6G?
-Mobile standards evolve because communication requirements change.
-Evolution of Requirements
-Generation	Main Requirement	Standards / Technologies
-1G	Mobile voice communication	AMPS, NMT, TACS
-2G	Digital voice and SMS	GSM, IS-95
-3G	Mobile internet and multimedia	UMTS, CDMA2000
-4G	High-speed mobile broadband	LTE, LTE-Advanced
-5G	Higher capacity, low latency, massive connectivity	5G NR, 5G Core
-6G	Future intelligent and integrated connectivity	IMT-2030 and emerging research
-Standards Evolution Diagram
-![Network architecture diagram](diagrams/network-039.svg)
-Edit diagram source
-Important: The 6G stage represents future research and standardisation. It is not a completed commercial mobile-network generation.
----
-6. Real-World Example: Making a Mobile Call
-Imagine two people using phones from different manufacturers and different mobile operators.
-Communication Process
-User A initiates a call.
-The phone connects to a compatible radio network.
-The network authenticates and authorises the subscriber.
-Standardised signalling establishes the call.
-Interconnected networks route the call.
-User B receives the call.
-Audio is exchanged through the established communication path.
-Simplified Architecture
-![Network architecture diagram](diagrams/network-040.svg)
-Edit diagram source
-The actual implementation depends on whether the call uses GSM, UMTS, VoLTE, VoNR, or another supported voice technology.
----
-7. Summary: Main Benefits of Standards
-Benefit	Explanation
-Interoperability	Compatible equipment can communicate across vendors
-Device Compatibility	Supported devices can access compatible networks
-International Roaming	Subscribers can use supported foreign networks
-Security	Common authentication and security mechanisms
-Spectrum Efficiency	More effective use of allocated radio resources
-Reliability	Defined procedures for signalling, mobility, and communication
+# Mobile Telecommunications Standards for FCAPS Network Management
 
-Scalability	Network operators can expand using common technologies
-Innovation	Shared standards provide a foundation for new products
-Competition	Multiple vendors can implement compatible technologies
-Network Evolution	Technologies can develop through successive generations
----
-8. Final Learning Summary
-Mobile communication standards are needed to make wireless telecommunications compatible, interoperable, secure, scalable, and reliable.
-Without common standards, mobile devices and networks would be harder to connect, international roaming would become more difficult, and equipment costs could increase.
-Standards provide the foundation that allows modern mobile networks to evolve from 1G analogue voice to 5G advanced connectivity and future 6G research.
-Remember
-Mobile Communication Standards = Common Rules + Compatible Equipment + Reliable Network Communication
----
-Which Governing Bodies Are Responsible for Mobile Telecommunications Standards?
-1. Introduction
-Mobile telecommunications standards are developed, coordinated, published, and implemented through cooperation between international organisations, regional standards bodies, national regulators, and telecommunications companies.
-These organisations help mobile networks operate reliably across different devices, operators, manufacturers, and countries.
-Two Main Categories
-1. Standards Development Organisations (SDOs)
-Develop technical specifications, protocols, and communication standards.
-2. Regulatory Authorities
-Manage legal requirements, radio spectrum authorisations, telecommunications markets, and compliance.
-Basic Structure
-![Network architecture diagram](diagrams/network-041.svg)
-Edit diagram source
-Important: Not every organisation shown is a government authority. Many standards organisations operate through technical cooperation and industry consensus.
----
-2. ITU — International Telecommunication Union
-Full Name: International Telecommunication Union
-Organisation Type: United Nations specialised agency
-Website: https://www.itu.int/
-What Is ITU?
-The ITU is an international organisation responsible for coordinating global telecommunications and radiocommunication activities.
-It plays an important role in international radio regulations and the IMT frameworks used for mobile communications.
-Main Responsibilities
-Coordinate international radio spectrum allocation.
-Support global telecommunications standardisation.
-Develop international mobile telecommunications frameworks.
-Promote international technical cooperation.
-Support telecommunications development worldwide.
-ITU Sectors
-Sector	Full Name	Responsibility
-ITU-R	Radiocommunication Sector	Radio spectrum, radio standards, and IMT
-ITU-T	Telecommunication Standardization Sector	Telecommunications network standards
-ITU-D	Telecommunication Development Sector	Telecommunications development and capacity-building
-ITU Structure
-![Network architecture diagram](diagrams/network-042.svg)
-Edit diagram source
-ITU and Mobile Generations
-Mobile Generation	ITU Framework
-1G	Early analogue cellular systems predated modern IMT frameworks
-2G	Digital cellular technologies developed before IMT-2000
-3G	IMT-2000
-4G	IMT-Advanced
-5G	IMT-2020
-6G	IMT-2030 framework and ongoing standardisation
-Important Learning Point
-ITU defines international frameworks and criteria, while organisations such as 3GPP develop many detailed cellular technology specifications.
----
-3. 3GPP — Third Generation Partnership Project
-Full Name: 3rd Generation Partnership Project
-Type: International standards collaboration
-Website: https://www.3gpp.org/
-What Is 3GPP?
-3GPP is a partnership of telecommunications standards organisations.
-It develops technical specifications and reports for cellular systems including GSM evolution, UMTS, LTE, 5G NR, and the 5G Core.
-3GPP is not a government telecommunications regulator.
-Main Responsibilities
-Develop radio access network specifications.
-Define core network architecture and interfaces.
-Specify cellular security and authentication procedures.
-Develop mobility and session-management protocols.
-Maintain and enhance mobile telecommunications technologies.
-Support interoperability between compliant equipment.
-3GPP Organisational Partners
-Organisation	Region
-ETSI	Europe
-ATIS	United States
-ARIB	Japan
-TTC	Japan
-CCSA	China
-TTA	South Korea
-TSDSI	India
-3GPP Structure
-![Network architecture diagram](diagrams/network-043.svg)
-Edit diagram source
-Main Technical Specification Groups
-Group	Full Name	Role
-RAN	Radio Access Network	Radio interfaces and radio access architecture
-SA	Service and System Aspects	Service requirements, system architecture, and security
-CT	Core Network and Terminals	Core-network and terminal-related protocols
-3GPP Technology Evolution
-![Network architecture diagram](diagrams/network-044.svg)
-Edit diagram source
-Example: 5G Network Architecture
-![Network architecture diagram](diagrams/network-045.svg)
-Edit diagram source
-3GPP defines the technical specifications used to implement many functions of this architecture.
----
-4. ETSI — European Telecommunications Standards Institute
-Full Name: European Telecommunications Standards Institute
-Type: European standards development organisation
-Website: https://www.etsi.org/
-What Is ETSI?
-ETSI develops telecommunications and information and communication technology standards.
-It is also one of the organisational partners of 3GPP.
-Main Responsibilities
-Develop European telecommunications standards.
-Support interoperability between telecommunications equipment.
-Publish technical specifications and standards.
-Participate in international mobile standards development.
-Develop standards in areas such as network virtualisation, cybersecurity, and telecommunications infrastructure.
-Relationship Between ETSI and 3GPP
-![Network architecture diagram](diagrams/network-046.svg)
-Edit diagram source
-Remember: ETSI and 3GPP are closely connected, but they are not the same organisation.
----
-5. IEEE — Institute of Electrical and Electronics Engineers
-Full Name: Institute of Electrical and Electronics Engineers
-Relevant Standards Body: IEEE Standards Association
-Website: https://standards.ieee.org/
-What Is IEEE?
-IEEE is a professional and technical organisation that develops standards across electrical engineering, electronics, computing, and networking.
-IEEE is especially important for wireless local-area networking.
-Main Responsibilities
-Develop technical and networking standards.
-Support interoperability between electronic devices.
-Define technologies used in wireless LANs.
-Promote engineering research and technical knowledge.
-Important IEEE Standards
-Standard	Technology
-IEEE 802.11	Wi-Fi / Wireless LAN
-IEEE 802.3	Ethernet
-IEEE 802.15	Wireless personal-area networks
-IEEE 802.16	Broadband wireless access / WiMAX
-IEEE Wireless Networking Concept
-![Network architecture diagram](diagrams/network-047.svg)
-Edit diagram source
-IEEE vs 3GPP
-IEEE: Develops standards for technologies such as Wi-Fi and Ethernet.
-3GPP: Develops specifications for cellular networks such as LTE and 5G.
-Both are important parts of modern communications systems.
----
-6. IETF — Internet Engineering Task Force
-Full Name: Internet Engineering Task Force
-Type: Internet standards development community
-Website: https://www.ietf.org/
-What Is IETF?
-IETF develops technical standards for the internet.
-Its protocols are important because modern mobile networks transport data using IP-based networking.
-Important Protocols
-Protocol	Purpose
-IP	Internet addressing and packet delivery
-TCP	Reliable transport of data
-UDP	Connectionless transport
-TLS	Security for many network applications
-HTTP	Web communication
-QUIC	Secure transport used by many internet applications
-IETF and Mobile Networks
-![Network architecture diagram](diagrams/network-048.svg)
-Edit diagram source
-Important Learning Point
-3GPP defines mobile-network architectures and interfaces, while IETF protocols support many of the internet communications carried across those networks.
----
-7. 3GPP2 — Third Generation Partnership Project 2
-Full Name: Third Generation Partnership Project 2
-Type: Historical telecommunications standards collaboration
-Website: https://www.3gpp2.org/
-What Is 3GPP2?
-3GPP2 developed technical specifications for cellular technologies based on the CDMA2000 family.
-It was separate from 3GPP.
-Important Technologies
-CDMA2000 1x
-CDMA2000 EV-DO
-Packet-data extensions for CDMA-based networks
-Historical Evolution
-![Network architecture diagram](diagrams/network-049.svg)
-Edit diagram source
-Difference Between 3GPP and 3GPP2
-3GPP	3GPP2
-GSM and UMTS evolution	IS-95 and CDMA2000 evolution
-LTE	CDMA2000 1x
-5G NR and 5G Core	EV-DO developments
-Mainstream ongoing cellular standards development	Historical CDMA2000 standards work
----
-8. National Telecommunications Regulatory Authorities
-Standards development and government regulation are different responsibilities.
-National regulators oversee telecommunications markets and radio spectrum according to applicable laws.
-Main Responsibilities
-Manage radio spectrum assignments and licensing.
-Regulate telecommunications operators.
-Promote fair competition where required.
-Protect telecommunications consumers.
-Enforce applicable telecommunications regulations.
-Monitor compliance with relevant licence conditions.
-Examples of Regulators
-Country / Region	Organisation
-Ireland	ComReg — Commission for Communications Regulation
-United States	FCC — Federal Communications Commission
-United Kingdom	Ofcom — Office of Communications
-India	DoT — Department of Telecommunications (spectrum/licensing); TRAI — Telecom Regulatory Authority of India (regulatory functions)
-European Union	National regulators operating under EU regulatory frameworks
-National Regulatory Model
-![Network architecture diagram](diagrams/network-050.svg)
-Edit diagram source
-Example: Ireland
-ComReg regulates electronic communications networks and services in Ireland and performs spectrum-management responsibilities.
-For example, a mobile operator deploying a 5G network must comply with relevant spectrum authorisations and Irish regulatory requirements.
-Important: A national regulator normally does not independently design standards such as LTE or 5G NR. Those detailed technical specifications are developed by standards organisations.
----
-9. How Mobile Telecommunications Standards Are Developed
-The standards process involves multiple stages.
-Step-by-Step Process
-Identify Requirements
-Mobile operators, manufacturers, researchers, and other participants identify new technical needs.
-Research and Proposals
-Companies and research organisations propose technologies and improvements.
-Technical Discussions
-Standards development groups evaluate proposals.
-Technical Specification Development
-Agreed requirements, protocols, and interfaces are documented.
-Approval and Publication
-Specifications are approved through the relevant organisation's procedures.
-Implementation and Testing
-Manufacturers develop compatible equipment and conduct testing.
-Network Deployment
-Mobile operators deploy solutions subject to technical, commercial, and regulatory requirements.
-Continued Evolution
-Standards are improved through later specifications and releases.
-Standards Development Lifecycle
-![Network architecture diagram](diagrams/network-051.svg)
-Edit diagram source
-10. Relationship Between ITU, 3GPP, ETSI and National Regulators
-These organisations have different but complementary responsibilities.
-Simplified Relationship Diagram
-![Network architecture diagram](diagrams/network-052.svg)
-Edit diagram source
-Note: This is a simplified relationship diagram. The organisations are not arranged in a single legal chain of command.
----
-11. Comparison of Governing and Standards Organisations
-Organisation	Type	Main Responsibility	Examples
-ITU	International UN agency	Global telecom coordination and IMT frameworks	IMT-2000, IMT-2020, IMT-2030
-3GPP	Standards partnership	Cellular technical specifications	UMTS, LTE, 5G NR
-ETSI	Regional standards organisation	European telecom and ICT standards	ETSI standards, 3GPP partnership
-IEEE	Technical standards organisation	Networking and electronics standards	Wi-Fi, Ethernet
-IETF	Internet standards community	Internet protocol specifications	IP, TCP, QUIC
-3GPP2	Historical standards partnership	CDMA2000 specifications	CDMA2000, EV-DO
-National Regulators	Regulatory authorities	Spectrum and telecom regulation	FCC, Ofcom, ComReg
----
-12. Mobile Generations and Their Standards Organisations
-Generation	Main Technology Examples	Important Standards Organisations / Frameworks
-1G	AMPS, NMT, TACS	National and regional standardisation efforts
-2G	GSM, IS-95	ETSI/GSM standardisation, TIA and related bodies
-3G	UMTS, CDMA2000	ITU IMT-2000, 3GPP, 3GPP2
-4G	LTE, LTE-Advanced	3GPP, ITU IMT-Advanced
-5G	5G NR, 5G Core	3GPP, ITU IMT-2020
-6G	Future mobile technologies	ITU IMT-2030, ongoing standards research and development
----
-14. Learning Summary
-Mobile telecommunications standards require cooperation between international bodies, industry partnerships, regional organisations, and national authorities.
-Remember These Key Roles
-ITU: Coordinates international telecommunications frameworks and radiocommunication matters.
-3GPP: Develops detailed cellular network specifications.
-ETSI: Develops telecommunications standards and participates in 3GPP.
-IEEE: Develops networking technologies such as Wi-Fi.
-IETF: Develops internet protocols.
-3GPP2: Historically developed CDMA2000 specifications.
-National Regulators: Manage telecommunications regulation and spectrum authorisations.
-Final Learning Goal
-Understand who develops mobile telecommunications standards, who regulates their deployment, and how the organisations cooperate to support global mobile communications.
----
-Official References
-ITU
-3GPP
-ETSI
-IEEE Standards Association
-IETF
-3GPP2
-ComReg Ireland
----
-FCAPS Network Management in Mobile Telecommunications
-1. Introduction to FCAPS
+## 1. What Is FCAPS?
+
+FCAPS is a network management framework used to organise telecommunications management functions.
+
 FCAPS stands for:
-F — Fault Management
-C — Configuration Management
-A — Accounting Management
-P — Performance Management
-S — Security Management
-FCAPS is a functional framework used to organise network management activities.
-It is associated with the Telecommunications Management Network (TMN) model defined in ITU-T recommendations.
-Why Is FCAPS Important?
-Mobile network operators use FCAPS principles to:
-Detect and resolve network failures.
-Configure network equipment.
-Monitor subscribers' service usage.
-Measure network performance.
-Maintain network security.
-Improve network availability and reliability.
-Support daily Network Operations Centre (NOC) activities.
-FCAPS Architecture
-![Network architecture diagram](diagrams/network-053.svg)
-Edit diagram source
-2. Organisations and Standards for FCAPS
-Several organisations develop the standards and specifications used to manage telecommunications networks.
-Organisation	Standards / Specifications	Main Responsibility
-ITU-T	M.3400	TMN management functions and FCAPS
-ITU-T	M.3010	Telecommunications Management Network architecture
-3GPP	TS 32.101	Telecommunications management principles
-3GPP	TS 32.102	Telecommunications management architecture
-3GPP	TS 32.111 series	Fault management and alarm interfaces
-3GPP	TS 32.401	Performance management concepts and requirements
-3GPP	TS 32.240	Charging management architecture
-3GPP	TS 28.532	Generic management services
-3GPP	TS 28.550	Performance assurance
-ETSI	NFV / ZSM specifications	Virtualisation and automated network management
-IETF	SNMP, NETCONF, YANG-related RFCs	Network monitoring and configuration protocols
-Important: FCAPS describes functional management areas. It is not a single protocol. Different specifications and interfaces implement these functions.
----
-3. Fault Management (F)
-What Is Fault Management?
-Fault Management identifies, reports, investigates and resolves problems in telecommunications networks.
-Examples include:
-Base station failure
-Fibre transmission failure
-Radio link failure
-Network equipment malfunction
-Power supply failure
-Core network connectivity problems
-Main Responsibilities
-Detect network failures.
-Collect alarms from network elements.
-Classify alarm severity.
-Correlate related alarms.
-Identify root causes.
-Notify network engineers.
-Support fault resolution.
-Confirm service restoration.
-Main Standards
-Standard	Description
-ITU-T M.3400	TMN Fault Management functions
-3GPP TS 32.111-1	Fault management requirements
-3GPP TS 32.111-2	Alarm IRP information service
-3GPP TS 32.111-6	Alarm IRP solution-set definitions
-Fault Management Architecture
-![Network architecture diagram](diagrams/network-054.svg)
-Edit diagram source
-Common Alarm Severities
-Severity	Meaning
-Critical	Serious problem requiring urgent attention
-Major	Significant service or equipment problem
-Minor	Lower-impact fault
-Warning	Condition requiring attention
-Cleared	Previously reported alarm condition has ended
-Exact severity handling depends on the alarm model and implementation.
-Real-World Example: 5G Site Outage
-Scenario: A gNodeB loses power.
-The equipment becomes unavailable.
-Site monitoring raises alarms where supported.
-EMS/NMS receives the alarm information.
-The monitoring system identifies the affected site.
-The NOC engineer investigates.
-Power is restored.
-The network returns to service.
-Recovery is verified and the incident is closed.
-Learning Goal
-Understand how a fault travels from the network equipment to the NOC and how engineers restore the affected service.
----
-4. Configuration Management (C)
-What Is Configuration Management?
-Configuration Management controls the settings and operational configuration of network equipment.
-Examples include:
-Configuring BTS parameters
-Updating LTE cell settings
-Configuring 5G gNodeB resources
-Managing neighbour relationships
-Changing supported frequencies and radio parameters
-Managing network software configurations
-Main Responsibilities
-Add and remove managed network resources.
-Update network parameters.
-Manage configuration inventory.
-Maintain configuration consistency.
-Track approved configuration changes.
-Support configuration backups and recovery.
-Verify configuration changes.
-Relevant Standards
-Standard	Role
-ITU-T M.3400	Configuration management functions
-3GPP TS 32.101	General telecom management requirements
-3GPP TS 32.102	Management architecture
-3GPP TS 28.532	Generic management services
-IETF NETCONF / YANG	Configuration protocol and data modelling approaches
-Configuration Management Architecture
-![Network architecture diagram](diagrams/network-055.svg)
-Edit diagram source
-Example: LTE Cell Configuration
-A network engineer must change an LTE cell configuration.
-Procedure
-Review the existing eNodeB configuration.
-Create an approved change request.
-Validate the proposed parameters.
-Apply the changes through the management system.
-Verify the new configuration.
-Monitor network performance and alarms.
-Roll back if required.
-Configuration Parameters
-Parameter	Example Purpose
-Cell Identity	Identify the serving cell
-PCI	Physical Cell Identity
-EARFCN	LTE radio frequency channel number
-TAC	Tracking Area Code
-Transmit Power	Control radio transmission power
-Neighbour Relations	Support mobility and handovers
-Learning Goal
-Understand how network configuration changes are controlled, validated and monitored.
----
-5. Accounting Management (A)
-What Is Accounting Management?
-Accounting Management measures network service usage and supports operational accounting, charging and billing.
-In telecommunications, accounting management and charging are related but not identical concepts.
-Accounting can include tracking resource consumption and service usage. Charging systems determine charges or balances according to operator policies.
-Main Responsibilities
-Collect relevant usage information.
-Measure resource consumption.
-Support charging and billing processes.
-Maintain charging records.
-Support usage reporting.
-Support cost allocation and analysis.
-Relevant Standards
-Standard	Role
-ITU-T M.3400	Accounting Management functions
-3GPP TS 32.240	Charging architecture and principles
-3GPP TS 32.251	Packet-switched domain charging
-3GPP TS 32.298	Charging Data Record parameter descriptions
-3GPP TS 32.299	Diameter charging applications
-Simplified Charging Architecture
-![Network architecture diagram](diagrams/network-056.svg)
-Edit diagram source
-This is a conceptual view. Actual charging architectures differ between GSM, UMTS, EPC and 5G Core networks.
-Example: Mobile Data Usage
-A customer uses mobile internet.
-A data session is established.
-The network handles user traffic.
-Usage information is measured.
-Charging functions process relevant usage events.
-Billing or prepaid systems use the charging information.
-The operator can report consumption and associated charges.
-Important Terms
-Term	Meaning
-CDR	Charging Data Record
-OCS	Online Charging System
-OFCS	Offline Charging System
-CHF	Charging Function in 5G
-Usage Data	Information about consumed network resources
-Learning Goal
-Understand the difference between usage measurement, accounting, charging and customer billing.
----
-6. Performance Management (P)
-What Is Performance Management?
-Performance Management monitors network behaviour, capacity and service quality using measurements and Key Performance Indicators (KPIs).
-Main Responsibilities
-Collect performance measurements.
-Calculate network KPIs.
-Monitor service availability.
-Identify capacity problems.
-Analyse congestion.
-Investigate abnormal performance.
-Support network optimisation.
-Relevant Standards
-Standard	Description
-ITU-T M.3400	Performance management functions
-3GPP TS 32.401	PM concepts and requirements
-3GPP TS 28.550	Performance assurance
-3GPP TS 28.532	Generic management services
-Performance Management Architecture
-![Network architecture diagram](diagrams/network-057.svg)
-Edit diagram source
-Common Mobile Network KPIs
-KPI	Meaning
-Availability	Whether a network resource or service is operational
-Accessibility	Ability of users to establish network access or services
-Retainability	Ability to maintain an established connection
-Throughput	Rate of successfully delivered data
-Latency	Delay experienced by data or signalling
-Handover Success Rate	Percentage of successful handover attempts
-PRB Utilisation	Usage of physical resource blocks
-Drop Rate	Frequency of unexpected service disconnections
-Example KPI Calculation
-Handover Success Rate
-```text
-Handover Success Rate (%) =
-    Successful Handovers
-    --------------------- × 100
-      Handover Attempts
-```
-Example:
-Successful handovers: 950
-Handover attempts: 1,000
-```text
-Handover Success Rate = (950 / 1000) × 100
 
-Handover Success Rate = 95%
+| Letter | Management Function | Main Purpose |
+|---|---|---|
+| F | Fault Management | Detect, report and resolve faults |
+| C | Configuration Management | Configure and control network resources |
+| A | Accounting Management | Track usage, charging and resource consumption |
+| P | Performance Management | Measure and optimise network performance |
+| S | Security Management | Protect network systems and management access |
+
+### FCAPS Architecture
+
+```mermaid
+flowchart TD
+    A["Operations Support System - OSS"]
+
+    A --> B["Fault Management"]
+    A --> C["Configuration Management"]
+    A --> D["Accounting Management"]
+    A --> E["Performance Management"]
+    A --> F["Security Management"]
+
+    B --> G["Network Management and Element Management"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H["Radio Access Network"]
+    G --> I["Mobile Core Network"]
 ```
-The exact definition of a KPI, its numerator, denominator and exclusions can depend on the technology and implementation.
-Real-World Example: Slow 4G Internet
-Subscribers report slow mobile internet.
-The NOC checks LTE performance counters.
-Engineers analyse throughput, PRB utilisation and congestion.
-The team determines the likely cause.
-Optimisation or capacity changes are planned.
-Performance measurements verify the improvement.
-Learning Goal
-Understand how raw network measurements become useful KPIs for monitoring and optimisation.
+
+FCAPS is a functional classification, not one individual communication protocol.
+
 ---
-7. Security Management (S)
-What Is Security Management?
-Security Management protects the confidentiality, integrity, availability and authorised use of network-management resources.
-It includes control over access to management systems and protection of sensitive management information.
-Main Responsibilities
-Manage administrator identities.
-Enforce access-control policies.
-Protect management interfaces.
-Record security-relevant activities.
-Detect suspicious access.
-Support incident investigation.
-Maintain security configurations.
-Protect credentials and sensitive information.
-Relevant Standards and Frameworks
-Standard / Framework	Role
-ITU-T M.3400	Security management functions
-3GPP TS 33-series	Cellular system security specifications
-IETF TLS / SSH standards	Secure communication protocols
-ISO/IEC 27001	Information security management system requirements
-ETSI security specifications	Additional telecom-specific security requirements
-Note: These specifications serve different purposes. Not all of them directly define FCAPS Security Management interfaces.
-Security Management Architecture
-![Network architecture diagram](diagrams/network-058.svg)
-Edit diagram source
-Example: Unauthorised Configuration Attempt
-An account attempts to change a gNodeB configuration.
-The management system checks authentication and permissions.
-The requested action is denied if the account lacks authorisation.
-The attempt is recorded in an audit log.
-Security monitoring can identify suspicious activity.
-Security personnel investigate if necessary.
-Important Concepts
-Authentication
-Authorisation
-Role-Based Access Control (RBAC)
-Encryption
-Audit Logging
-Security Monitoring
-Incident Response
-Learning Goal
-Understand how management systems prevent unauthorised changes and protect the telecom infrastructure.
+
+# 2. Organisations Responsible for FCAPS Standards
+
+Several standards organisations contribute to network management.
+
+| Organisation | Main Responsibility | Relevant Standards |
+|---|---|---|
+| ITU-T | Telecommunications management frameworks | M.3010, M.3400 |
+| 3GPP SA5 | Mobile network management and orchestration | TS 32-series, TS 28-series |
+| 3GPP SA3 | Cellular security specifications | TS 33-series |
+| ETSI | Telecom standards, NFV and automation | ETSI NFV, ZSM |
+| IETF | Network management protocols and data models | SNMP, NETCONF, YANG |
+
+### Important Difference
+
+- **ITU-T:** Defines foundational telecom management frameworks.
+- **3GPP:** Defines cellular-network-specific management capabilities.
+- **ETSI:** Develops complementary telecom management and automation standards.
+- **IETF:** Defines protocols and data models that can support network management.
+
 ---
-8. Telecommunications Management Network (TMN)
-What Is TMN?
-TMN stands for Telecommunications Management Network.
-ITU-T M.3010 describes principles for organising telecommunications management architectures.
-TMN provides a framework for managing network resources, services and operational activities.
-Traditional TMN Logical Layers
-Layer	Name	Role
-BML	Business Management Layer	Business objectives and management
-SML	Service Management Layer	Customer-facing service management
-NML	Network Management Layer	End-to-end network management
-EML	Element Management Layer	Management of network elements
-NEL	Network Element Layer	Physical and logical network resources
-TMN Layered Architecture
-![Network architecture diagram](diagrams/network-059.svg)
-Edit diagram source
-How FCAPS Relates to TMN
-TMN describes management architecture concepts.
-FCAPS describes management functional areas.
-OSS/NMS/EMS are examples of management systems that implement relevant capabilities.
-FCAPS functions may appear across several TMN layers rather than belonging to one layer only.
----
-9. FCAPS Management Architecture for Mobile Networks
-Main Components
-Component	Full Form	Role
-OSS	Operations Support System	Supports network operation and management
-NMS	Network Management System	Provides network-level management
-EMS	Element Management System	Manages a set of network elements
-NE	Network Element	Network equipment or software resource
-RAN	Radio Access Network	Wireless access infrastructure
-Core	Core Network	Mobile connectivity, control and service functions
-Simplified FCAPS Architecture
-![Network architecture diagram](diagrams/network-060.svg)
-Edit diagram source
-Note: This is a simplified learning architecture. Real operator environments can include multiple vendor management systems, mediation platforms, assurance systems, charging platforms and cloud management services.
----
-10. FCAPS Across Mobile Generations
-FCAPS functions are useful across several generations, but the way they are implemented differs.
-Generation	Typical Managed Elements	Management Characteristics
-1G	Analogue base stations, switches	Traditional operational monitoring and configuration
-2G	BTS, BSC, MSC	EMS, alarms, performance counters and configuration management
-3G	NodeB, RNC, SGSN, GGSN	Expanded fault, configuration and performance management
-4G	eNodeB, EPC nodes	Packet-network management and LTE KPIs
-5G	gNodeB, 5GC network functions	Service-based management, automation and cloud integration
-6G	Future network resources	Research into intelligent and automated management
-Evolution Diagram
-![Network architecture diagram](diagrams/network-061.svg)
-Edit diagram source
-The diagram describes an evolution of management approaches, not a direct replacement of each management platform.
----
-11. FCAPS in 5G Network Management
-5G introduces advanced management and orchestration capabilities.
-Important 3GPP Specifications
-Specification	Main Subject
-TS 28.532	Generic management services
-TS 28.550	Performance assurance
-TS 32.101	General telecommunications management principles
-TS 32.401	Performance management requirements
-TS 32.111 series	Fault management and alarms
-TS 32.240	Charging management
-Simplified 5G Management Architecture
-![Network architecture diagram](diagrams/network-062.svg)
-Edit diagram source
-Main Learning Points
-5G supports service-oriented management capabilities.
-Cloud-native network functions require software and infrastructure management.
-Network slicing introduces additional management requirements.
-Performance assurance can use analytics and automation.
-Charging is handled through dedicated charging functions and interfaces.
-Security spans management, control and user-plane environments.
----
-12. FCAPS vs OSS vs NMS vs EMS
-These terms are related but not interchangeable.
-Term	Meaning	Main Purpose
-FCAPS	Five functional management areas	Classify management responsibilities
-OSS	Operations Support System	Support telecom operations
-NMS	Network Management System	Manage network-level resources
-EMS	Element Management System	Manage individual groups of network elements
-TMN	Telecommunications Management Network	Architecture framework for network management
-Example
-An operator may have:
-One OSS platform for operational workflows.
-Multiple vendor EMS platforms.
-A central NMS for network visibility.
-A performance management platform.
-A fault monitoring system.
-Separate charging and security platforms.
-Together, these systems can implement the different FCAPS functions.
----
-13. Real-World FCAPS Example: 5G Network Problem
-Scenario
-Customers in one area report poor 5G service quality.
-The operator applies the FCAPS management framework.
-Step 1 — Fault Management
-Check alarms and investigate possible site or equipment failures.
-Step 2 — Configuration Management
-Review gNodeB configuration, radio parameters and recent changes.
-Step 3 — Accounting Management
-Review relevant resource-consumption or charging information where useful to the investigation.
-Step 4 — Performance Management
-Analyse throughput, congestion, accessibility and handover KPIs.
-Step 5 — Security Management
-Review whether relevant access-control or security events contributed to the incident.
-Troubleshooting Diagram
-![Network architecture diagram](diagrams/network-063.svg)
-Edit diagram source
-In practice, not every incident requires investigation of all five categories. Engineers select the areas relevant to the symptoms.
----
-14. FCAPS Comparison Table
-FCAPS Area	Main Goal	Typical Information	Example Action
-Fault	Restore services	Alarms and events	Troubleshoot failed site
-Configuration	Maintain correct settings	Configuration parameters	Update cell parameters
-Accounting	Track usage and charging	Usage records and charging events	Review service consumption
-Performance	Maintain network quality	Counters and KPIs	Optimise congested cell
-Security	Protect management systems	Access logs and security events	Block unauthorised changes
----
-17. Official Standards and References
-ITU-T
-ITU-T M.3400 — TMN Management Functions
-ITU-T M.3010 — TMN Architecture Principles
-3GPP
-3GPP Specifications Portal
-3GPP TS 32.401 — Performance Management
-3GPP TS 28.532 — Generic Management Services
-3GPP TS 28.550 — Performance Assurance
-3GPP TS 32.240 — Charging Architecture
-Other Organisations
-ETSI
-IETF
-Check the relevant release and version before using specifications for production network implementation.
----
-Final Learning Summary
-FCAPS is a foundational framework for telecommunications network management.
-Fault Management: Detect, investigate and resolve network problems.
-Configuration Management: Configure and control network resources.
-Accounting Management: Track resource usage and support charging.
-Performance Management: Measure, analyse and optimise network performance.
-Security Management: Protect network management systems and resources.
-ITU-T M.3400 provides the foundational TMN management-function model.
-3GPP specifications define detailed management capabilities used by cellular systems, while other standards organisations contribute network protocols, security, orchestration and automation specifications.
-Learning Goal: Understand how FCAPS supports reliable operation, monitoring, configuration, usage management, performance assurance and security across mobile telecommunications networks.
----
-Official Performance Management Standards for Mobile Telecommunications
-1. Introduction
-Performance Management (PM) is one of the five functional areas of FCAPS network management.
-PM helps telecommunications operators measure, analyse, monitor and improve the performance of mobile networks.
-It is used for:
-Network performance monitoring
-Radio network optimisation
-Network capacity planning
-Network quality analysis
-Service availability monitoring
-Congestion analysis
-Mobility and handover analysis
-Network fault investigation
-Official Performance Management specifications are primarily developed by:
-ITU-T — International Telecommunication Union, Telecommunication Standardization Sector
-3GPP — 3rd Generation Partnership Project
-ETSI — European Telecommunications Standards Institute, which also publishes 3GPP specifications
-The primary technical working group for 3GPP telecommunications management is 3GPP SA5 (Service and System Aspects Working Group 5).
----
-2. Why Are Performance Management Standards Important?
-Mobile networks contain equipment from different manufacturers, including:
-Ericsson
-Nokia
-Huawei
-Samsung
-Other telecom network equipment vendors
-Without common PM specifications, each manufacturer could define network measurements, reporting formats and management interfaces differently.
-Performance Management standards help establish common measurement concepts, definitions and interfaces.
-Main Benefits
-Standardised performance measurement definitions
-More consistent KPI calculations
-Multi-vendor management interoperability
-Network performance analysis
-Quality-of-service monitoring
-Capacity planning and optimisation
-Support for automated network assurance
-Important: Not every vendor KPI is standardised. Operators also use proprietary counters and vendor-specific performance indicators.
----
-3. Performance Management Standards Architecture
-![Network architecture diagram](diagrams/network-064.svg)
-Edit diagram source
-The standards describe the management functions and relevant data structures. Actual architectures vary between operators and vendors.
----
-4. ITU-T Performance Management Standards
-4.1 ITU-T M.3400 — TMN Management Functions
-Organisation: ITU-T
-Document: ITU-T M.3400
-Title: TMN Management Functions
-Official Link:
+
+# 3. Foundational FCAPS Standards
+
+## 3.1 ITU-T M.3400 — TMN Management Functions
+
+**Organisation:** ITU-T
+
+**Document:** ITU-T M.3400
+
+**Official Title:** TMN management functions
+
+**Official Reference:**
 https://www.itu.int/rec/T-REC-M.3400
-Purpose
-ITU-T M.3400 provides a foundational framework for Telecommunications Management Network (TMN) functions.
-It covers the five traditional network management areas:
-Fault Management
-Configuration Management
-Accounting Management
-Performance Management
-Security Management
-Performance Management Functions
-Performance Management includes collecting and analysing information about network resource and service behaviour.
-Examples:
-Network performance monitoring
-Performance evaluation
-Performance analysis
-Quality-of-service assessment
-Performance-related reporting
-Architecture
-![Network architecture diagram](diagrams/network-065.svg)
-Edit diagram source
-Learning Goal
-Understand the foundational role of Performance Management within the TMN and FCAPS models.
----
-5. 3GPP TS 32.401 — PM Concepts and Requirements
-Document: 3GPP TS 32.401
-Official Title: Telecommunication management; Performance Management (PM); Concept and requirements
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991
-Purpose
-TS 32.401 describes fundamental Performance Management concepts and requirements for telecommunications management.
-It is one of the most important starting documents for learning PM.
-Main Learning Topics
-Performance Management concepts
-Performance measurement collection
-Performance monitoring requirements
-Measurement-related administration
-Management-system interactions
-Simplified PM Architecture
-![Network architecture diagram](diagrams/network-066.svg)
-Edit diagram source
-Example
-An LTE base station generates performance counters.
-The management system collects the measurements and allows engineers to monitor network behaviour.
----
-6. 3GPP TS 32.404 — Performance Measurement Definitions
-Document: 3GPP TS 32.404
-Official Title: Performance Management (PM); Performance measurements; Definitions and template
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1994
-Purpose
-This specification defines common measurement-description concepts and templates for performance measurements.
-It helps maintain consistency in how performance measurements are documented.
-Important Measurement Concepts
-Measurement name
-Measurement description
-Measurement collection method
-Measurement object
-Measurement result
-Measurement applicability
-Example Measurement Definition
-Field	Example
-Measurement Name	Successful handover count
-Description	Number of successful handovers
-Measured Object	Cell
-Result Type	Integer counter
-Collection Period	Configured measurement interval
-Technology	LTE
-This is an illustrative example, not an exact standard measurement definition.
----
-7. 3GPP TS 32.405 — 3G UTRAN Performance Measurements
-Document: 3GPP TS 32.405
-Technology: UMTS / WCDMA
-Official Title: Performance measurements; Universal Terrestrial Radio Access Network (UTRAN)
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1995
-Purpose
-Defines standardised performance measurements for 3G UTRAN networks.
-Main Network Components
-Component	Role
-UE	User Equipment
-NodeB	3G radio base station
-RNC	Radio Network Controller
-Core Network	Mobile services and connectivity
-Architecture
-![Network architecture diagram](diagrams/network-067.svg)
-Edit diagram source
-Example Performance Areas
-Radio access performance
-Radio bearer establishment
-Mobility and handovers
-Resource utilisation
-Connection reliability
----
-8. 3GPP TS 32.425 — 4G LTE Performance Measurements
-Document: 3GPP TS 32.425
-Technology: LTE / E-UTRAN
-Official Title: Performance measurements Evolved Universal Terrestrial Radio Access Network (E-UTRAN)
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2011
-Purpose
-TS 32.425 defines performance measurements for LTE radio access networks.
-It is especially important for LTE RAN engineers, performance engineers and network optimisation teams.
-Main Performance Areas
-RRC connection establishment
-E-RAB establishment
-Accessibility
-Retainability
-Handover performance
-Radio resource utilisation
-Throughput-related measurements
-Mobility performance
-LTE Performance Management Architecture
-![Network architecture diagram](diagrams/network-068.svg)
-Edit diagram source
-Example LTE KPIs
-KPI	Purpose
-RRC Setup Success Rate	Measures successful RRC connections
-E-RAB Setup Success Rate	Measures bearer establishment success
-E-RAB Drop Rate	Monitors unexpected bearer releases
-Handover Success Rate	Measures mobility performance
-PRB Utilisation	Measures radio resource utilisation
-User Throughput	Measures data transfer performance
-For production KPIs, use the exact standardised measurements and definitions applicable to the selected release and equipment.
----
-9. 3GPP TS 32.450 — LTE KPI Definitions
-Document: 3GPP TS 32.450
-Official Title: Key Performance Indicators (KPI) for Evolved Universal Terrestrial Radio Access Network (E-UTRAN): Definitions
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2025
-Purpose
-Defines standardised KPI concepts and definitions for LTE radio networks.
-Important Difference
-Performance Counter
-A measurement collected from the network.
-KPI
-An indicator calculated or derived from measurements to evaluate network performance.
-Example
-```text
-Handover Success Rate (%) =
 
-Successful Handover Attempts
------------------------------ × 100
-Total Handover Attempts
+### Purpose
+
+ITU-T M.3400 defines Telecommunications Management Network (TMN) management functions.
+
+It provides the foundational functional organisation associated with FCAPS.
+
+### Main Areas
+
+1. Fault Management
+2. Configuration Management
+3. Accounting Management
+4. Performance Management
+5. Security Management
+
+### Functional Model
+
+```mermaid
+flowchart TD
+    A["ITU-T M.3400"]
+
+    A --> B["Fault"]
+    A --> C["Configuration"]
+    A --> D["Accounting"]
+    A --> E["Performance"]
+    A --> F["Security"]
 ```
-This is a simplified educational formula. Actual KPI definitions may use specific counters, conditions, exclusions and aggregation rules.
-KPI Processing Architecture
-![Network architecture diagram](diagrams/network-069.svg)
-Edit diagram source
-10. 3GPP TS 32.432 — Performance Measurement File Format
-Document: 3GPP TS 32.432
-Official Title: Performance measurement: File format definition
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2014
-Purpose
-Describes standardised performance measurement file-format information.
-PM systems may exchange performance measurement information using files.
-Example Architecture
-![Network architecture diagram](diagrams/network-070.svg)
-Edit diagram source
-11. 3GPP TS 32.435 — XML Performance Measurement Format
-Document: 3GPP TS 32.435
-Official Title: Performance measurement; eXtensible Markup Language (XML) file format definition
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2017
-Purpose
-Defines XML-based structures for representing performance measurement information.
-Why XML?
-Structured data representation
-Machine-readable measurement files
-Support for automated processing
-Interoperability between compatible systems
-Example XML Concept
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<performanceMeasurements>
-    <networkElement>Example-eNodeB</networkElement>
-    <measurementPeriod>15 minutes</measurementPeriod>
-    <measurement>
-        <name>ExampleCounter</name>
-        <value>1000</value>
-    </measurement>
-</performanceMeasurements>
-```
-Important: This XML is illustrative, not a schema-compliant TS 32.435 file.
-Consult the specification for actual XML structure and validation requirements.
+
 ---
-12. 3GPP TS 28.550 — 5G Performance Assurance
-Document: 3GPP TS 28.550
-Official Title: Management and orchestration; Performance assurance
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3411
-Purpose
-Defines performance assurance capabilities for modern mobile network management.
-Performance assurance supports monitoring and evaluating the behaviour of managed network resources and services.
-Main Learning Areas
-Performance measurement management
-Performance information collection
-Monitoring and assurance
-Management service interactions
-Support for network performance evaluation
-5G Performance Assurance Architecture
-![Network architecture diagram](diagrams/network-071.svg)
-Edit diagram source
-13. 3GPP TS 28.552 — 5G Performance Measurements
-Document: 3GPP TS 28.552
-Technology: 5G NR / 5G Core
-Official Title: Management and orchestration; 5G performance measurements
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3413
-Purpose
-TS 28.552 is a primary reference for standardised 5G performance measurements.
-It is particularly important for engineers working with 5G radio access and core network performance.
-Main 5G Measurement Areas
-NG-RAN performance
-5G Core performance
-Mobility performance
-Radio resource utilisation
-Throughput measurements
-Session-related measurements
-Other measurements defined by the applicable release
-Simplified 5G Architecture
-![Network architecture diagram](diagrams/network-072.svg)
-Edit diagram source
-Example 5G Performance Areas
-Area	Example
-Accessibility	Connection establishment performance
-Mobility	Handover performance
-Throughput	Downlink and uplink data rates
-Radio Capacity	Radio resource utilisation
-Core Network	Session-related success and failure measurements
-Reliability	Connection and service continuity
----
-14. 3GPP TS 28.554 — 5G End-to-End KPIs
-Document: 3GPP TS 28.554
-Official Title: Management and orchestration; 5G end to end Key Performance Indicators (KPI)
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3415
-Purpose
-Defines end-to-end Key Performance Indicators for 5G networks.
-This is especially important when assessing network and service performance beyond a single radio or core component.
-Difference Between TS 28.552 and TS 28.554
-Specification	Focus
-TS 28.552	5G performance measurements
-TS 28.554	5G end-to-end KPI definitions
-End-to-End KPI Architecture
-![Network architecture diagram](diagrams/network-073.svg)
-Edit diagram source
-Learning Goal
-Understand why end-to-end service quality requires information from multiple parts of the network.
----
-15. Additional Performance Management Standards
-The following official specifications are also useful for more detailed study.
-Document	Main Area
-3GPP TS 32.403	UMTS and combined UMTS/GSM measurements
-3GPP TS 32.406	Packet-switched core network measurements
-3GPP TS 32.407	Circuit-switched core network measurements
-3GPP TS 32.411	PM measurement administration requirements
-3GPP TS 32.412	PM measurement administration information service
-3GPP TS 32.435	XML measurement file format
-3GPP TS 28.532	Generic management services
-The exact applicability depends on the mobile technology, release, and management architecture.
----
-16. Performance Management Documents by Generation
-Generation	Important Documents	Purpose
-2G / GSM	3GPP TS 52.402	GSM performance measurements
-3G / UMTS	3GPP TS 32.403, TS 32.405	UMTS and UTRAN measurements
-3G Core	3GPP TS 32.406, TS 32.407	Packet-switched and circuit-switched domains
-4G / LTE	3GPP TS 32.425	E-UTRAN performance measurements
-4G / LTE	3GPP TS 32.450	LTE KPI definitions
-5G	3GPP TS 28.550	Performance assurance
-5G	3GPP TS 28.552	5G performance measurements
-5G	3GPP TS 28.554	5G end-to-end KPI definitions
-Cross-generation	ITU-T M.3400	TMN Performance Management framework
-Cross-generation	3GPP TS 32.401	PM concepts and requirements
----
-17. Performance Management Data Collection Process
-A typical PM workflow involves collecting performance measurements, processing them and presenting useful information to operations teams.
-Step-by-Step Process
-Network elements generate performance measurements.
-The measurement collection system obtains the data.
-Performance data is processed and validated.
-Counters are stored in a database.
-KPIs are calculated.
-Dashboards display performance trends.
-Engineers investigate network problems.
-Optimisation actions are evaluated.
-Complete PM Workflow
-![Network architecture diagram](diagrams/network-074.svg)
-Edit diagram source
-18. Example: LTE Network Performance Investigation
-Scenario
-Subscribers report slow 4G mobile internet.
-Step 1 — Identify the Network
-Determine the affected LTE cells and eNodeBs.
-Step 2 — Read the Relevant Standard
-Consult 3GPP TS 32.425 for applicable LTE measurements.
-Step 3 — Collect Measurements
-Review relevant measurements such as:
-Radio resource utilisation
-User throughput
-Connection establishment
-Mobility performance
-Step 4 — Calculate KPIs
-Use the appropriate KPI definitions, including those in TS 32.450.
-Step 5 — Investigate
-Determine whether congestion, radio conditions, transport limitations or other factors contribute to poor performance.
-Step 6 — Optimise
-Apply approved configuration or capacity improvements.
-Step 7 — Verify
-Compare measurements before and after changes.
----
-19. Example: 5G Network Performance Investigation
-Scenario
-Users report high latency and low throughput on a 5G network.
-Recommended Documents
-3GPP TS 28.550
-3GPP TS 28.552
-3GPP TS 28.554
-Investigation Workflow
-![Network architecture diagram](diagrams/network-075.svg)
-Edit diagram source
-20. Official Standards References
-ITU-T
-ITU-T M.3400 — TMN Management Functions
-3GPP General PM
-TS 32.401 — PM Concepts and Requirements
-TS 32.404 — Measurement Definitions and Template
-3G Measurements
-TS 32.405 — UTRAN Performance Measurements
-4G LTE Measurements
-TS 32.425 — E-UTRAN Performance Measurements
-TS 32.450 — LTE KPI Definitions
-PM File Formats
-TS 32.432 — PM File Format
-TS 32.435 — XML PM File Format
-5G Measurements and Assurance
-TS 28.550 — Performance Assurance
-TS 28.552 — 5G Performance Measurements
-TS 28.554 — 5G End-to-End KPIs
-Version Note: Always choose the specification release and version applicable to your network. Measurements, formulas and support can change between 3GPP releases.
----
-21. Final Learning Summary
-The most important official Performance Management documents are:
-ITU-T M.3400: TMN Performance Management foundation.
-3GPP TS 32.401: PM concepts and requirements.
-3GPP TS 32.404: Measurement definitions and templates.
-3GPP TS 32.405: 3G UTRAN performance measurements.
-3GPP TS 32.425: 4G LTE performance measurements.
-3GPP TS 32.450: LTE KPI definitions.
-3GPP TS 32.432 / 32.435: PM measurement file formats.
-3GPP TS 28.550: 5G performance assurance.
-3GPP TS 28.552: 5G performance measurements.
-3GPP TS 28.554: 5G end-to-end KPI definitions.
-Learning Goal:
-Understand which official documents define Performance Management functions, measurements, file formats and KPIs, and learn how to apply them to the monitoring and optimisation of 3G, 4G and 5G networks.
----
-Which Standards Govern Performance Management in Mobile Telecommunications?
-1. Introduction
-Performance Management (PM) is a key part of telecommunications network management and the FCAPS framework.
-It enables mobile network operators to monitor, measure, analyse and optimise network performance.
-Mobile telecommunications Performance Management is guided by international recommendations and technical specifications.
-The two most important sources are:
-ITU-T — Defines foundational telecommunications management functions and architectures.
-3GPP — Defines detailed mobile-network performance measurements, management requirements, KPI definitions and performance assurance capabilities.
-ETSI and other partner organisations also participate in telecommunications standardisation.
-Why Are PM Standards Needed?
-Ensure consistent measurement definitions.
-Support multi-vendor interoperability.
-Establish common KPI calculation methods.
-Define performance measurement collection requirements.
-Support network assurance and optimisation.
-Enable performance reporting and analysis.
-Support automated network management.
----
-2. Main Organisations Responsible for PM Standards
-Organisation	Responsibility	Relevant Standards
-ITU-T	Telecommunications management frameworks	M.3010, M.3400
-3GPP SA5	Cellular network management and orchestration	TS 32-series, TS 28-series
-ETSI	European telecom standardisation and publication	ETSI TS versions of 3GPP specifications
-IETF	Internet management protocols and data models	SNMP, NETCONF, YANG
-TM Forum	Industry operations frameworks and information models	eTOM, SID, Open APIs
-Important: These organisations have different roles. ITU-T and 3GPP provide the primary telecommunications management frameworks and specifications discussed here. IETF and TM Forum provide complementary network-management technologies and operational frameworks.
-Standards Ecosystem
-![Network architecture diagram](diagrams/network-076.svg)
-Edit diagram source
-3. ITU-T Performance Management Standards
-3.1 ITU-T M.3010 — TMN Architecture
-Official Document: ITU-T M.3010
-Subject: Principles for a Telecommunications Management Network
-Organisation: ITU-T
-Official Link:
+
+## 3.2 ITU-T M.3010 — TMN Architecture
+
+**Organisation:** ITU-T
+
+**Document:** ITU-T M.3010
+
+**Official Subject:** Principles for a Telecommunications Management Network
+
+**Official Reference:**
 https://www.itu.int/rec/T-REC-M.3010
-Purpose
-ITU-T M.3010 establishes architectural principles for Telecommunications Management Networks (TMN).
-It describes how telecommunications network management functions can be organised.
-Traditional TMN Layers
-Layer	Name	Purpose
-BML	Business Management Layer	Business-level management
-SML	Service Management Layer	Service-level management
-NML	Network Management Layer	Network-wide management
-EML	Element Management Layer	Individual network element management
-NEL	Network Element Layer	Managed network resources
-TMN Architecture
-![Network architecture diagram](diagrams/network-077.svg)
-Edit diagram source
-Relationship to Performance Management
-TMN provides an architectural framework for management activities.
-PM information can be collected from network elements, aggregated at network level and used to assess services.
----
-3.2 ITU-T M.3400 — TMN Management Functions
-Official Document: ITU-T M.3400
-Subject: TMN Management Functions
-Organisation: ITU-T
-Official Link:
-https://www.itu.int/rec/T-REC-M.3400
-Purpose
-M.3400 defines telecommunications management functions, including functions associated with the FCAPS areas.
-FCAPS Functions
-Fault Management
-Configuration Management
-Accounting Management
-Performance Management
-Security Management
-PM Functional Architecture
-![Network architecture diagram](diagrams/network-078.svg)
-Edit diagram source
-Learning Point
-M.3400 provides foundational telecommunications management concepts.
-It does not replace generation-specific 3GPP measurement definitions.
----
-4. 3GPP Performance Management Standards
-3GPP SA5 develops specifications for telecommunications management, operations and orchestration.
-Important PM-related standards are distributed across the TS 32 and TS 28 specification families.
-4.1 Core Standards
-Document	Main Purpose
-TS 32.401	PM concepts and requirements
-TS 32.404	Performance measurement definitions and templates
-TS 32.411	PM integration reference point requirements
-TS 32.412	PM integration reference point information service
-TS 32.432	Performance measurement collection / file-related information
-TS 32.435	XML performance measurement file format
-TS 28.532	Generic management services
-TS 28.550	Performance assurance
-TS 28.552	5G performance measurements
-TS 28.554	5G end-to-end KPI definitions
-Always check the selected specification release and version, as the title, scope and applicable solution sets can differ by release.
----
-5. 3GPP TS 32.401 — PM Concepts and Requirements
-Official Title: Telecommunication management; Performance Management (PM); Concept and requirements
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991
-Purpose
-TS 32.401 describes the main concepts and requirements for cellular network Performance Management.
-Main Areas
-Performance measurement collection concepts
-Measurement administration
-Collection of measurement results
-Management-system interactions
-Performance measurement requirements
-Architecture
-![Network architecture diagram](diagrams/network-079.svg)
-Edit diagram source
-Example
-An eNodeB generates performance measurements.
-A management system collects the measurements and forwards the results for network analysis.
----
-6. Standards Governing 2G Performance Management
-6.1 3GPP TS 52.402 — GSM Performance Measurements
-Generation: 2G
-Technology: GSM
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2802
-Purpose
-TS 52.402 defines performance measurements for GSM systems.
-Network Components
-BTS — Base Transceiver Station
-BSC — Base Station Controller
-MSC — Mobile Switching Centre
-Measurement Areas
-Radio resource performance
-Traffic channel usage
-Connection establishment
-Mobility performance
-Network resource utilisation
-GSM PM Architecture
-![Network architecture diagram](diagrams/network-080.svg)
-Edit diagram source
-7. Standards Governing 3G Performance Management
-Main Standards
-Standard	Description
-3GPP TS 32.403	UMTS and combined UMTS/GSM measurements
-3GPP TS 32.405	UTRAN performance measurements
-3GPP TS 32.406	Packet-switched core measurements
-3GPP TS 32.407	Circuit-switched core measurements
-Main Components
-NodeB
-RNC
-MSC
-SGSN
-GGSN
-3G PM Architecture
-![Network architecture diagram](diagrams/network-081.svg)
-Edit diagram source
-Performance Areas
-Radio bearer establishment
-Connection retainability
-Handover performance
-Resource utilisation
-Data service performance
----
-8. Standards Governing 4G LTE Performance Management
-Main Standards
-3GPP TS 32.425
-Title: E-UTRAN Performance Measurements
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=2011
-3GPP TS 32.450
-Title: E-UTRAN KPI Definitions
-Main Purpose
-These documents provide LTE measurement definitions and KPI specifications.
-Common LTE Performance Areas
-Category	Example KPI
-Accessibility	RRC Setup Success Rate
-Accessibility	E-RAB Setup Success Rate
-Retainability	E-RAB Drop Rate
-Mobility	Handover Success Rate
-Capacity	PRB Utilisation
-Integrity	User Throughput
-LTE PM Architecture
-![Network architecture diagram](diagrams/network-082.svg)
-Edit diagram source
-Example: RRC Setup Success Rate
-```text
-RRC Setup Success Rate (%) =
 
-Successful RRC Setups
----------------------- × 100
-RRC Setup Attempts
+### Purpose
+
+M.3010 defines principles for the Telecommunications Management Network architecture.
+
+### Traditional Management Layers
+
+| Layer | Name | Responsibility |
+|---|---|---|
+| BML | Business Management Layer | Business-level operations |
+| SML | Service Management Layer | Service management |
+| NML | Network Management Layer | Network-wide operations |
+| EML | Element Management Layer | Network-element management |
+| NEL | Network Element Layer | Managed network resources |
+
+### TMN Layer Architecture
+
+```mermaid
+flowchart TD
+    A["Business Management"]
+    B["Service Management"]
+    C["Network Management"]
+    D["Element Management"]
+    E["Network Elements"]
+
+    A <--> B
+    B <--> C
+    C <--> D
+    D <--> E
 ```
-This is a simplified teaching formula.
-For operational reporting, use the exact standard or operator-approved definition, including applicable exclusions and aggregation rules.
+
+**Remember:**
+
+- M.3010 describes management architecture principles.
+- M.3400 describes management functions.
+
 ---
-9. Standards Governing 5G Performance Management
-The key 5G PM standards are:
-Standard	Main Subject
-TS 28.532	Generic management services
-TS 28.550	Performance assurance
-TS 28.552	5G performance measurements
-TS 28.554	5G end-to-end KPIs
-9.1 TS 28.550 — Performance Assurance
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3411
-Purpose
-Defines capabilities for performance assurance and management in modern cellular systems.
-Main Concepts
-Performance measurement management
-Performance collection
-Performance assurance services
-Management interactions
+
+# 4. Fault Management Standards
+
+## What Is Fault Management?
+
+Fault Management detects abnormal network conditions and supports fault investigation, reporting and recovery.
+
+### Important Standards
+
+| Standard | Main Subject |
+|---|---|
+| ITU-T M.3400 | TMN fault management functions |
+| 3GPP TS 32.111-1 | Fault management requirements |
+| 3GPP TS 32.111-2 | Alarm IRP information service |
+| 3GPP TS 32.111-6 | Alarm IRP solution-set definitions |
+| 3GPP TS 28.532 | Generic management services |
+
+### Official References
+
+- [ITU-T M.3400](https://www.itu.int/rec/T-REC-M.3400)
+- [3GPP Specifications Portal](https://portal.3gpp.org/)
+
+## Main Fault Management Functions
+
+- Alarm collection
+- Alarm surveillance
+- Alarm severity classification
+- Alarm correlation
+- Fault localisation
+- Trouble reporting
+- Service restoration verification
+
+### Fault Management Architecture
+
+```mermaid
+flowchart TD
+    A["BTS / NodeB / eNodeB / gNodeB"]
+    B["Element Management System"]
+    C["Fault Management Platform"]
+    D["Alarm Correlation"]
+    E["Network Operations Centre"]
+    F["Troubleshooting"]
+    G["Fault Resolution"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+
+### Real-World Example
+
+A 5G base station becomes unavailable.
+
+1. A monitoring system detects the problem.
+2. An alarm is reported.
+3. The fault management system processes the alarm.
+4. A NOC engineer investigates.
+5. The fault is resolved.
+6. Network recovery is verified.
+
 ---
-9.2 TS 28.552 — 5G Performance Measurements
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3413
-Purpose
-Defines performance measurements for 5G systems.
-Example Measurement Areas
-NG-RAN performance
-5G Core performance
-Registration-related performance
-PDU session performance
-Mobility measurements
-Radio resource usage
+
+# 5. Configuration Management Standards
+
+## What Is Configuration Management?
+
+Configuration Management controls network settings, managed resources and configuration changes.
+
+### Important Standards
+
+| Standard | Main Subject |
+|---|---|
+| ITU-T M.3400 | Configuration management functions |
+| 3GPP TS 32.101 | Telecom management principles |
+| 3GPP TS 32.102 | Telecom management architecture |
+| 3GPP TS 28.532 | Generic management services |
+| 3GPP TS 28.541 | 5G Network Resource Model |
+| IETF RFC 6241 | NETCONF protocol |
+| IETF RFC 7950 | YANG data modelling language |
+
+### Main Configuration Management Functions
+
+- Network-element configuration
+- Managed-resource creation and deletion
+- Configuration parameter modification
+- Software configuration management
+- Configuration backup and recovery
+- Configuration consistency checks
+- Change verification
+
+### Configuration Management Architecture
+
+```mermaid
+flowchart TD
+    A["Network Engineer"]
+    B["Network Management System"]
+    C["Configuration Validation"]
+    D["Management Service / EMS"]
+    E["Network Element"]
+    F["Configuration Verification"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+```
+
+### Example: LTE Cell Configuration
+
+A network engineer changes a cell parameter.
+
+1. Review current configuration.
+2. Prepare the proposed change.
+3. Validate the new settings.
+4. Apply the approved configuration.
+5. Verify that the change succeeded.
+6. Monitor the affected cell.
+7. Roll back if necessary.
+
+### Common Configuration Parameters
+
+| Parameter | Purpose |
+|---|---|
+| Cell ID | Identifies a cell |
+| PCI | Physical Cell Identity |
+| EARFCN | LTE radio channel identifier |
+| TAC | Tracking Area Code |
+| Transmit Power | Controls radio transmission |
+| Neighbour Relations | Supports handover and mobility |
+
 ---
-9.3 TS 28.554 — 5G End-to-End KPIs
-Official Link:
-https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3415
-Purpose
-Defines end-to-end KPIs for evaluating 5G network and service performance.
-Difference Between the Standards
-Standard	Question Answered
-TS 28.550	How is performance assurance managed?
-TS 28.552	What 5G performance measurements are defined?
-TS 28.554	How are specified end-to-end KPIs defined?
-Simplified 5G PM Architecture
-![Network architecture diagram](diagrams/network-083.svg)
-Edit diagram source
-10. Performance Management Interfaces and File Formats
-Performance Management also requires mechanisms for exchanging data between network elements and management systems.
-Important Standards and Technologies
-Standard / Technology	Purpose
-3GPP TS 32.411 / 32.412	PM integration-reference-point requirements and information
-3GPP TS 32.432	PM collection and related information-service specifications
-3GPP TS 32.435	XML performance measurement format
-3GPP TS 28.532	Generic management services
-SNMP	Network management and monitoring protocol
-NETCONF	Configuration management protocol
-YANG	Data modelling language
-SNMP, NETCONF and YANG are complementary IETF technologies. They are not substitutes for 3GPP's standardised cellular measurement definitions.
-Performance Data Flow
-![Network architecture diagram](diagrams/network-084.svg)
-Edit diagram source
-11. How These Standards Work Together
-No single technical specification governs every aspect of mobile-network Performance Management.
-Different documents describe different layers of the management process.
-Standards Relationship
-![Network architecture diagram](diagrams/network-085.svg)
-Edit diagram source
-Example
-ITU-T M.3400 provides general management-function concepts.
-3GPP TS 32.401 defines cellular PM concepts and requirements.
-A technology-specific 3GPP specification defines measurements.
-Collection and interface specifications support measurement delivery.
-KPI specifications define how performance indicators are derived.
-The OSS or PM platform uses the information for operational monitoring.
+
+# 6. Accounting Management Standards
+
+## What Is Accounting Management?
+
+Accounting Management collects information about network resource consumption and service usage.
+
+In mobile telecommunications, accounting often works alongside charging and billing systems.
+
+### Important Standards
+
+| Standard | Main Subject |
+|---|---|
+| ITU-T M.3400 | Accounting management functions |
+| 3GPP TS 32.240 | Charging architecture and principles |
+| 3GPP TS 32.251 | Packet-switched domain charging |
+| 3GPP TS 32.298 | Charging Data Record parameter definitions |
+| 3GPP TS 32.299 | Diameter charging applications |
+| 3GPP TS 32.255 | 5G data connectivity domain charging |
+
+### Main Accounting Functions
+
+- Usage measurement
+- Service-consumption reporting
+- Charging information collection
+- Charging-record processing
+- Billing-system integration
+- Resource-usage analysis
+
+### Accounting and Charging Architecture
+
+```mermaid
+flowchart LR
+    A["Mobile Subscriber"]
+    B["Mobile Network"]
+    C["Charging Functions"]
+    D["Charging Records / Events"]
+    E["Billing / Balance System"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+### Real-World Example
+
+A subscriber consumes mobile data.
+
+1. The device establishes a data session.
+2. The network measures relevant usage.
+3. Charging functions process the usage information.
+4. Charging data is delivered to relevant systems.
+5. Billing or prepaid balance processing occurs.
+
+### Important Terms
+
+| Term | Meaning |
+|---|---|
+| CDR | Charging Data Record |
+| OCS | Online Charging System |
+| OFCS | Offline Charging System |
+| CHF | Charging Function |
+| Billing | Customer charge processing |
+
+**Important:** Charging implementations differ across mobile generations. For example, the 5G charging system uses architectures that differ from traditional EPC charging.
+
 ---
-12. Which Standard Should an Engineer Use?
-Engineering Task	Recommended Starting Standard
-Learn FCAPS and TMN	ITU-T M.3400
-Learn management architecture	ITU-T M.3010
-Understand PM fundamentals	3GPP TS 32.401
-Study GSM measurements	3GPP TS 52.402
-Study 3G UTRAN measurements	3GPP TS 32.405
-Study LTE RAN measurements	3GPP TS 32.425
-Study LTE KPI definitions	3GPP TS 32.450
-Study PM data exchange	3GPP TS 32.432 / 32.435
-Study 5G performance assurance	3GPP TS 28.550
-Study 5G measurement definitions	3GPP TS 28.552
-Study 5G end-to-end KPIs	3GPP TS 28.554
+
+# 7. Performance Management Standards
+
+## What Is Performance Management?
+
+Performance Management collects and analyses network measurements to evaluate network quality and capacity.
+
+### Important Standards
+
+| Standard | Main Subject |
+|---|---|
+| ITU-T M.3400 | Performance management functions |
+| 3GPP TS 32.401 | PM concepts and requirements |
+| 3GPP TS 32.404 | Measurement definitions and template |
+| 3GPP TS 32.405 | 3G UTRAN measurements |
+| 3GPP TS 32.425 | LTE E-UTRAN measurements |
+| 3GPP TS 32.450 | LTE KPI definitions |
+| 3GPP TS 28.550 | Performance assurance |
+| 3GPP TS 28.552 | 5G performance measurements |
+| 3GPP TS 28.554 | 5G end-to-end KPIs |
+
+### Main PM Functions
+
+- Performance measurement collection
+- KPI calculation
+- Capacity monitoring
+- Performance analysis
+- Congestion detection
+- Network quality reporting
+- Network optimisation
+
+### Performance Management Architecture
+
+```mermaid
+flowchart TD
+    A["Mobile Network Elements"]
+    B["Performance Counters"]
+    C["Measurement Collection"]
+    D["Performance Database"]
+    E["KPI Calculation"]
+    F["Performance Dashboard"]
+    G["NOC / Optimisation"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+
+### Common Mobile Network KPIs
+
+| KPI | Purpose |
+|---|---|
+| Availability | Measures operational availability |
+| Accessibility | Measures connection or service establishment |
+| Retainability | Measures service continuity |
+| Handover Success Rate | Measures mobility performance |
+| Throughput | Measures data transfer performance |
+| Latency | Measures communication delay |
+| PRB Utilisation | Measures radio resource usage |
+
+### Example: Handover Success Rate
+
+```text
+Handover Success Rate (%) =
+
+Successful Handovers
+--------------------- × 100
+Handover Attempts
+```
+
+Example:
+
+- Successful handovers: 970
+- Handover attempts: 1,000
+
+```text
+Handover Success Rate = (970 / 1000) × 100
+
+Handover Success Rate = 97%
+```
+
+This is a simplified formula for learning. Operational KPI formulas must follow the applicable measurement and KPI definitions.
+
 ---
-13. Important: Standards vs Vendor KPIs
-Standardised measurements and vendor-specific counters are not necessarily identical.
-For example, a network vendor may expose additional counters for:
-Radio scheduling
-Device capability combinations
-Interference analysis
-Internal resource usage
-Advanced MIMO operation
-Engineering Best Practice
-When calculating or comparing KPIs:
-Identify the network technology.
-Identify the 3GPP specification release.
-Check the standard measurement definition.
-Check vendor counter documentation.
-Verify aggregation and filtering rules.
-Confirm the KPI formula.
-Validate the reported results.
-A KPI with the same name from different systems may produce different values if the underlying counter definitions or calculation rules differ.
+
+# 8. Security Management Standards
+
+## What Is Security Management?
+
+Security Management controls access to management systems and protects network management information and resources.
+
+### Important Standards
+
+| Standard | Main Subject |
+|---|---|
+| ITU-T M.3400 | Security management functions |
+| ITU-T M.3410 | Security management system guidance |
+| ITU-T M.3411 | Identity and access management requirements |
+| 3GPP TS 33.501 | 5G security architecture and procedures |
+| ISO/IEC 27001 | Information security management system requirements |
+| IETF RFC 8446 | TLS 1.3 |
+| IETF RFC 4251 | SSH protocol architecture |
+
+### Main Security Management Functions
+
+- Authentication
+- Authorisation
+- Identity management
+- Role-based access control
+- Security auditing
+- Security-event monitoring
+- Secure management communications
+- Incident investigation
+
+### Security Management Architecture
+
+```mermaid
+flowchart TD
+    A["Network Administrator"]
+    B["Identity Management"]
+    C["Authentication"]
+    D["Authorisation"]
+    E["Network Management System"]
+    F["Managed Network Elements"]
+    G["Security Logging"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+```
+
+### Example: Unauthorised Configuration Change
+
+1. A user attempts to modify a gNodeB.
+2. The management platform checks their identity.
+3. The platform evaluates permissions.
+4. Unauthorised operations are rejected.
+5. The attempt may be logged and investigated.
+
+**Note:** 3GPP TS 33.501 addresses broader 5G system security. It complements, but does not exclusively define, FCAPS Security Management.
+
 ---
-14. Performance Management Standards by Generation
-Generation	Primary Documents	Main Focus
-2G	TS 52.402	GSM measurements
-3G	TS 32.403 / 32.405	UMTS and UTRAN measurements
-4G	TS 32.425 / 32.450	LTE counters and KPIs
-5G	TS 28.550 / 28.552 / 28.554	Assurance, measurements and KPIs
-Cross-generation	ITU-T M.3400 / TS 32.401	Foundational management and PM concepts
-6G	Future standards under development	Emerging intelligent-network management
+
+# 9. Complete FCAPS Standards Mapping
+
+| FCAPS Function | Foundational Standard | Important 3GPP Standards | Complementary Standards |
+|---|---|---|---|
+| Fault | ITU-T M.3400 | TS 32.111 series, TS 28.532 | ITU-T TMN framework |
+| Configuration | ITU-T M.3400 | TS 32.101, TS 32.102, TS 28.532, TS 28.541 | NETCONF, YANG |
+| Accounting | ITU-T M.3400 | TS 32.240, TS 32.251, TS 32.255, TS 32.298, TS 32.299 | Charging and billing frameworks |
+| Performance | ITU-T M.3400 | TS 32.401, TS 32.425, TS 28.550, TS 28.552, TS 28.554 | PM collection and reporting tools |
+| Security | ITU-T M.3400 | TS 33.501 and applicable security specifications | ITU-T M.3410, M.3411, ISO/IEC 27001, TLS, SSH |
+
 ---
-15. Practical Example: Investigating Poor LTE Performance
-Scenario
-A mobile operator receives complaints about slow LTE internet.
-Step 1: Select the Standards
-Use:
-TS 32.425 for LTE performance measurements.
-TS 32.450 for KPI definitions.
-Step 2: Collect Relevant Measurements
+
+# 10. FCAPS Across 2G, 3G, 4G and 5G
+
+| Generation | Common Managed Components | Management Approach |
+|---|---|---|
+| 2G | BTS, BSC, MSC | Traditional element and network management |
+| 3G | NodeB, RNC, SGSN, GGSN | Expanded mobile-network management |
+| 4G | eNodeB, MME, SGW, PGW | LTE/EPC performance and management |
+| 5G | gNodeB, AMF, SMF, UPF | Service-based management and orchestration |
+| 6G | Future radio and network functions | Management architecture under development |
+
+### Evolution Diagram
+
+```mermaid
+flowchart TD
+    A["2G Network Management"]
+    B["3G Network Management"]
+    C["4G Network Management"]
+    D["5G Management and Orchestration"]
+    E["6G Intelligent Management Research"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+---
+
+# 11. FCAPS in a Real Mobile Network
+
+## Simplified End-to-End Management Architecture
+
+```mermaid
+flowchart TD
+    A["Network Operations Centre"]
+    B["OSS / Network Management"]
+
+    C["Fault Management"]
+    D["Configuration Management"]
+    E["Accounting Management"]
+    F["Performance Management"]
+    G["Security Management"]
+
+    H["Element Management / Management Services"]
+    I["2G / 3G / 4G / 5G RAN"]
+    J["Mobile Core Network"]
+
+    A <--> B
+
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
+
+    C <--> H
+    D <--> H
+    E <--> H
+    F <--> H
+    G <--> H
+
+    H <--> I
+    H <--> J
+```
+
+### Roles of Main Components
+
+| Component | Role |
+|---|---|
+| NOC | Monitors network health and coordinates incident response |
+| OSS | Supports telecommunications operations |
+| NMS | Manages network-wide resources |
+| EMS | Manages groups of network elements |
+| RAN | Provides mobile radio connectivity |
+| Core Network | Provides mobility, session control and connectivity services |
+| Charging Systems | Support charging and billing |
+| Security Systems | Monitor and control security-related activities |
+
+---
+
+# 12. Practical FCAPS Troubleshooting Example
+
+## Scenario
+
+Customers report that a 5G cell is experiencing poor performance.
+
+### Fault Management
+
+Check:
+
+- Active alarms
+- Site availability
+- Transmission alarms
+- Equipment faults
+
+### Configuration Management
+
 Review:
-PRB utilisation
-User throughput
-Accessibility measurements
-Mobility measurements
-Step 3: Analyse the KPIs
-Determine whether radio resource congestion or other issues may explain degraded service.
-Step 4: Investigate Further
-Review:
-Radio conditions
-Transport capacity
-Site alarms
-Recent configuration changes
-Step 5: Optimise
-Apply appropriate, approved network changes.
-Step 6: Verify
-Compare KPIs before and after the intervention.
+
+- Radio parameters
+- Cell configuration
+- Neighbour relationships
+- Recent changes
+
+### Accounting Management
+
+Review relevant network resource or usage information if needed for the investigation.
+
+### Performance Management
+
+Check:
+
+- Accessibility
+- Retainability
+- Throughput
+- PRB utilisation
+- Handover success
+- Latency
+
+### Security Management
+
+Check relevant security or access-control events if they may be related to the incident.
+
+## Troubleshooting Workflow
+
+```mermaid
+flowchart TD
+    A["5G Service Issue"]
+
+    A --> B["Check Fault Alarms"]
+    A --> C["Review Configuration"]
+    A --> D["Review Relevant Usage"]
+    A --> E["Analyse KPIs"]
+    A --> F["Review Security Events"]
+
+    B --> G["Root Cause Investigation"]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H["Corrective Action"]
+    H --> I["Service Verification"]
+```
+
+Not every incident requires all five FCAPS areas. Engineers use the functions relevant to the problem.
+
 ---
-16. Official References
-ITU-T
-ITU-T M.3010 — TMN Principles
-ITU-T M.3400 — TMN Management Functions
-3GPP
-3GPP Official Website
-3GPP Specifications Portal
-TS 32.401 — PM Concepts and Requirements
-TS 52.402 — GSM Performance Measurements
-TS 32.425 — LTE Performance Measurements
-TS 28.550 — Performance Assurance
-TS 28.552 — 5G Performance Measurements
-TS 28.554 — 5G End-to-End KPIs
-Standards Version Note: Always verify the current specification status and select the release applicable to the deployed network.
+
+# 13. Recommended FCAPS Learning Roadmap
+
+## Beginner
+
+1. Learn the meaning of FCAPS.
+2. Study ITU-T M.3400.
+3. Understand TMN architecture and ITU-T M.3010.
+4. Learn OSS, NMS and EMS terminology.
+
+## Intermediate
+
+5. Study Fault Management and TS 32.111.
+6. Study Configuration Management and TS 28.532.
+7. Study charging architecture and TS 32.240.
+8. Study Performance Management and TS 32.401.
+9. Study management security and access control.
+
+## Advanced
+
+10. Study TS 28.541 for the 5G Network Resource Model.
+11. Study TS 28.552 for 5G performance measurements.
+12. Study TS 28.554 for 5G end-to-end KPIs.
+13. Study management automation and orchestration.
+14. Analyse a real mobile-network incident using FCAPS.
+
 ---
-17. Final Learning Summary
-Performance Management in mobile telecommunications is governed by a family of international recommendations and technical specifications.
-Key Documents
-ITU-T M.3400: FCAPS/TMN management foundation
-ITU-T M.3010: Telecommunications management architecture
-3GPP TS 32.401: Performance Management concepts
-3GPP TS 52.402: GSM performance measurements
-3GPP TS 32.405: 3G UTRAN performance measurements
-3GPP TS 32.425: LTE performance measurements
-3GPP TS 32.450: LTE KPI definitions
-3GPP TS 28.550: 5G performance assurance
-3GPP TS 28.552: 5G performance measurements
-3GPP TS 28.554: 5G end-to-end KPIs
-Learning Goal: Understand which documents establish the principles, measurement definitions, interfaces and KPIs needed to manage telecommunications network performance.
+
+# 14. Practice Questions
+
+## Beginner
+
+1. What does FCAPS stand for?
+2. What is the purpose of ITU-T M.3400?
+3. What is the difference between OSS and EMS?
+4. What is Fault Management?
+5. Why is Performance Management important?
+
+## Intermediate
+
+6. Which 3GPP standard family covers alarm management?
+7. What is the purpose of TS 28.541?
+8. How does charging differ from accounting?
+9. Which standards cover 5G performance measurements?
+10. How does Security Management protect an NMS?
+
+## Advanced
+
+11. How do ITU-T and 3GPP standards complement each other?
+12. How can FCAPS functions be integrated into a telecom OSS?
+13. How does 5G management differ from traditional management?
+14. What is the relationship between the TMN layers and FCAPS?
+15. How can FCAPS support automated network operations?
+
+---
+
+# 15. Official Reference Documents
+
+## ITU-T
+
+- [ITU-T M.3010 — TMN Principles](https://www.itu.int/rec/T-REC-M.3010)
+- [ITU-T M.3400 — TMN Management Functions](https://www.itu.int/rec/T-REC-M.3400)
+- [ITU-T M.3410 — Security Management](https://www.itu.int/rec/T-REC-M.3410)
+- [ITU-T M.3411 — Identity and Access Management](https://www.itu.int/rec/T-REC-M.3411)
+
+## 3GPP
+
+- [3GPP Specifications Portal](https://portal.3gpp.org/)
+- [3GPP TS 32.101 — Management Principles](https://portal.3gpp.org/)
+- [3GPP TS 32.102 — Management Architecture](https://portal.3gpp.org/)
+- [3GPP TS 32.111 — Fault Management](https://portal.3gpp.org/)
+- [3GPP TS 32.240 — Charging Architecture](https://portal.3gpp.org/)
+- [3GPP TS 32.401 — Performance Management](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1991)
+- [3GPP TS 28.532 — Generic Management Services](https://portal.3gpp.org/)
+- [3GPP TS 28.541 — 5G Network Resource Model](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3400)
+- [3GPP TS 28.552 — 5G Performance Measurements](https://portal.3gpp.org/)
+- [3GPP TS 33.501 — 5G Security Architecture](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3169)
+
+## Other References
+
+- [ETSI](https://www.etsi.org/)
+- [IETF](https://www.ietf.org/)
+- [ISO](https://www.iso.org/)
+
+**Version Note:** For implementation, always verify the applicable release, specification status and vendor support.
+
+---
+
+# 16. Final Learning Summary
+
+The main standards governing FCAPS Network Management are:
+
+**Foundational Standards**
+
+- ITU-T M.3010 — TMN architecture
+- ITU-T M.3400 — TMN management functions
+
+**Cellular Network Management Standards**
+
+- 3GPP TS 32.111 series — Fault Management
+- 3GPP TS 28.532 / 28.541 — Management services and resource models
+- 3GPP TS 32.240 series — Charging Management
+- 3GPP TS 32.401 / TS 28.552 — Performance Management
+- 3GPP TS 33.501 — Complementary 5G security architecture
+
+**Learning Goal:**
+
+Understand how ITU-T, 3GPP, ETSI and IETF standards support Fault, Configuration, Accounting, Performance and Security Management in mobile telecommunications networks.
+
 ---
