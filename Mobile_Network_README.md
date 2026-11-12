@@ -564,4 +564,117 @@ Not every incident requires all five categories. Prioritise evidence that relate
 
 ---
 
+Chapter 14 — O-RAN Standards, Architecture and Network Management
+14.1 What is O-RAN?
+O-RAN (Open Radio Access Network) describes an approach to building open, interoperable, intelligent and increasingly virtualised radio access networks. The O-RAN ALLIANCE develops O-RAN technical specifications. This is distinct from 3GPP, which defines the underlying cellular radio and network standards such as 5G NR, NG-RAN and the 5G Core. Open RAN is not a separate generation after 5G.
 
+Learning outcomes: Identify O-RAN elements, trace interfaces, distinguish SMO and RIC functions, connect O-RAN management to FCAPS, and locate official specifications.
+
+14.2 Why Open RAN matters
+- Interoperability: Open interfaces aim to enable equipment from different vendors to work together, subject to profile support and interoperability testing.
+- Disaggregation: Radio, distributed and centralised unit functions can be separated and deployed on suitable platforms.
+- Automation: Intelligent controllers and management services can optimise networks using policies, measurements and applications.
+- Cloud infrastructure: O-RAN network functions can run on an O-Cloud platform.
+- Operational choice: Operators can integrate multiple vendors, but integration, security and performance testing remain essential.
+14.3 Main O-RAN components and roles
+Component	Full name	Main role
+O-RU	O-RAN Radio Unit	Radio-frequency functions and lower-PHY processing for the applicable functional split
+O-DU	O-RAN Distributed Unit	Radio scheduling and lower protocol processing, including MAC/RLC and higher-PHY functions in common deployments
+O-CU-CP	O-RAN Central Unit, Control Plane	Higher-layer signalling and control-plane functions such as RRC/PDCP-C
+O-CU-UP	O-RAN Central Unit, User Plane	User-plane packet handling, including SDAP/PDCP-U
+Near-RT RIC	Near-Real-Time RAN Intelligent Controller	Fine-grained control and optimisation through E2; hosts xApps
+Non-RT RIC	Non-Real-Time RAN Intelligent Controller	Longer-timescale policy, analytics and AI/ML optimisation within the SMO framework; supports rApps
+SMO	Service Management and Orchestration	Network management, orchestration, lifecycle functions and integration of management capabilities
+O-Cloud	O-RAN Cloud	Cloud infrastructure and platform services hosting virtualised/containerised O-RAN network functions
+
+
+Important: The functional split, implementation choices and available interfaces depend on the O-RAN and 3GPP profiles and releases used in a deployment.
+14.4 Key O-RAN interfaces
+
+Interface	Typical endpoints	Purpose	O-RAN workgroup
+Open Fronthaul	O-DU ↔ O-RU	Interoperable radio fronthaul, commonly based on the 7-2x split; includes control, user, synchronisation and management planes	WG4
+A1	Non-RT RIC ↔ Near-RT RIC	Policy guidance, enrichment information and AI/ML-related coordination	WG2
+E2	Near-RT RIC ↔ E2 nodes (e.g. O-DU / O-CU)	Fine-grained measurements and near-real-time RAN control	WG3
+O1	SMO ↔ managed O-RAN functions	Operations, administration and maintenance: fault, configuration and performance management	WG10
+O2	SMO ↔ O-Cloud	Cloud infrastructure management and deployment/orchestration support	WG6
+R1	rApps ↔ Non-RT RIC framework	Services and APIs supporting rApp integration	WG2
+F1 / E1	O-CU ↔ O-DU / O-CU-CP ↔ O-CU-UP	3GPP-defined interfaces profiled for multi-vendor operation	3GPP; O-RAN WG5 profiles
+
+
+Not the same thing: A1 is not an antenna interface; E2 is not the 5G Core N2 interface; O1 is a management interface rather than the radio user's data path.
+14.5 O-RAN architecture: data flow and control flow
+Simplified user-plane path:
+1. A device communicates by radio with the O-RU.
+2. The O-RU forwards appropriate fronthaul information to the O-DU.
+3. The O-DU connects through F1 to the O-CU-UP.
+4. The O-CU-UP connects to the 5G Core, and traffic reaches a data network.
+Intelligent management path:
+1. The SMO manages network functions and O-Cloud resources through O1/O2 where applicable.
+2. The Non-RT RIC uses policies, analytics and rApps for longer-timescale optimisation.
+3. A1 can convey policy guidance toward the Near-RT RIC.
+4. The Near-RT RIC, using xApps, observes and influences supported E2 nodes through E2.
+5. Operators monitor outcomes with standardised and vendor-specific network measurements.
+14.6 O-RAN ALLIANCE workgroups
+Group	Focus
+WG1	Use cases and overall architecture
+WG2	Non-RT RIC, A1 and R1
+WG3	Near-RT RIC and E2
+WG4	Open Fronthaul
+WG5	Multi-vendor profiles for F1/W1/E1/X2/Xn
+WG6	Cloudification and orchestration, including O2
+WG7	White-box hardware
+WG8	Stack reference design
+WG9	Open x-haul transport
+WG10	OAM and O1
+WG11	Security
+
+
+14.7 O-RAN and FCAPS Network Management
+
+FCAPS area	O-RAN example	Relevant management scope
+Fault	Detect O-RU link degradation or O-DU failure	O1/OAM fault supervision and alarm reporting
+Configuration	Configure O-RAN network-function parameters	O1 management operations and resource models
+Accounting	Track resource usage and support operator charging workflows	Core/charging systems remain central; O-RAN resource use can support operations accounting
+Performance	Collect cell-level measurements, evaluate capacity and radio quality	O1 PM collection; E2 measurements for Near-RT optimisation where supported
+Security	Secure interfaces, protect credentials and management functions	WG11 security requirements, platform controls and relevant 3GPP/IETF security standards
+
+
+Distinction: O-RAN management does not replace 3GPP core charging architecture or make every FCAPS function an O1-only function.
+14.8 O-RAN Performance Management example
+Scenario: A 5G cell shows low throughput and high radio utilisation.
+1. The managed O-DU/O-CU reports relevant performance data using supported management services.
+2. The SMO / PM platform aggregates measurements and calculates suitable KPIs.
+3. An engineer or Non-RT RIC application identifies a performance pattern.
+4. A policy can be passed over A1 to the Near-RT RIC if supported.
+5. An xApp can use E2 measurements and permitted E2 control actions to optimise a supported RAN function.
+6. Validate the before-and-after throughput, user experience, alarms and security impacts.
+The availability of specific E2 service models, KPIs and controls is implementation- and release-dependent.
+14.9 Which documents should you read?
+Document or specification family	Purpose	Where to find it
+O-RAN Architecture Description (WG1; adopted as ETSI TS 103 982 in an earlier edition)	Overall O-RAN logical architecture	O-RAN download portal / ETSI
+O-RAN A1 Interface specifications (WG2; ETSI TS 103 983–989 adopt earlier A1 documents)	A1 principles, requirements, protocols and testing	O-RAN / ETSI
+O-RAN E2 Interface specifications (WG3)	E2 functions, protocol and service-model framework	O-RAN download portal
+O-RAN Open Fronthaul specifications (WG4)	DU–RU interoperability and management	O-RAN download portal
+O-RAN O1 and OAM specifications (WG10)	Management functions, procedures and interfaces	O-RAN download portal
+O-RAN O2 specifications (WG6)	O-Cloud management and orchestration	O-RAN download portal
+O-RAN Security specifications (WG11)	Security requirements across O-RAN components/interfaces	O-RAN download portal
+3GPP TS 38-series and TS 28-series	NR/NG-RAN interfaces and network management	3GPP specifications portal
+
+
+Version note (November 2026): O-RAN specifications are revised frequently. Use the currently applicable release from the official specification portal instead of assuming an older adopted ETSI edition is the newest O-RAN document.
+Official references
+- O-RAN ALLIANCE — Specifications
+- O-RAN ALLIANCE — Technical workgroups
+- O-RAN WG2 — Non-RT RIC and A1
+- O-RAN WG3 — Near-RT RIC and E2
+- O-RAN ETSI specifications adoption announcement
+- 3GPP specification portal
+14.10 Self-check questions
+1. How is the O-RAN ALLIANCE different from 3GPP?
+2. What are the roles of O-RU, O-DU, O-CU-CP and O-CU-UP?
+3. Which interfaces connect the two RICs and Near-RT RIC to E2 nodes?
+4. What are the management roles of O1 and O2?
+5. What is the difference between an xApp and an rApp?
+6. How do O-RAN PM measurements relate to FCAPS Performance Management?
+7. Why do open interfaces still require security and interoperability testing?
+Learning goal: Draw and explain the O-RAN user plane, the RIC control/optimisation paths and the SMO management interfaces without confusing them with the 5G Core.
